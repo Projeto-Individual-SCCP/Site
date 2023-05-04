@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - FIEL ON</title>
+    <link rel="shortcut icon" href="img/logo-cor-tela (2).png" type="image/x-icon"> 
+    <link rel="stylesheet" href="css/cadastro.css"> 
+
+<body>
+
+    <div class="header"> 
+        <div class="container"> 
+            <img class="logo" src="img/logo cadastro.png" alt="">
+            <ul class="navbar"> 
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#clube">Clube</a></li>
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
+                <li><a href="quizz.html">Quizz</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container1">
+        <img class="img-cadastro" src="img/bandeiracor.png" alt=""> 
+            <div class="texto-cadastro"> 
+                <h1>CADASTRO</h1>
+                <p>Nome Completo:</p>
+                <input id="nome_p" class="input_number" type="text"
+                    placeholder=" Insira o seu nome completo">
+                <p>E-mail:</p>
+                <input id="email_p" class="input_number" type="text" placeholder=" ex: corinthians@outlook.com">
+                <p>Telefone Celular</p>
+                <input id="telefone_p" class="input_number" type="text" placeholder=" ex: xx xxxxx-xxxx">
+                <p>Estado:</p>
+                <input id="estado_p" class="input_number" type="text" placeholder=" ex: São Paulo">
+                <p>Gênero:</p>
+                <select class="input_number" name="genero_p">
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                  </select>
+                <p>Idade:</p>
+                <input id="idade_p" class="input_number" type="number" placeholder=" ex: 20 anos">
+                <p>Senha:</p>
+                <input id="senha_p" class="input_number" type="password" placeholder=" *******">
+                <span>Deve conter no mínimo 8 caracteres e um '#'.</span>
+                <p>Confimar sua senha:</p>
+                <input id="confirmar_senha" class="input_number" type="password" placeholder=" *******">
+                <div class="texto1">
+                    <span>Já tem uma conta? <a href="login.html">Faça Login</a></span>
+                </div>
+                <button class="botao-banner" onclick="cadastrar()">Cadastrar</button>
+            </div>
+    </div>
+    </div>
+</body>
+
+</html>

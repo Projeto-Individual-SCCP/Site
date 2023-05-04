@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+body {
+    background-color: #E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+}
+
+/* Header*/
+.header {
+    position: relative; 
+    top: 0; 
+    width: 100%;
+    height: 100px;
+    background-color: #897e6f;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%; 
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    padding: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+
+}
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 200px;
+   
+}
+.navbar {
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+  
+}
+.navbar li a {
+    color: #E3DCCD;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    
+}
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+}
+
+
+
+.botao-banner {
+    background-color: #897e6f;
+    font-size: 20px;
+    border: none; 
+    border-radius: 10px; 
+    padding: 10px 60px; 
+    font-family: 'Poppins', sans-serif; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    color: white;
+}
+
+
+button:hover{
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #afa997;
+    color: white;
+    transition-duration: 0.3s; 
+}
+
+.input_number{ 
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    border-style: none;
+    background-color: #897e6f;
+    border-radius: 5px;
+    color: white;
+} 
+
+.texto-cadastro { 
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 2%;
+    margin-left: 4%;
+    width: 35%;
+    height: 90%;
+}
+
+.texto-cadastro h1 { 
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 2%;
+    width: 35%;
+    height: 90%;
+    color: #897e6f;
+    font-family: 'Notable', sans-serif;
+    letter-spacing: 2px;
+}
+.texto-cadastro span { 
+    width: fit-content;
+}
+
+::placeholder{
+    color: white;
+}
+
+select {
+    color: white;
+}
+.container1 {
+    margin-top: 0%;
+    margin-left: 0%; 
+    width: 100%;
+    margin-bottom: 2%;
+}
+.container1 .form{ 
+    width: 50%; 
+    margin-left: 50%;
+    position: absolute;
+    height: 89%;
+    background-color: #897e6f;
+}
+
+.container1 .form span{ 
+    font-family: 'Notable', sans-serif;
+    color: #E3DCCD;
+    margin-top: 30%;
+    margin-left: 28%;
+    font-size: 38px;
+    position: absolute;
+
+}
+
+.container1 .form p{ 
+    font-family: 'Poppins', sans-serif; 
+    color: hsl(41, 28%, 85%);
+    margin-top: 45%;
+    margin-left: 6%;
+    font-size: 25px;
+    position: absolute;
+    width: 89%;
+    text-align: center;
+}
+
+.container1 p{
+    align-self: self-start; 
+    margin-left: 0%;
+    color: #000000;
+}
+
+.container1 a{ 
+    color: #3B280A;
+    display: inline-block;
+    
+}
+.container1 .texto-cadastro .texto1{
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 30px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.container1 .texto-cadastro .texto1 span {
+    width: fit-content;
+    font-size: 11px;
+}
+
