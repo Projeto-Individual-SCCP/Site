@@ -1,0 +1,382 @@
+/*importação de fonte do google fontes com varias especuras diferentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color:#E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 5%; 
+    flex-direction: row;
+}
+
+/* Header*/
+.header {
+    position: absolute; 
+    top: 0; 
+    width: 100%;
+    height: 75px;
+    background-color: #E3DCCD;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px; 
+    /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
+    padding: 0%;
+}
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 200px;
+   
+}
+.navbar {
+    width: 700px;
+    display: flex;
+    list-style: none; 
+    justify-content: space-between;
+  
+}
+.navbar li a {
+    color: #767066;
+    text-decoration: none; 
+    font-size: 18px;
+    font-weight: 600; 
+    display: flex;
+    margin-left: 15px;
+    letter-spacing: 1px;
+    
+}
+.navbar li a:hover {
+    color: #b4a39b;
+    transition: 0.5s;
+
+}
+
+/* BANNER SOBRE O PROJETO*/
+.banner {
+    margin-top: 170px;
+
+}
+.line {
+    height: 2px;
+    width: 500px;
+    background-color: #767066;
+    margin-left: 220px;
+}
+.banner .container {
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    justify-content:flex-start;
+}
+.texto-banner {
+    color:#767066;
+    width: 100%; 
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.texto-banner p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+.texto-banner h1 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-banner h2 {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #767066;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto-banner p span {
+    font-weight: 700; 
+}
+
+/* BANNER SOBRE MIM*/
+.banner1{
+    width: 100%;
+    height: 1800px;
+    background-color: #767066;
+    margin-top: 170px;
+
+}
+.container1{
+    margin-top: 100px;
+}
+.container1 h1{
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color:#E3DCCD;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 10%;
+}
+.container1 .line{
+    height: 2px;
+    width: 350px;
+    background-color:#E3DCCD;
+    margin-left: 450px;
+    margin-top: -150px;
+}
+
+.container1 h2{
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 2px;
+    color: #E3DCCD;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    text-align:start;
+    margin-top: 5%;
+    margin-left: 7%;
+}
+.container1 p1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 1%;
+}
+.container1 p2 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #E3DCCD;
+    margin-left: 7%;
+    margin-right: 50%;
+    margin-top: 1%;
+}
+.imagem-banner1 img{
+    width: 450px;
+    margin-top: -470px;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 56%;
+    opacity: 0.7;
+} 
+.banner1 .container1 .boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+.boxes .box1 {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3DCCD;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px 10px 20px 10px; 
+    margin-bottom: 0%;
+    text-align: center; 
+  }
+
+.boxes .box1 h1{
+    color: #767066;
+    font-size: 30px;
+    margin-top: 6%;
+    margin-bottom: 0%;
+}
+.boxes .box1 p {
+    color: #767066;
+    font-size: 18px;
+    margin-top: 0%;
+    padding: 2%;
+    width: 100%;
+    text-align: center; 
+}
+
+.boxes .box2 {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3DCCD;
+    padding: 40px;
+    margin: 5px;
+    border-radius: 20px;
+    margin: 20px 10px 20px 10px; 
+    text-align: center; 
+    margin-bottom: 0%;
+  }
+
+.boxes .box2 h1{
+    color: #767066;
+    font-size: 30px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.boxes .box2 p {
+    color: #767066;
+    font-size: 18px;
+    margin-top: 0%;
+    padding: 2%;
+    width: 100%;
+}
+.boxes .box3 {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3DCCD;
+    padding: 40px;
+    margin: 5px;
+    border-radius: 20px;
+    margin: 20px 10px 20px 10px; 
+  }
+
+.boxes .box3 h1{
+    color: #767066;
+    font-size: 30px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.boxes .box3 p {
+    color: #767066;
+    font-size: 18px;
+    margin-top: 0%;
+    padding: 2%;
+    text-align: center; 
+}
+.title h1{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+}
+.boxes{
+    margin-bottom: 50px;
+}
+.container1 .title .line{
+    height: 2px;
+    width: 490px;
+    background-color:#E3DCCD;
+    margin-left: 388px;
+    margin-top: -150px;
+    margin-bottom: 2%;
+}
+
+/* BANNER 6-RODAPE */
+.banner6 {
+    background-color: #E3DCCD;
+    width: 100%;
+    display: flex;
+    margin:  0px 0px 0px 0px;
+    height: 380px;
+    margin-top: 0%;
+    background-repeat: no-repeat;
+    margin-right: 200px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.banner6 .texto-banner6 h1{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 100px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.banner6 .texto-banner6 h5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#767066;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0%;
+    font-weight:initial;
+    font-size: 17px;
+}
+
+
+.banner6 .texto-banner6 p{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    color:#767066;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    margin-bottom: 0%;
+    text-transform: uppercase;
+}
+
+.icons{
+    margin-top: 5px;
+    margin-left: 380px;
+}
+.icons img {
+    /*configuração das imagens de contato do Fale Conosco*/
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 60px;
+}
