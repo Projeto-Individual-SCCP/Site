@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz sobre o Corinthians</title>
+</head>
+<body>
+	<h1>Quiz sobre o Corinthians</h1>
+	<p>Em que ano o Corinthians foi fundado?</p>
+	<form>
+		<input type="radio" name="resposta" value="1910"> a) 1910<br>
+		<input type="radio" name="resposta" value="1988"> b) 1988<br>
+		<input type="radio" name="resposta" value="1922"> c) 1922<br>
+		<br>
+		<button type="button" onclick="verificarResposta()">Verificar Resposta</button>
+	</form>
+	<br>
+	<p id="resultado"></p>
+
+	<script>
+		function verificarResposta() {
+			// Cria um vetor com as opções de resposta
+			var opcoes = document.getElementsByName("resposta");
+
+			// Percorre o vetor e verifica qual opção foi selecionada
+			for (var i = 0; i < opcoes.length; i++) {
+				if (opcoes[i].checked) {
+					// Verifica se a opção selecionada é a resposta correta
+					if (opcoes[i].value == "1910") {
+						document.getElementById("resultado").innerHTML = "Resposta correta!";
+					} else {
+						document.getElementById("resultado").innerHTML = "Resposta incorreta! Tente novamente.";
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

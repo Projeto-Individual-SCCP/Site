@@ -59,6 +59,8 @@ body {
 .navbar li a:hover {
     color: #b4a39b;
     transition: 0.5s;
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 
 }
 
@@ -96,7 +98,16 @@ body {
     color: #767066;
     font-weight: bold;
     margin-bottom: 5px;
-}
+  
+ }
+ .texto-banner h1:hover {
+    color: #b4a39b;
+    transition: 2.0s;
+  }
+  .line:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 .texto-banner p span {
     font-weight: 700; 
 }
