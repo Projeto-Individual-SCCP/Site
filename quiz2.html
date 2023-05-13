@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ | FIEL ON</title>
+</head>
+<body>
+  <h1> Quanto você conhece o Corinthians? </h1>
+  <button onclick="ver()"> Ver </button>
+  <div id="quiz">
+    <div id="perguntasQuiz"></div><br>
+    <div id="respostasQuiz"></div>
+    <div id="correcaoQuiz"></div>
+  </div>
+  <script>
+    var perguntas = [
+      "Em que ano o Corinthians foi fundado?",
+      "Quantos Mundiais o Corinthians tem?",
+      "Escolha a alternativa que contenha as maiores ídolos da história do Corinthians:",
+      "Qual o maior artilheiro da Neo Química Arena?"
+    ];
+
+    var alternativas = [
+      ["1910", "1988", "1922"],
+      ["1, em 2012", "2, em 2000 e 2012", "2, em 2002 e 2012"],
+      ["Rivelino, Marcelinho Carioca, Neto, Ronaldo Fenômeno", "Rivaldo, Marcelinho Carioca, Roberto Carlos, Ronaldo Fenômeno", "Neto, Pelé, Edu Dracena, Zico e Cassio"],
+      ["Roger Guedes", "Guerrero", "Jô"]
+    ];
+
+    var corretas = [
+      "1910",
+      "2, em 2000 e 2012", 
+      "Rivelino, Marcelinho Carioca, Neto, Ronaldo Fenômeno",
+      "Jô"
+    ];
+    
+    var acerto = [];
+    var acertos = 0;
+    var contador = 0;
+    var respostaSelecionada = null;
+    var perguntasQuiz = document.getElementById("perguntasQuiz");
+    var respostasQuiz = document.getElementById("respostasQuiz");
+    var correcaoQuiz = document.getElementById("correcaoQuiz");
+    
+    perguntasQuiz.innerHTML = perguntas[contador];
+    respostasQuiz.innerHTML = alternativas[contador].map(
+      (alternativa, index) => `<input type="radio" name="alternativa" value="${alternativa}" onchange="respostaSelecionada='${alternativa}'">${alternativa}<br>`
+    ).join("");
+    
+    function ver() {
+      if (respostaSelecionada === null) {
+        alert("Por favor, selecione uma resposta.");
+        return;
+      }
+      
+      if (respostaSelecionada === corretas[contador]) {
+        acertos++;
+        correcaoQuiz.innerHTML = "Resposta correta!";
+      } else {
+        correcaoQuiz.innerHTML = `Resposta incorreta. A resposta correta é: ${corretas[contador]}`;
+      }
+      
+      respostaSelecionada = null;
+      
+      contador++;
+      if (contador >= perguntas.length) {
+        alert(`Você acertou ${acertos} de ${perguntas.length} perguntas!`);
+      }
+    }

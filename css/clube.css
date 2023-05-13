@@ -286,16 +286,16 @@ body {
     margin-left: 5%;
     margin-right: 50%;
     margin-top: 4%;
-    width: 43%;
+    width: 49%;
 }
 
 .imagem-banner3 img{
-    width: 480px;
+    width: 410px;
     height: 520px;
-    margin-top: -43%;
+    margin-top: -38%;
     margin-bottom: 50px;
     align-items: center;
-    margin-left: 53%;
+    margin-left: 59%;
     display: flex;
     border-radius: 5px;
     flex-direction: row;

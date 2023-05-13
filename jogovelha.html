@@ -1,0 +1,62 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="estilo.css"/>   
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <style>
+        #jogo{
+    width:603px;
+    height:600px;
+    border:solid 3px
+}
+ 
+.linha{
+    height:200px;
+    border-bottom:solid 1px;
+}
+ 
+.casa{
+    width:200px;
+    height:100%;
+    border-right:solid 1px;
+    float:left;
+}
+
+
+    </style>
+    <body>
+            <div id="jogo">
+                <div class="linha">
+                    <button class="casa" id="casa1" onclick="1()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa2" onclick="2()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa3" onclick="3()" style="cursor: pointer;"></div>
+                </div>
+                <div class="linha">
+                    <div class="casa" id="casa4" onclick="4()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa5" onclick="5()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa6" onclick="6()" style="cursor: pointer;"></div>
+                </div>
+                <div class="linha">
+                    <div class="casa" id="casa7" onclick="7()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa8" onclick="8()" style="cursor: pointer;"></div>
+                    <div class="casa" id="casa9" onclick="9()" style="cursor: pointer;"></div>
+                </div>
+            </div>
+            <div id="resultado"></div>
+    </body>
+    </html>
+    <script>
+
+
+function verificarFimDeJogo(){
+    if( casasIguais(1, 2, 3) || casasIguais(4, 5, 6) || casasIguais(7, 8, 9) ||
+        casasIguais(1, 4, 7) || casasIguais(2, 5, 8) || casasIguais(3, 6, 9) ||
+        casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
+        ){
+        $("#resultado").html("<h1>O jogador " + vencedor + "venceu! </h1>");
+        $(".casa").off("click");
+    }
+}
+   </script>

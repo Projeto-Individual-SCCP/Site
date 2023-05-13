@@ -1,38 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quiz sobre o Corinthians</title>
+	<title>Quiz Corinthians</title>
 </head>
 <body>
-	<h1>Quiz sobre o Corinthians</h1>
-	<p>Em que ano o Corinthians foi fundado?</p>
-	<form>
-		<input type="radio" name="resposta" value="1910"> a) 1910<br>
-		<input type="radio" name="resposta" value="1988"> b) 1988<br>
-		<input type="radio" name="resposta" value="1922"> c) 1922<br>
-		<br>
-		<button type="button" onclick="verificarResposta()">Verificar Resposta</button>
-	</form>
-	<br>
-	<p id="resultado"></p>
+	<div id="pergunta1">
+		<h1>Em que ano o Corinthians foi fundado?</h1>
+		<input type="radio" name="resposta1" value="a">a) 1910<br>
+		<input type="radio" name="resposta1" value="b">b) 1988<br>
+		<input type="radio" name="resposta1" value="c">c) 1922<br>
+		<button onclick="verificarResposta(1)">Enviar</button>
+	</div>
+
+	<div id="pergunta2" style="display:none;">
+		<h1>Porque Corinthians?</h1>
+		<input type="radio" name="resposta2" value="a">a) pq sim<br>
+		<input type="radio" name="resposta2" value="b">b) xiu<br>
+		<input type="radio" name="resposta2" value="c">c) bla<br>
+		<button onclick="verificarResposta(2)">Enviar</button>
+	</div>
+
+	<div id="resultado" style="display:none;">
+		<h1>Resultado</h1>
+		<p>Você acertou <span id="acertos"></span> de 2 perguntas.</p>
+	</div>
 
 	<script>
-		function verificarResposta() {
-			// Cria um vetor com as opções de resposta
-			var opcoes = document.getElementsByName("resposta");
+		// vetor com as perguntas
+		var perguntas = [
+			{
+				pergunta: "Em que ano o Corinthians foi fundado?",
+				respostas: ["1910", "1988", "1922"],
+				correta: 0
+			},
+			{
+				pergunta: "Por que Corinthians?",
+				respostas: ["pq sim", "xiu", "bla"],
+				correta: 1
+			}
+		];
 
-			// Percorre o vetor e verifica qual opção foi selecionada
-			for (var i = 0; i < opcoes.length; i++) {
-				if (opcoes[i].checked) {
-					// Verifica se a opção selecionada é a resposta correta
-					if (opcoes[i].value == "1910") {
-						document.getElementById("resultado").innerHTML = "Resposta correta!";
-					} else {
-						document.getElementById("resultado").innerHTML = "Resposta incorreta! Tente novamente.";
-					}
+		// vetor para armazenar as respostas corretas do usuário
+		var acertos = [];
+
+		// função para verificar as respostas
+		function verificarRespostas() {
+			var numAcertos = 0;
+			for (var i = 0; i < perguntas.length; i++) {
+				var perguntaAtual = perguntas[i];
+				var respostaSelecionada = parseInt(document.querySelector('input[name="resposta' + i + '"]:checked').value);
+				if (respostaSelecionada === perguntaAtual.correta) {
+					numAcertos++;
+					acertos.push(i);
 				}
+			}
+			alert("Você acertou " + numAcertos + " perguntas!");
+			// chama a função para mostrar as respostas corretas
+			mostrarRespostas();
+		}
+
+		// função para mostrar as respostas corretas
+		function mostrarRespostas() {
+			var resultado = "";
+			if (acertos.length === 0) {
+				resultado = "Você não acertou nenhuma pergunta. Tente novamente!";
+			} else {
+				resultado = "Você acertou as perguntas: ";
+				for (var i = 0; i < acertos.length; i++) {
+					resultado += (acertos[i] + 1) + ", ";
+				}
+				resultado = resultado.slice(0, -2); // remove a última vírgula e espaço
+			}
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+
+		// função para trocar de página
+		function proximaPagina() {
+			var paginaAtual = parseInt(document.getElementById("pagina").value);
+			var proximaPagina = paginaAtual + 1;
+			if (proximaPagina < perguntas.length) {
+				document.getElementById("pagina").value = proximaPagina;
+				document.getElementById("pergunta").innerHTML = perguntas[proximaPagina].pergunta;
+				var respostas = "";
+				for (var i = 0; i < perguntas[proximaPagina].respostas.length; i++) {
+					respostas += '<input type="radio" name="resposta' + proximaPagina + '" value="' + i + '"> ' + perguntas[proximaPagina].respostas[i] + '<br>';
+				}
+				document.getElementById("respostas").innerHTML = respostas;
+			} else {
+				verificarRespostas();
 			}
 		}
 	</script>
-</body>
-</html>
+</head>
+<body>
+	
+
+
+	
+    <div class="pergunta1">
+        <h1>Em que ano o Corinthians foi fundado?</h1>
+        <input type="radio" id="radio1" name="resposta1" value="a">a) 1910<br>
+        <input type="radio" id="radio2" name="resposta1" value="b">b) 1912<br>
+        <input type="radio" id="radio3" name="resposta1" value="c">c) 1914<br>
+        <button onclick="verificarResposta1()">Enviar</button>
+        <button onclick="proximo()"> Próximo </button>
+        <div id="pergunta1"></div>
+    </div> 
+
+     <div id="pergunta2">
+        <h1>Quantos Mundiais o Corinthians tem?</h1>
+        <input type="radio" id="radio4" name="resposta2" value="a">a) 1, em 2012.<br>
+        <input type="radio" id="radio5" name="resposta2" value="b">b) 2, em 2000 e 2012<br>
+        <input type="radio" id="radio6" name="resposta2" value="c">c) 2, em 2002 e 2012<br>
+        <button onclick="verificarResposta2()">Enviar</button>
+        <button onclick="proximo()"> Próximo </button>
+        <div id="msg2"></div>
+    </div>
+
+    <div id="pergunta3">
+        <h1>Escolha a alternativa que contenha as maiores ídolos da história do Corinthians:</h1>
+        <input type="radio" id="radio7" name="resposta3" value="a">a) Rivelino, Marcelinho Carioca, Neto, Ronaldo
+        Fenômeno<br>
+        <input type="radio" id="radio8" name="resposta3" value="b">b) Rivaldo, Marcelinho Carioca, Roberto Carlos,
+        Ronaldo
+        Fenômeno<br>
+        <input type="radio" id="radio9" name="resposta3" value="c">c) Neto, Pelé, Edu Dracena, Zico e Cassio<br>
+        <button onclick="verificarResposta3()">Enviar</button>
+        <button onclick="proximo()"> Próximo </button>
+        <div id="msg3"></div>
+    </div>
+
+    <div id="pergunta4">
+        <h1>Qual o maior artilheiro da Neo Química Arena?</h1>
+        <input type="radio" id="radio10" name="resposta4" value="a">a) Roger Guedes<br>
+        <input type="radio" id="radio11" name="resposta4" value="b">b) Guerrero<br>
+        <input type="radio" id="radio12" name="resposta4" value="c">c) Jô <br>
+        <button onclick="verificarResposta4()">Enviar</button>
+        <button onclick="proximo()"> Próximo </button>
+        <div id="msg4"></div>
+    </div>
+<div id="result">
+    <button onclick="percent()"> Quantos Porcento eu sou corinthiano?</button>
+    <div id="res"></div>
