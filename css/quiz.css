@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    background-color: #E3DCCD;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.form{
+    margin: 50px 5% 50px 25%; /*tag unica que configura tds as margens (top right bottom left)*/
+    width: 60%;
+    border-radius: 20px;
+    height: 700px; /*o tamanho do card é suficiente para caber o conteudo*/
+    background-color: #767066;
+    flex-direction: column;
+    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; /*alinhamento vertical*/
+    margin: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*alinhamento vertical*/
+    margin: auto;
+}
+
+.texto { /*formulario de cadastro*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; /*alinhamento vertical*/
+    margin: auto;
+    width: 100%;
+    height: 90%;
+}
+
+.texto h3{
+    font-size: 18px;
+    text-align: center;
+}
+.texto h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.PR{
+    font-size: 28px;
+}

@@ -8,14 +8,14 @@ body {
     background-repeat: no-repeat;
 }
 
-.container {
+/* .container {
     display: flex;
-    width: 80%;
+    width: 70%;
     margin: 5%; 
     flex-direction: row;
-}
+} */
 
-/* Header*/
+/* Header
 .header {
     position: relative; 
     top: 0; 
@@ -61,10 +61,51 @@ body {
 .navbar li a:hover {
     color: #b4a39b;
     transition: 0.5s;
+} */
+
+/* .form{
+    margin: 100px 20% 100px 10%; 
+    width: 80%;
+    border-radius: 20px;
+    background-color: white;
+}
+.container1 {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
 }
 
+.form .container1 .img-cadastro{ 
+    width: 50%;
+    height: 100%; 
+    border-radius: 20px 0px 0px 20px;
+    margin-top: 0%;
+}
+.form .container1 .texto-cadastro{
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    margin: auto; 
+    width: 80%;
+    height: 90%;
+}
 
+.form .container1 h1{
+        color: #AD8442;
+}
+.form .container1 p{
+    align-self: self-start;
+    margin-left: 10%;
+}
+
+.form .container1 a{ 
+
+    color: #3B280A;
+    
+}
 .botao-banner {
     background-color: #897e6f;
     font-size: 20px;
@@ -131,18 +172,7 @@ button:hover{
 select {
     color: white;
 }
-.container1 {
-    margin-top: 0%;
-    margin-left: 0%; 
-    width: 100%;
-}
-.container1 .img-cadastro{ 
-    width: 50%; 
-    margin-top: 0%;
-    margin-left: 0%;
-    position: absolute;
-    height: 1000px;
-}
+
 
 
 .container1 p{
@@ -170,4 +200,150 @@ select {
 }
 
 
+ */
 
+
+ .texto-cadastro { /*formulario de cadastro*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; /*alinhamento vertical*/
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}
+
+.containerlogin span { 
+    width: 80%;
+    font-size: 12px;
+}
+
+.img-cadastro{ 
+    width: 90%; /* largura*/
+    border-radius: 15px 0px 0px 15px;/*borda da imagem (top right bottom left)*/
+}
+select {
+    color: white;
+}
+/*Login*/
+
+.form{
+    /*card da area de login e cadastro*/
+    margin: 50px 5% 50px 5%; /*tag unica que configura tds as margens (top right bottom left)*/
+    width: 90%;
+    border-radius: 20px;
+    height: 50%; /*o tamanho do card é suficiente para caber o conteudo*/
+    background-color: #E3DCCD;
+    border: 4px solid #767066;
+    
+}
+::placeholder{
+    color: white;
+}
+
+.containerlogin {
+    /*conteudo do formulário de login e cadastro */
+    display: flex;
+    justify-content: space-around; /* os itens são distribuídos igualmente no espaço disponível ao redor deles */
+}
+.form .containerlogin .texto-login{
+    /*configuração dos textos*/
+    display: flex;
+    flex-direction: column; /*trocar o direcionamento de linear para coluna*/
+    justify-content: center; /*apos virar coluna, se torna o alinhamento vertical*/
+    align-items: center;  /*apos virar coluna, se torna o alinhamento horizontal*/
+    margin: auto; /*quando o display é flex, a margem automatica deixa os elementos centralizados*/
+    width: 80%;
+    height: 90%;
+}
+
+.form .containerlogin h1{
+    /*estilizaçao do titulo*/
+    color: #767066;
+    margin-top: 0%;
+}
+.form .containerlogin p{
+    /*estilização dos textos*/
+    align-self: self-start; /*alinha apenas este elemento para o inicio*/
+    margin-left: 10%;
+}
+
+.form .containerlogin a{ 
+    /*estilização dos links*/
+   color: #767066;
+    
+}
+
+.input_number{ 
+    /*estilização de TODOS os inputs dos formularios do site*/
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    border-style: none;
+    background-color: #767066;
+    border-radius: 5px;
+} 
+
+.card:hover{
+    /*'animação' que gera um sombreamento no card quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+button{
+    /*estilização do botão da página da calculadora*/
+    background-color: #767066;
+    color: #ffffff;
+    width: 170px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.botao-banner{
+    background-color: #767066;
+    color: #ffffff;
+    width: 220px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botao-banner2{
+    background-color: #767066;
+    color: #ffffff;
+    width: 220px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botao-banner2 b{ 
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
