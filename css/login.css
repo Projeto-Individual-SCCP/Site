@@ -258,7 +258,7 @@ select {
 
 .form .containerlogin a{ 
     /*estilização dos links*/
-   color: #767066;
+   color: #ffffff;
     
 }
 
@@ -322,7 +322,7 @@ button{
     display: inline-block;
 }
 
-.botao-banner2 b{ 
+.botao-banner2 a{ 
     color: white;
     text-decoration: none;
     font-weight: normal;
