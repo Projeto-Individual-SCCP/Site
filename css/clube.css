@@ -560,7 +560,7 @@ body {
     justify-content: center;
 }
 
-.botao b{ 
+.botao a{ 
     color: #767066;
     text-decoration: none;
     font-weight: normal;

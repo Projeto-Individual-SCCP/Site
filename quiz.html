@@ -126,17 +126,18 @@
     respostasQuiz.innerHTML = alternativas[contador];
 
     function ver() {
-        contador++
-        if (contador > perguntas.length) {
-            alert("Quiz finalizado");
+        contador++ 
+        if (contador < perguntas.length) {
+            
+            perguntasQuiz.innerHTML = perguntas[contador];
+            respostasQuiz.innerHTML = alternativas[contador];
+             
         }
         else {
 
-            perguntasQuiz.innerHTML = perguntas[contador - 1];
-            respostasQuiz.innerHTML = alternativas[contador - 1];
-
+            alert("Quiz finalizado");
         }
-
+    
         msg.innerHTML = "";
     }
 
