@@ -8,36 +8,36 @@
     <title>QUIZ | FIEL ON</title>
 
     <script src="../js/funcoes.js"></script>
-    <link rel="shortcut icon" href="assets/imgs/logo-cor-tela (2).png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
     <link rel="stylesheet" href="../css/quiz.css">
 </head>
 
 <body>
     <div class="form">
-    <div class="container">
-        <h1> Bem vindo(a) ao quiz!</h1>
-    <div class="texto">
-    <h3> Passos a serem seguidos:<br>
-        1º Escolha a alternativa correta.<br>
-        2º Clique em VERIFICAR para os pontos serem contabilizados.<br>
-        3º Clique em PRÓXIMA PERGUNTA para que as perguntas e alternativas sejam trocadas.
-    </h3>
-    </div>
-    <div class="PR" id="quiz">
-        <div id="perguntasQuiz"></div><br>
-        <div id="respostasQuiz"></div>
-    </div>
-        <div id="msg"></div>
-        <div id="div_lista">
-            <p>Suas Respostas:</p>
+        <div class="container">
+            <h1> Bem vindo(a) ao quiz!</h1>
+            <div class="texto">
+                <h3> Passos a serem seguidos:<br>
+                    1º Escolha a alternativa correta.<br>
+                    2º Clique em VERIFICAR para os pontos serem contabilizados.<br>
+                    3º Clique em PRÓXIMA PERGUNTA para que as perguntas e alternativas sejam trocadas.
+                </h3>
+            </div>
+            <div class="PR" id="quiz">
+                <div id="perguntasQuiz"></div><br>
+                <div id="respostasQuiz"></div>
+            </div>
+            <div id="msg"></div>
+            <div id="div_lista">
+                <p>Suas Respostas:</p><br>
+            </div>
+            <input id="input_acertos">
+            <button onclick="salvar()"> Salvar </button>
         </div>
-
+        <div id="acertos"></div>
     </div>
-    <button onclick="salvar()"> Salvar </button>
-    <div id="acertos"></div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
 </body>
 
 </html>
@@ -150,42 +150,42 @@
     var soma = 0;
     var acertos = 0;
     var contador = 0;
-    var listaResposta= [];
-    var listaAcertos= [];
+    var listaResposta = [];
+    var listaAcertos = [];
     perguntasQuiz.innerHTML = perguntas[contador];
     respostasQuiz.innerHTML = alternativas[contador];
 
 
     function ver() {
-        contador++ 
+        contador++
         if (contador < perguntas.length) {
-            
+
             perguntasQuiz.innerHTML = perguntas[contador];
             respostasQuiz.innerHTML = alternativas[contador];
-             
+
         }
         else {
 
             alert("Quiz finalizado");
         }
-    
+
         msg.innerHTML = "";
- 
+
     }
 
-    
+
 
     function verificarResposta1() {
-        var primeira= Pergunta1.value
+        var primeira = Pergunta1.value
 
-        if (perguntas[0] &&  primeira == 'A') {
+        if (perguntas[0] && primeira == 'A') {
             acertos += 1
-            
-  
+
+
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(primeira);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[0]}✔️<br>`;
-          
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✔️<br>`;
+
 
             if (acertos > 1) {
                 acertos = 1
@@ -196,26 +196,26 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}. `
             acertos += 0
-  
+
             listaResposta.push(primeira);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[0]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✖️<br>`;
         }
 
 
-       
+
 
     }
     // }
 
     function verificarResposta2() {
-        var segunda= Pergunta2.value
+        var segunda = Pergunta2.value
 
         if (perguntas[1] && segunda == 'B') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(segunda);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[1]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✔️<br>`;
 
             if (acertos > 2) {
                 acertos = 2
@@ -227,25 +227,25 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
-  
+
             listaResposta.push(segunda);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[1]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✖️<br>`;
         }
-        
-        
+
+
     }
 
 
 
     function verificarResposta3() {
-        var terceira= Pergunta3.value
+        var terceira = Pergunta3.value
 
         if (perguntas[2] && terceira == 'A') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(terceira);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[2]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✔️<br>`;
 
             if (acertos > 3) {
                 acertos = 3
@@ -257,23 +257,23 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
-  
+
             listaResposta.push(terceira);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[2]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✖️<br>`;
         }
-    
+
 
     }
 
     function verificarResposta4() {
-        var quarta= Pergunta4.value
+        var quarta = Pergunta4.value
 
         if (perguntas[3] && quarta == 'C') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(quarta);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[3]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✔️<br>`;
 
             if (acertos > 4) {
                 acertos = 4
@@ -285,24 +285,24 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
-  
+
             listaResposta.push(quarta);
-        div_lista.innerHTML+= `${contador+1}.${listaResposta[3]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✖️<br>`;
         }
 
 
     }
 
     function verificarResposta5() {
-        var quinta= Pergunta5.value
+        var quinta = Pergunta5.value
 
         if (perguntas[4] && quinta == 'C') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(quinta);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[4]}✔️<br>`;
-            
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✔️<br>`;
+
 
             if (acertos > 5) {
                 acertos = 5
@@ -314,9 +314,9 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
-  
+
             listaResposta.push(quinta);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[4]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✖️<br>`;
         }
 
 
@@ -324,14 +324,14 @@
     }
 
     function verificarResposta6() {
-        var sexta= Pergunta6.value
+        var sexta = Pergunta6.value
 
         if (perguntas[5] && sexta == 'B') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(sexta);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[5]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✔️<br>`;
 
             if (acertos > 6) {
                 acertos = 6
@@ -343,23 +343,23 @@
         else {
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
-  
+
             listaResposta.push(sexta);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[5]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✖️<br>`;
         }
-    
+
 
     }
 
     function verificarResposta7() {
-        var setima= Pergunta7.value
+        var setima = Pergunta7.value
 
         if (perguntas[6] && setima == 'C') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(setima);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[6]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✔️<br>`;
 
             if (acertos > 7) {
                 acertos = 7
@@ -372,21 +372,21 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(setima);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[6]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✖️<br>`;
         }
-    
+
 
     }
 
     function verificarResposta8() {
-        var oitava= Pergunta8.value
+        var oitava = Pergunta8.value
 
         if (perguntas[7] && oitava == 'B') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(oitava);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[7]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✔️<br>`;
 
             if (acertos > 8) {
                 acertos = 8
@@ -399,23 +399,23 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(oitava);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[7]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✖️<br>`;
         }
 
-    
+
 
     }
 
     function verificarResposta9() {
-        var nona= Pergunta9.value
+        var nona = Pergunta9.value
 
- 
+
         if (perguntas[8] && nona == 'B') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(nona);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[8]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✔️<br>`;
 
             if (acertos > 9) {
                 acertos = 9
@@ -428,21 +428,21 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(nona);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[8]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✖️<br>`;
         }
 
 
     }
 
     function verificarResposta10() {
-        var decima= Pergunta10.value
-        
+        var decima = Pergunta10.value
+
         if (perguntas[9] && decima == 'A') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(decima);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[9]}✔️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✔️<br>`;
 
             if (acertos > 10) {
                 acertos = 10
@@ -455,34 +455,43 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(decima);
-            div_lista.innerHTML+= `${contador+1}.${listaResposta[9]}✖️<br>`;
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✖️<br>`;
         }
 
-        var porcent= acertos * 10;
+        var porcent = acertos * 10;
 
-            div_lista.innerHTML+=`Você acertou ${acertos} perguntas!<br>
+        div_lista.innerHTML += `Você acertou ${acertos} perguntas!<br>
             Isso corresponde à ${porcent}% do Quiz.<br>`
 
-            if(acertos <= 3){
-                div_lista.innerHTML+=`Tente novamente<br>`
-            }
+        if (acertos <= 3) {
+            div_lista.innerHTML += `Tente novamente<br>`
+        }
 
-            else if(acertos <= 7){
-                div_lista.innerHTML+=`Pode melhorar<br>`
-            }
+        else if (acertos <= 7) {
+            div_lista.innerHTML += `Pode melhorar<br>`
+        }
 
-            else{
-                div_lista.innerHTML+=`Você sabe mesmo sobre o Corinthians!<br>`
-            }
-    
-
-        
-
+        else {
+            div_lista.innerHTML += `Você sabe mesmo sobre o Corinthians!<br>`
+        }
 
     }
 
-    
-    
+    function salvar() {
+        var input = input_acertos.value
+
+        if (input == acertos) {
+            alert('OK, validado')
+        }
+
+        else {
+            alert('ERRO, verifique se inseriu corretamente')
+        }
+    }
+
+
+
+
 
 
 //     function salvar() {
