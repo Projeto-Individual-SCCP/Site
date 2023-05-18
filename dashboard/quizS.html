@@ -8,21 +8,41 @@
     <title>QUIZ | FIEL ON</title>
 
     <script src="../js/funcoes.js"></script>
-    <link rel="shortcut icon" href="assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="dashboards.css">
 </head>
 
 <body>
-    <div class="form">
+    <div class="header">
+        <img class="logo" src="../assets/imgs/logo-dash.png">
         <div class="container">
-            <h1> Bem vindo(a) ao quiz!</h1>
-            <div class="texto">
-                <h3> Passos a serem seguidos:<br>
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="">Gráficos</a></li>
+                <li><a href="mural.html">Interações</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="form">
+        <div class="container2">
+            <div class="texto-banner2">
+                <h1> Quanto você conhece o Corinthians?</h1>
+                <div class="line"></div>
+                <h2>Para realizar o quiz, leia as seguintes instruções:</h2>
+                <p>
                     1º Escolha a alternativa correta.<br>
                     2º Clique em VERIFICAR para os pontos serem contabilizados.<br>
-                    3º Clique em PRÓXIMA PERGUNTA para que as perguntas e alternativas sejam trocadas.
-                </h3>
+                    3º Clique em PRÓXIMA PERGUNTA para que as perguntas e alternativas sejam trocadas.<br>
+                    4º Na décima pergunta insira no campo PONTOS a pontuação correta que você atingiu. <br>
+                    5º Se divirta!
+                </p>
+                
             </div>
+        </div>
+   
+
+        <div class="container3">
+         
             <div class="PR" id="quiz">
                 <div id="perguntasQuiz"></div><br>
                 <div id="respostasQuiz"></div>
@@ -37,7 +57,8 @@
         <div id="acertos"></div>
     </div>
     </div>
-    </div>
+    </div> 
+    
 </body>
 
 </html>

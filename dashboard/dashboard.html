@@ -6,16 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>FIEL ON | Dashboards</title>
 
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -26,17 +22,18 @@
 
 <body onload=" atualizarFeed()">
 
+
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <img class="logo" src="../assets/imgs/logo-dash.png">
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
+                <a href="quizS.html">
+                    <h3>Quiz</h3>
                 </a>
             </div>
 
@@ -48,19 +45,55 @@
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Interações</h3>
                 </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
+                <img class="sair" src="../assets/imgs/sair (1).png">
             </div>
 
         </div>
+    </div>
 
-        <div class="dash">
+    <div class="container">
+        <div class="texto-banner">
+            <h1>Bem-vindo à Área de Cliente Fiel ON!</h1>
+        
+            <p>
+
+                É com grande satisfação que lhe damos as boas-vindas ao espaço reservado aos verdadeiros torcedores do
+                Sport Club Corinthians Paulista. Aqui, você encontrará uma experiência única, com recursos interativos
+                para que você possa se envolver ainda mais com o seu time do coração.<br>
+                <br>
+                Como uma das funcionalidades dessa área temos o prazer de apresentar a você nosso Quiz Corinthiano, onde
+                você poderá testar seus conhecimentos sobre a história gloriosa do Timão, sobre jogadores icônicos,
+                títulos memoráveis e momentos históricos que fizeram parte da trajetória do clube. O Quiz Corinthiano é
+                a oportunidade perfeita para mostrar que você é um especialista no Corinthians e para aprender ainda
+                mais sobre o seu amado time.<br>
+                <br>
+                Além disso, oferecemos gráficos personalizados que disponibilizarão a você informações importantes do
+                time e apresentarão o seu desempenho no quiz ao longo do tempo. Visualize seu progresso e seu número de
+                acertos, compare sua pontuação, aprimore seus conhecimentos e se torne um verdadeiro mestre corinthiano.<br>
+                <br>
+                Estamos empenhados em criar um ambiente onde você possa se conectar com outros torcedores, compartilhar
+                sua paixão pelo Corinthians, participar de discussões animadas em fóruns exclusivos e criar laços de
+                amizade com a família corinthiana.<br>
+                <br>
+                Não perca tempo! Explore todas as funcionalidades do Fiel On, mergulhe no Quiz Corinthiano, acompanhe
+                seu progresso através dos gráficos e sinta a emoção de ser um verdadeiro fiel torcedor. Estamos aqui
+                para tornar a sua jornada como torcedor ainda mais especial e inesquecível. <br>
+                <br>
+                <h2>Vai, Corinthians!</h2>
+
+            </p>
+
+        </div>
+    </div>
+
+    <!-- <div class="dash">
             <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+               
                 <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Aquario 1</button>
                 <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Aquario 2</button>
                 <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Aquario 3</button>
@@ -116,7 +149,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 </body>
@@ -154,7 +187,7 @@
                 elementoAtual.classList.remove("display-block")
             }
             elementoAtual.classList.add("display-none")
-            
+
             // alterando estilo do botão
             let btnAtual = document.getElementById(`btnAquario${i}`)
             if (btnAtual.classList.contains("btn-pink")) {
@@ -162,12 +195,12 @@
             }
             btnAtual.classList.add("btn-white")
         }
-        
+
         // exibindo - ou não - o gráfico
         let graficoExibir = document.getElementById(`grafico${idAquario}`)
         graficoExibir.classList.remove("display-none")
         graficoExibir.classList.add("display-block")
-        
+
         // alterando estilo do botão
         let btnExibir = document.getElementById(`btnAquario${idAquario}`)
         btnExibir.classList.remove("btn-white")

@@ -69,9 +69,9 @@ body {
 }
 .line {
     height: 2px;
-    width: 380px;
+    width: 478px;
     background-color: #767066;
-    margin-left: 265px;
+    margin-left: 235px;
     margin-bottom: 5%;
 }
 
@@ -357,7 +357,7 @@ body {
 
 .boxes .box1 {
     width: 840px;
-    height: 220px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -396,8 +396,8 @@ body {
     margin-top: 0%;
     margin-bottom: 0%;
 }
-.boxes .box2 p {
-    color: #767066;
+.boxes .box1 p {
+    color: #E3DCCD;
     font-size: 18px;
     margin-top: 0%;
     padding: 2%;
@@ -558,7 +558,14 @@ button:hover{
 }
 
 .imagem-banner4 img{
-    width: 200px;
+    width: 250px;
+    height: 150px;
+    border-radius: 300px 300px 300px 300px;
+    margin-top: 0%;
+}
+
+.imagem-banner4 p{
+    color: #E3DCCD;
 }
 .imagem-banner4 img:hover{
     -ms-transform: scale(1.1);
@@ -568,20 +575,22 @@ button:hover{
 
  .box1 {
     width: 200px;
-    height: 180px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #767066;
-    padding: 40px;
+    /* padding: 40px; */
     margin: 5px;
     border-radius: 20px;
     /* margin: 20px 5px 20px 5px;  */
     text-align: center; 
     margin-bottom: 0%;
     color: #E3DCCD;
+    
   }
+
 
 .boxes .box1 h1{
     color: #767066;
@@ -590,7 +599,7 @@ button:hover{
     margin-bottom: 0%;
 }
 .boxes .box1 p {
-    color: #767066;
+    color: #E3DCCD;
     font-size: 18px;
     margin-top: 0%;
     padding: 2%;
@@ -599,6 +608,36 @@ button:hover{
 .box1:hover {
     transition: 0.5s;
     box-shadow: 0 16px 40px 0 rgba(0,0,0,0.2);
-
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     
   }
+  
+.box1 p1{
+    margin-left: 35%;
+    margin-top: -25%;
+    text-align: justify;
+}
+
+.box1 p2{
+    margin-left: 35%;
+    margin-top: -25%;
+    text-align: justify;
+}
+.box1 p3{
+    margin-left: 35%;
+    margin-top: -25%;
+    text-align: justify;
+}
+
+.box1 p4{
+    margin-left: 35%;
+    margin-top: -25%;
+    text-align: justify;
+}
+
+.box1 p5{
+    margin-left: 35%;
+    margin-top: -25%;
+    text-align: justify;
+}

@@ -1,8 +1,59 @@
 /* pagina mural */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*,
 body {
-  font-family: "Exo 2", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #E3DCCD;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: absolute; 
+  top: 0; 
+  width: 100%;
+  height: 75px;
+  background-color: #E3DCCD;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0px; 
+  /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
+  padding: 0%;
+  position:absolute;
+}
+.header .container {
+  justify-content: space-evenly;
+  align-items: center;
+}
+.logo {
+  width: 200px;
+ 
+}
+.navbar {
+  width: 700px;
+  display: flex;
+  list-style: none; 
+  justify-content:space-around;
+
+}
+.navbar li a {
+  color: #767066;
+  text-decoration: none; 
+  font-size: 18px;
+  font-weight: 600; 
+  display: flex;
+  margin-left: 15px;
+  letter-spacing: 1px;
+  
+}
+.navbar li a:hover {
+  color: #b4a39b;
+  transition: 0.5s;
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+
 }
 
 .label-captura {
@@ -119,7 +170,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #767066;
   height: 100vh;
   overflow: auto;
 }
@@ -275,3 +326,375 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
+
+
+/* FORMULARIO */
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #e6005a 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 2px solid #32b9cd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+/* PAGINA DOS GRÁFICOS */
+
+.janela {
+  display: flex;
+  width: 100vw;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 4px dotted #767066;
+  background-color: #E3DCCD;
+  /* border: 3px solid pink; */
+}
+.logo {
+  width: 200px;
+ 
+}
+
+.dash-right {
+  display: flex;
+  width: 80%;
+  height: fit-content;
+  background-color: #8b8b9c;
+  position: relative;
+  top: 0;
+  left: 25%;
+}
+
+.header-left h1 {
+  color: #32b9cd;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #767066;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.btn-nav {
+  background-color: #767066 ;
+  width: 50%;
+  height: 25px;
+  border-style: none; /*tira a estilização automatica do botão do html*/
+  border-radius: 100px 300px 100px 300px;
+  cursor:pointer; /*muda a imagem do cursor quando passar pelo botão*/
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 5%;
+
+}
+.btn-nav h3{ 
+  color: #f0efee;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.btn-nav:hover{
+  /*'animação' do botão quando o mouse passar*/
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  background-color: #bbb5aa;
+  color: white;
+  transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+
+.btn-nav-white{
+  background-color: #767066 ;
+  color: #E3DCCD;
+  width: 50%;
+  height: 25px;
+  border-style: none; /*tira a estilização automatica do botão do html*/
+  border-radius: 100px 300px 100px 300px;
+  cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 5%;
+
+}
+
+.btn-nav-white h3{ 
+  color: #f0efee;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.btn-nav-white:hover{
+  /*'animação' do botão quando o mouse passar*/
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  background-color: #bbb5aa;
+  color: white;
+  transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+
+
+
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+  /* width: 50%;
+  height: 25px; */
+  border-style: none; /*tira a estilização automatica do botão do html*/
+  border-radius: 10px;
+  cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 5%;
+}
+
+
+
+
+.btn-logout:hover{
+  /*'animação' do botão quando o mouse passar*/
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  background-color: #bbb5aa;
+  color: white;
+  transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+/* pagina extra - simulador */
+.simulador {
+  color: white;
+
+}
+
+.simulador .container {
+  flex-direction: column
+}
+
+
+
+.container1 h1{
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color:#E3DCCD;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  padding: 10%;
+}
+
+.container1 h2{
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color:#E3DCCD;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  padding: 10%;
+
+}
+.line{
+  height: 2px;
+  width: 350px;
+  background-color:#E3DCCD;
+  margin-left: 455px;
+  margin-top: -150px;
+}
+
+
+
+.line:hover {
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.form{
+  width: 100%;
+  margin:0%;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  position: fixed;
+  
+}
+
+.texto-banner {
+  color:#767066;
+  width: 60%; 
+  margin-top: 20px;
+  margin-left: 35%;
+}
+.texto-banner p {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 5%;
+}
+
+.container2{
+  margin-top: 20%;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-left: 7%;
+}
+
+.container3{
+  margin-top: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: #767066;
+  margin-right: 0%;
+  margin-left: 0%;
+  padding: 0%;
+}
+
+.texto-banner2 h1{
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color:#767066;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -2%;
+}
+
+.texto-banner2 h1:hover {
+  color: #b4a39b;
+  transition: 0.5s;
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.texto-banner2 h2{
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color:#767066;
+  font-weight: bold;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-top: 15%;
+}
+
+
+.texto-banner2 p {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 2%;
+  color: #767066;
+}
+
