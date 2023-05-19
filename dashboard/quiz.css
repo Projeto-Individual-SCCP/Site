@@ -65,7 +65,7 @@ body {
 /* BANNER SOBRE O PROJETO*/
 .banner {
     margin-top: 170px;
-
+    margin-bottom: 0%;
 }
 .line {
     height: 2px;
@@ -92,6 +92,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: justify;
+    margin-bottom: 0%;
 }
 .texto-banner h1 {
     font-size: 40px;
@@ -103,7 +104,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
+
 
 .texto-banner h1:hover {
     color: #b4a39b;
@@ -126,7 +129,7 @@ body {
     align-items: start;
     justify-content: start;
     text-align: start;
-    margin-left: 2%;
+    margin-left: 0%;
 }
 
 .texto-banner p span {
@@ -136,25 +139,220 @@ body {
 /* BANNER SOBRE MIM*/
 .banner1{
     width: 100%;
-    height: 3700px;
+    height: 900px;
     background-color: #767066;
-    margin-top: 150px;
+    margin-top: 10px;
+    
 }
 .container1{
-    margin-top: 80px;
+    margin-top: 20%;
+    margin-bottom: 5%;
 }
-.container1 h1{
-    font-size: 40px;
+
+
+.perguntas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.mensagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-style:italic;
+    font-weight: 200;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+.lista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.lista2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.lista3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.respotas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 34%;
+    background-color: #E3DCCD;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    border-color:  #767066;
+    border-width: 2px;
+    border-style: dotted;
+    cursor: pointer;
+    color: #767066;
+    font-weight: bold;
+    font-size: 20px;
+}
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    position: static;
+}
+.botao-a{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:inline-block;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.botao-c{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:inline-block;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+.input_number{ 
+    /*estilização de TODOS os inputs dos formularios do site*/
+    width: 30px;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    border-style: none;
+    background-color: #E3DCCD;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 48%;
+    color: #767066;
+    margin-top: 1%;
+    text-align: center;
+} 
+
+.botao-b{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 180;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 250px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 47.2%;
+    font-size: 15px;
+    
+}
+
+
+
+.container1 h2{
     font-family: 'Poppins', sans-serif; 
-    letter-spacing: 2px;
     color:#E3DCCD;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
-    padding: 10%;
+    margin-top: 0%;
+    padding: 5%;
+    margin-left: -5%;
 }
+.container1 h1:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .container1 .line{
     height: 2px;
     width: 350px;

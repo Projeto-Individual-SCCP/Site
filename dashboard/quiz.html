@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,6 @@
 
     <title>FIEL ON | Quiz</title>
 
-    <script src="./js/funcoes.js"></script>
     <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
     <link rel="stylesheet" href="quiz.css">
 
@@ -21,11 +19,9 @@
         <div class="container">
             <img class="logo" src="../assets/imgs/logo-dash.png">
             <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="clube.html">Clube</a></li>
-                <li><a href="projeto.html">Sobre</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="graficos.html">Dashboards</a></li>
+                <li><a href="mural.html">Interações</a></li>
             </ul>
         </div>
     </div>
@@ -37,23 +33,568 @@
                 <div class="line"></div>
                 <h2>Para realizar o quiz, leia as seguintes instruções:</h2>
                 <p>
-                1º Escolha a alternativa correta.<br>
-                2º Clique em VERIFICAR para os pontos serem contabilizados.<br>
-                3º Clique em PRÓXIMA PERGUNTA para que as perguntas e alternativas sejam trocadas.<br>
-                4º Na décima pergunta insira no campo PONTOS a pontuação correta que você atingiu. <br>
-                5º Se divirta!
+                    ① Analise cuidadosamente as opções fornecidas para cada pergunta e selecione aquela que você
+                    acredita ser a resposta correta.<br>
+                    ② Após selecionar sua resposta, clique no botão "VERIFICAR" para que o sistema calcule e registre
+                    sua pontuação com base na resposta fornecida.<br>
+                    ③ Depois de verificar sua resposta e receber os pontos correspondentes, clique em "PRÓXIMA
+                    PERGUNTA" para avançar para a próxima questão do quiz.
+                    Isso permitirá que você continue testando seus conhecimentos com novas perguntas e alternativas.<br>
+                    ④ Ao alcançar a décima pergunta, insira sua pontuação acumulada até o momento no campo designado
+                    como "PONTOS". Isso ajudará a registrar sua pontuação final corretamente. <br>
+                    ⑤» Tenha em mente que, uma vez que você avançar para a próxima pergunta, não será possível retornar
+                    para a pergunta anterior. Portanto, é importante que você revise sua resposta antes de clicar em
+                    "VERIFICAR". Certifique-se de ter selecionado a alternativa desejada para evitar arrependimentos
+                    posteriormente.
                 </p>
-              
+
             </div>
         </div>
     </div>
     <div class="banner1">
         <div class="container1">
-            <h1>CONQUISTAS</h1>
-            <div class="line"></div>
 
-            <p1> 
-            </p1>
+            <h2>
+                <div class="perguntas" id="perguntasQuiz"></div><br>
+            </h2>
+            <div class="respostas" id="respostasQuiz"></div>
         </div>
+        <div class="mensagem" id="msg"></div>
+        <div class="titulo">
+            Suas Respostas:<br>
+        </div>
+        <div class="lista " id="div_lista"></div>
+        <div class="lista2 " id="div_lista2"></div>
+        <div class="lista3 " id="div_lista3"></div>
+        <div class="titulo">
+            Insira a quantidade de pontos:<br>
+        </div>
+        <input class="input_number" id="input_acertos" type="number" min="0" max="10">
+        <button class="botao-b" onclick="salvar()"> Salvar </button>
+    </div>
+    <div id="acertos"></div>
+
+
+    </div>
+
     </div>
 </body>
+<script>
+    var perguntas = [["Em que ano o Corinthians foi fundado?"],
+    ["Quantos Mundiais o Corinthians tem?"],
+    ["Escolha a alternativa que contenha as maiores ídolos da história do Corinthians:"],
+    ["Qual o maior artilheiro da Neo Química Arena?"],
+    ["Qual gigante europeu o Corinthians eliminou para chegar a final do Mundial de clubes da FIFA em 2000?"],
+    ["Antes de ter a Arena Corinthians, onde o Timão mandava seus jogos?"],
+    ["Derby Paulista é o apelido dado a qual clássico?"],
+    ["Qual foi o título que encerrou a Era Tite, que foi de 2010 até 2013?"],
+    ["De onde surgiu o apelido Timão?"],
+    ["Qual foi a contratação mais cara do Corinthians nos últimos anos?"]
+
+    ];
+
+    var alternativas = [
+        [`
+    <select class="select" id="input_p1">
+    <option  value="x">  » Selecione uma Opção «  </b> </option>
+    <option value="A">1910</option>
+    <option value="B">1912</option>
+    <option value="C">1914</option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta1()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+    <select class="select" id="input_p2">
+        <option  value="x"> » Selecione uma Opção « </option>
+    <option value="A">1, em 2012</option>
+    <option value="B">2, em 2000 e 2012</option>
+    <option value="C">2, em 2002 e 2012</option>
+    </select><br>
+    <<div class="botoes">
+    <button class="botao-c" onclick="Resposta2()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+        <select class="select" id="input_p3">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A">Rivelino, Marcelinho Carioca, Neto</option>
+    <option value="B">Rivaldo, Roberto Carlos, Zico</option>
+    <option value="C">Neto, Pelé, Edu Dracena</option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta3()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()">Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+        <select class="select" id="input_p4">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A">Roger Guedes</option>
+    <option value="B">Guerrero</option>
+    <option value="C">Jô</option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta4()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+        <select class="select" id="input_p5">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A">Chelsea</option>
+    <option value="B">Manchester United</option>
+    <option value="C">Real Madrid </option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta5()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+        <select class="select" id="input_p6">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A">Fazendinha</option>
+    <option value="B">Pacaembu</option>
+    <option value="C">Parque São Jorge </option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta6()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ], [`
+        <select class="select" id="input_p7">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A"> Corinthians x São Paulo</option>
+    <option value="B"> Corinthians x Santos</option>
+    <option value="C"> Corinthians x Palmeiras </option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta7()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ], [`
+        <select class="select" id="input_p8">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A"> Campeonato Brasileiro</option>
+    <option value="B"> Recopa Sul-Americana</option>
+    <option value="C">  Copa Sul-Americana </option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta8()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ], [`
+        <select class="select" id="input_p9">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A"> Deboche de torcidas rivais</option>
+    <option value="B"> Repercurssão do alto investimento na mídia</option>
+    <option value="C">  Reconhecimento de jornais internacionais </option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta9()">Verificar ✓</button>
+    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    </div>`
+        ],
+        [`
+        <select class="select"  id="input_p10">
+            <option value="x"> » Selecione uma Opção « </option>
+    <option value="A"> Luan </option>
+    <option value="B"> Alexandre Pato</option>
+    <option value="C"> Romarinho</option>
+    </select><br>
+    <div class="botoes">
+    <button class="botao-c" onclick="Resposta10()">Verificar ✓</button>
+</div>
+    `
+        ],
+    ];
+
+
+    var soma = 0;
+    var acertos = 0;
+    var contador = 0;
+    var listaResposta = [];
+    var listaAcertos = [];
+    perguntasQuiz.innerHTML = perguntas[contador];
+    respostasQuiz.innerHTML = alternativas[contador];
+
+
+    function ver() {
+        contador++
+
+        if (contador < perguntas.length) {
+
+            perguntasQuiz.innerHTML = perguntas[contador];
+            respostasQuiz.innerHTML = alternativas[contador];
+
+        }
+        else {
+
+            alert("Quiz finalizado");
+        }
+
+        msg.innerHTML = "";
+
+    }
+
+
+
+    function Resposta1() {
+        var primeira = input_p1.value;
+
+        if (perguntas[0] && primeira == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[0] && primeira == 'A') {
+            acertos += 1
+
+
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(primeira);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✓.  `;
+
+
+            if (acertos > 1) {
+                acertos = 1
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}. `
+            acertos += 0
+
+            listaResposta.push(primeira);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✕.  `;
+        }
+
+
+
+
+    }
+    // }
+
+    function Resposta2() {
+        var segunda = input_p2.value;
+
+        if (perguntas[1] && segunda == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[1] && segunda == 'B') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(segunda);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✓.  `;
+
+            if (acertos > 2) {
+                acertos = 2
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+
+            listaResposta.push(segunda);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✕.  `;
+        }
+
+
+    }
+
+
+
+    function Resposta3() {
+        var terceira = input_p3.value;
+
+        if (perguntas[2] && terceira == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[2] && terceira == 'A') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(terceira);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✓.  `;
+
+            if (acertos > 3) {
+                acertos = 3
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+
+            listaResposta.push(terceira);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✕.  `;
+        }
+
+
+    }
+
+    function Resposta4() {
+        var quarta = input_p4.value;
+
+        if (perguntas[3] && quarta == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[3] && quarta == 'C') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(quarta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✓.  `;
+
+            if (acertos > 4) {
+                acertos = 4
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+
+            listaResposta.push(quarta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✕.  `;
+        }
+
+
+    }
+
+    function Resposta5() {
+        var quinta = input_p5.value;
+
+
+        if (perguntas[4] && quinta == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[4] && quinta == 'C') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(quinta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✓.  `;
+
+
+            if (acertos > 5) {
+                acertos = 5
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+
+            listaResposta.push(quinta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✕.  `;
+        }
+
+
+
+    }
+
+    function Resposta6() {
+        var sexta = input_p6.value;
+
+        if (perguntas[5] && sexta == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[5] && sexta == 'B') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(sexta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✓.  `;
+
+            if (acertos > 6) {
+                acertos = 6
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+
+            listaResposta.push(sexta);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✕.  `;
+        }
+
+
+    }
+
+    function Resposta7() {
+        var setima = input_p7.value;
+
+        if (perguntas[6] && setima == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[6] && setima == 'C') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(setima);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✓.  `;
+
+            if (acertos > 7) {
+                acertos = 7
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+            listaResposta.push(setima);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✕.  `;
+        }
+
+
+    }
+
+    function Resposta8() {
+        var oitava = input_p8.value
+
+        if (perguntas[7] && oitava == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[7] && oitava == 'B') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(oitava);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✓.  `;
+
+            if (acertos > 8) {
+                acertos = 8
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+            listaResposta.push(oitava);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✕.  `;
+        }
+
+
+
+    }
+
+    function Resposta9() {
+        var nona = input_p9.value
+
+        if (perguntas[8] && nona == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[8] && nona == 'B') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(nona);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✓.  `;
+
+            if (acertos > 9) {
+                acertos = 9
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+            listaResposta.push(nona);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✕.  `;
+        }
+
+
+    }
+
+    function Resposta10() {
+        var decima = input_p10.value
+
+        if (perguntas[9] && decima == 'x') {
+            alert("Escolha uma opção válida!")
+        }
+
+        else if (perguntas[9] && decima == 'B') {
+            acertos += 1
+            listaAcertos.push(acertos)
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            listaResposta.push(decima);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✓.<br>`;
+
+            if (acertos > 10) {
+                acertos = 10
+                alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
+                msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
+            }
+
+        }
+        else {
+            msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
+            acertos += 0
+            listaResposta.push(decima);
+            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✕.<br>`;
+        }
+
+        var porcent = acertos * 10;
+
+
+        div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!<br>
+            Isso corresponde à ${porcent}% do Quiz.<br>`
+
+        if (acertos <= 3) {
+            div_lista3.innerHTML += `<b>Tente novamente</b><br>`
+        }
+
+        else if (acertos <= 7) {
+            div_lista3.innerHTML += `<b>Pode melhorar</b><br>`
+        }
+
+        else {
+            div_lista3.innerHTML += `<b>Você sabe mesmo sobre o Corinthians!</b><br>`
+        }
+
+    }
+
+    function salvar() {
+        var input = input_acertos.value
+
+        if (input == acertos) {
+            alert('PONTOS VALIDADOS')
+        }
+
+        else {
+            alert('ERRO- INSIRA O NÚMERO CORRETO DE PONTOS ACUMULADOS')
+        }
+    }
+</script>
