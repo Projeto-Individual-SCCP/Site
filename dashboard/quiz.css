@@ -137,13 +137,20 @@ body {
 }
 
 /* BANNER SOBRE MIM*/
+
+
 .banner1{
     width: 100%;
-    height: 900px;
-    background-color: #767066;
+    height: 930px;
+    background-image: url(../assets/imgs/fundo\(3\).png);
     margin-top: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #767066;
     
 }
+
+
 .container1{
     margin-top: 20%;
     margin-bottom: 5%;
@@ -155,10 +162,11 @@ body {
     align-items: center;
     justify-content: center;
     color: #E3DCCD;
-    width: 90%;
+    width: 75%;
     margin-left: 5%;
     text-align: center;
     margin-top: 5%;
+    
 }
 
 .mensagem{
@@ -247,6 +255,7 @@ body {
     color: #767066;
     font-weight: bold;
     font-size: 20px;
+    
 }
 .botoes{
     display: flex;
