@@ -73,7 +73,7 @@
 
 
 <script>
-    function cadastrar() {
+function cadastrar() {
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
@@ -85,8 +85,8 @@
         var idadeVar= idade_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        // var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (senhaVar)
         if (nomeVar == "" || 
             emailVar == "" ||
             estadoVar == "" ||
@@ -94,12 +94,23 @@
             idadeVar == "" ||
             senhaVar == "" || 
             confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // cardErro.style.display = "block"
+            alert("Mensagem de erro para todos os campos em branco");
 
-            // finalizarAguardar();
+            return false;
+        } if (emailVar.indexOf("@") < 0 || // se o texto do input tem @
+            emailVar.indexOf(".") < 0) { // se o texto do input tem .
+            alert("Email deve conter @ e .");
+            return false;
+        } if (senhaVar.indexOf("#") < 0 ||
+            senhaVar.length < 8) { 
+            alert("A senha deve conter um # e no mínimo 8 caracteres");
+            return false;
+        } if (senhaVar != confirmacaoSenhaVar){
+            alert("A confirmação de senha não foi validada");
             return false;
         }
+        
         // else {
         //     setInterval(sumirMensagem, 5000)
         // }
@@ -122,19 +133,18 @@
                 confirmacaoSenhaServer: confirmacaoSenhaVar
             })
         }).then(function (resposta) {
-
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 // cardErro.style.display = "block";
 
-      alert ("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
 
-                limparFormulario();
+                // limparFormulario();
                 // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -142,14 +152,11 @@
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             // finalizarAguardar();
+            return false;
         });
-
-        return false;
     }
 
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
+
     function limparFormulario(){
         nomeVar = "";
             emailVar = "";
