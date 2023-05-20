@@ -141,15 +141,29 @@ body {
 
 .banner1{
     width: 100%;
-    height: 930px;
-    background-image: url(../assets/imgs/fundo\(3\).png);
+    height: 934px;
+    background-image: url(../assets/imgs/fundo\(3\).jpeg);
     margin-top: 10px;
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #767066;
     
+    
 }
 
+.fim spam{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    color: #E3DCCD;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    margin-bottom: 0%;
+}
 
 .container1{
     margin-top: 20%;
@@ -165,7 +179,7 @@ body {
     width: 75%;
     margin-left: 5%;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2%;
     
 }
 
@@ -327,7 +341,7 @@ button:hover{
 .botao-b{
     background-color: #E3DCCD;
     color: #767066;
-    width: 180;
+    width: 100px;
     height: 50px;
     border-style: none; /*tira a estilização automatica do botão do html*/
     border-radius: 250px;
@@ -339,11 +353,29 @@ button:hover{
     margin-top: 2%;
     align-items: center;
     justify-content: center;
-    margin-left: 47.2%;
+    margin-left: 45.7%;
     font-size: 15px;
     
 }
 
+.botao-d{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 100px;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 250px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin-top: 0%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 45.7%;
+    font-size: 15px;
+}
 
 
 .container1 h2{

@@ -272,9 +272,16 @@ body {
 }
 
 .graph {
-  width: 80%;
+  width: 70%;
   margin: auto;
   padding-top: 10px;
+  margin-right: 30%;
+}
+
+.linha { /* estilização da linha dos gráficos */
+  display: flex;
+  flex-direction: row;
+  width: 550px;
 }
 
 .tituloGraficos {
@@ -399,7 +406,7 @@ input {
 
 .janela {
   display: flex;
-  width: 100vw;
+  width: 35vw;
 }
 
 .header-left a {

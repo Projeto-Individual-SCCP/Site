@@ -1,44 +1,25 @@
-
-function salvar() {
+function enviar() {
     // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var Pergunta1Var= Pergunta1.value;
-    var Pergunta2Var= Pergunta2.value;
-    var Pergunta3Var= Pergunta3.value;
-    var Pergunta4Var= Pergunta4.value;
-    var Pergunta5Var= Pergunta5.value;
-    var Pergunta6Var= Pergunta6.value;
-    var Pergunta7Var= Pergunta7.value;
-    var Pergunta8Var= Pergunta8.value;
-    var Pergunta9Var= Pergunta9.value;
-    var Pergunta10Var= Pergunta10.value;
+    var acertosVar = input_acertos.value;
+    
 
-    if (senhaVar)
-    if (Pergunta1Var == "" || 
-        Pergunta2Var == "" ||
-        Pergunta3Var == "" ||
-        Pergunta4Var == "" ||
-        Pergunta5Var == "" ||
-        Pergunta6Var == "" || 
-        Pergunta7Var == "" ||
-        Pergunta8Var == "" ||  
-        Pergunta9Var == "" || 
-        Pergunta10Var == "" || 
-        confirmacaoSenhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+    if (acertosVar == "") {
+        // cardErro.style.display = "block"
+        alert("ERRO");
 
         // finalizarAguardar();
-    //     return false;
+        return false;
     }
     // else {
     //     setInterval(sumirMensagem, 5000)
     // }
 
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/quiz/enviar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -46,17 +27,7 @@ function salvar() {
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            p1Server:Pergunta1Var,
-            p2Server:Pergunta2Var,  
-            p3Server:Pergunta3Var,
-            p4Server:Pergunta4Var,
-            p5Server:Pergunta5Var,
-            p6Server:Pergunta6Var,
-            p7Server:Pergunta7Var,
-            p8Server:Pergunta8Var,
-            p9Server:Pergunta9Var,
-            p10Server:Pergunta10Var
-
+            acertosServer: acertosVar
         })
     }).then(function (resposta) {
 
@@ -65,16 +36,16 @@ function salvar() {
         if (resposta.ok) {
             // cardErro.style.display = "block";
 
-  alert ("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+  alert ("Respostas enviadas com sucesso! Redirecionando para tela de Início...");
 
             setTimeout(() => {
-                window.location = "login.html";
+                window.location = "dashboard.html";
             }, "2000")
 
             limparFormulario();
             // finalizarAguardar();
         } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
+            throw ("Houve um erro ao tentar realizar o envio das respostas...");
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
@@ -82,4 +53,12 @@ function salvar() {
     });
 
     return false;
+}
+
+// function sumirMensagem() {
+//     cardErro.style.display = "none"
+// }
+function limparFormulario(){
+    acertosVar = "";
+        
 }

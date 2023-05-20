@@ -1,0 +1,11 @@
+.chart-container{
+    position: relative;
+    margin: auto;
+    height: 110vh;
+    width: 80vw;
+}
+
+.chart1{
+    height: 10vh;
+    width: 40vw;
+}
