@@ -282,6 +282,7 @@ select {
     border-style: none;
     background-color: #767066;
     border-radius: 5px;
+    color: #ffffff;
 } 
 
 .card:hover{

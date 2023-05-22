@@ -276,13 +276,39 @@ body {
   margin: auto;
   padding-top: 10px;
   margin-right: 30%;
+  padding-right: 10px;
+}
+
+canvas#lm35Temperatura2{
+  width: 180px;
 }
 
 .linha { /* estilização da linha dos gráficos */
   display: flex;
   flex-direction: row;
-  width: 550px;
+  width: 200px;
 }
+
+.linhaMaior { /* estilização da linha dos gráficos */
+  display: flex;
+  flex-direction: row;
+  width: 680px;
+}
+
+.linha1 { /* estilização da linha dos gráficos */
+  display: flex;
+  flex-direction: row;
+  width: 340px;
+}
+
+.linha2 { /* estilização da linha dos gráficos */
+  display: flex;
+  flex-direction: row;
+  width: 580px;
+  margin-left: 10px;
+  padding: 20px;
+}
+
 
 .tituloGraficos {
   color: rgb(216, 216, 216);

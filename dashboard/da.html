@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,9 @@
     <script src="../js/funcoes.js"></script>
 
 </head>
+
 <body style="display: flex;">
-    
+
     <div class="janela">
         <div class="header-left">
             <img class="logo" src="../assets/imgs/logo-dash.png">
@@ -49,17 +51,29 @@
 
     <div class="graficos">
         <section class="graph">
-            <div class="linha">
-                <canvas id="lm35Temperatura1"></canvas>
+            <div class="linhaMaior">
+            <div class="linha1">
                 <canvas id="lm35Temperatura2"></canvas>
             </div>
+            <div class="linha2">
+            <canvas id="lm35Temperatura1"></canvas>
+        </div>
+    </div>
             <div class="linha">
                 <canvas id="lm35Temperatura3"></canvas>
                 <canvas id="lm35Temperatura4"></canvas>
             </div>
+            <div class="linha">
+                <canvas id="lm35Temperatura5"></canvas>
+                <canvas id="lm35Temperatura6"></canvas>
+            </div>
+            <div class="linha">
+                <canvas id="lm35Temperatura7"></canvas>
+                <canvas id="lm35Temperatura8"></canvas>
+            </div>
         </section>
     </div>
-<!-- 
+    <!-- 
     <div id="graficos">
         <div id="grafico1" class="display-block">
             <h3 class="tituloGraficos">
@@ -73,7 +87,7 @@
             </div>
         </div>
     </div> -->
-<!-- <div class="chart-container">
+    <!-- <div class="chart-container">
     <div>
         <canvas class="graph" id="myChart"></canvas> 
         
@@ -88,161 +102,189 @@
 </body>
 
 <script>
-      var contextoLm35Temperatura1 = document.getElementById('lm35Temperatura1').getContext('2d'); // Pega o id do canvas, e guarda na variável contextoLm35Temperatura1
-                    var lm35Temperatura1 = new Chart( // New Chart, serve para criar um novo Chart, nesse caso está sendo guardado na variável "lm35Temperatura1"
-                        contextoLm35Temperatura1,
-                        {
-                            type: 'line',
-                            data: {
-                                datasets: [{
-                                    label: 'Tanque 1- Pilsen',
-                                    type: 'line',
-                                    borderColor: ['#AD8442'],
-                                    backgroundColor: ['#AD8442'],
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        distribution: 'series',
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Temperatura (LAGER)'
-                                        },
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
-                                },
-                                animation: {
-                                    duration: 0
-                                }
-                            }
+    var contextoLm35Temperatura1 = document.getElementById('lm35Temperatura1').getContext('2d'); // Pega o id do canvas, e guarda na variável contextoLm35Temperatura1
+    var lm35Temperatura1 = new Chart( // New Chart, serve para criar um novo Chart, nesse caso está sendo guardado na variável "lm35Temperatura1"
+        contextoLm35Temperatura1,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Tanque 1- Pilsen',
+                    type: 'line',
+                    borderColor: ['#AD8442'],
+                    backgroundColor: ['#AD8442'],
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
                         }
-                    );
-
-                    /* -- lm35Temperatura2 */
-
-                    var contextoLm35Temperatura2 = document.getElementById('lm35Temperatura2').getContext('2d');
-                    var lm35Temperatura2 = new Chart(
-                        contextoLm35Temperatura2,
-                        {
-                            type: 'line',
-                            data: {
-                                datasets: [{
-                                    label: 'Tanque 2- IPA',
-                                    type: 'line',
-                                    borderColor: ['#ffd902'],
-                                    backgroundColor: ['#ffe135']
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        distribution: 'series',
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Temperatura (ALE)'
-                                        },
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
-                                },
-                                animation: {
-                                    duration: 0
-                                }
-                            }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura (LAGER)'
+                        },
+                        ticks: {
+                            beginAtZero: true
                         }
-                    );
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
 
-                    /* -- lm35Temperatura3 */
+    /* -- lm35Temperatura2 */
 
-                    var contextoLm35Temperatura3 = document.getElementById('lm35Temperatura3').getContext('2d');
-                    var lm35Temperatura3 = new Chart(
-                        contextoLm35Temperatura3,
-                        {
-                            type: 'line',
-                            data: {
-                                datasets: [{
-                                    label: 'Tanque 3- Schwarzbier',
-                                    type: 'line',
-                                    borderColor: ['#AD8442'],
-                                    backgroundColor: ['#AD8442']
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        distribution: 'series',
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Temperatura (LAGER)'
-                                        },
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
-                                },
-                                animation: {
-                                    duration: 0
-                                }
-                            }
+    var contextoLm35Temperatura2 = document.getElementById('lm35Temperatura2').getContext('2d');
+    var lm35Temperatura2 = new Chart(contextoLm35Temperatura2, {
+        type: 'pie',
+        data: {
+        labels: ['Acertos', 'Erros'],
+        datasets: [
+            {
+                label: '',
+                data: [90, 19],
+                borderColor: 'rgba(255,109,158)',
+                backgroundColor: ['rgba(255,109,158)', 'rgb(255, 205, 86)'],
+                borderWidth: 3,
+            },
+
+        ],
+    },
+
+    //     options: {
+    //     scales: {
+    //         y: {
+    //             beginAtZero: true
+    //         }
+    //     }
+    // }
+});
+
+
+    /* -- lm35Temperatura3 */
+
+    var contextoLm35Temperatura3 = document.getElementById('lm35Temperatura3').getContext('2d');
+    var lm35Temperatura3 = new Chart(
+        contextoLm35Temperatura3,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Tanque 3- Schwarzbier',
+                    type: 'line',
+                    borderColor: ['#AD8442'],
+                    backgroundColor: ['#AD8442']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
                         }
-                    );
-
-                    /* -- lm35Temperatura4 */
-
-                    var contextoLm35Temperatura4 = document.getElementById('lm35Temperatura4').getContext('2d');
-                    var lm35Temperatura4 = new Chart(
-                        contextoLm35Temperatura4,
-                        {
-                            type: 'line',
-                            data: {
-                                datasets: [{
-                                    label: 'Tanque 4- Stout',
-                                    type: 'line',
-                                    borderColor: ['#ffd902'],
-                                    backgroundColor: ['#ffe135']
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        distribution: 'series',
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        scaleLabel: {
-                                            display: true,
-                                            labelString: 'Temperatura (ALE)'
-                                        },
-                                        ticks: {
-                                            beginAtZero: true
-                                        }
-                                    }]
-                                },
-                                animation: {
-                                    duration: 0
-                                }
-                            }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura (LAGER)'
+                        },
+                        ticks: {
+                            beginAtZero: true
                         }
-                    );
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+    /* -- lm35Temperatura4 */
+
+    var contextoLm35Temperatura4 = document.getElementById('lm35Temperatura4').getContext('2d');
+    var lm35Temperatura4 = new Chart(
+        contextoLm35Temperatura4,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Tanque 4- Stout',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura (ALE)'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+
+    var contextoLm35Temperatura5 = document.getElementById('lm35Temperatura5').getContext('2d');
+    var lm35Temperatura5 = new Chart(
+        contextoLm35Temperatura5,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Tanque 4- Stout',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura (ALE)'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
 </script>

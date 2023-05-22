@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEL ON | Lista de Jogadores</title>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="quiz.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="../assets/imgs/logo-dash.png">
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="graficos.html">Dashboards</a></li>
+                <li><a href="mural.html">Interações</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        Insira os nomes dos jogadores do Corinthians que você conhece: <input id="input_jog"><br>
+        Insira de 0 a 10 o quanto você gosta deles: <input id="input_gostar" type="number" min="0" max="10"><br>
+        <button onclick="registrar()">Registrar Jogadores</button>
+        <button onclick="ver()">Mostrar Jogadores</button>
+        <button onclick="salvar()">Salvar lista</button>
+        <div id="msg"></div>
+        <div id="msg2"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var listaJogadores = [];
+    var listaGostar = [];
+
+    function registrar() {
+        var contador = 0;
+
+
+        if (listaJogadores.indexOf(input_jog.value) < 0) {
+            listaJogadores.push(input_jog.value);
+        } else {
+            alert("Não pode mais de 1 jogador com o mesmo nome!");
+        }
+
+
+        while (contador <= listaJogadores.length) {
+            if (contador >= 0 && contador <= 4) {
+                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um torcedor iniciante e conhece bem pouco do elenco.<br>`
+            }
+            else if (contador >= 5 && contador <= 8) {
+                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um bom torcedor e mas poderia conhecer mais o elenco.<br>`
+            }
+            else {
+                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um torcedor FIEL e sabe tudo sobre o TIMÃO! VAI CORINTHIANS!!<br>`
+            }
+            contador += 1
+        }
+    }
+
+    function ver() {
+        var contador = 0;
+        var amor = Number(input_gostar.value);
+        listaGostar.push(input_gostar.value);
+
+        if (amor < 5) {
+            alert(" Nível de Paixão muito baixo... 😢")
+        } else {
+            alert(" Nível de Paixão alto, ele deve ser muito querido por toda Fiel! 😁")
+        }
+
+        while (contador < listaJogadores.length) {
+            msg.innerHTML += `
+    ${contador + 1}. Nome: ${listaJogadores[contador]} ⋙ Nível de Paixão: ${listaGostar[contador]}<br>`
+            contador += 1
+        }
+    }
+
+    function salvar() {
+        // salvando no local storage
+        const arr= listaJogadores
+        localStorage.setItem('itens', JSON.stringify(arr));
+        const itens = JSON.parse(localStorage.getItem('itens'))
+
+        msg2.innerHTML = `${itens}<br>`
+    }
+</script>

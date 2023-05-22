@@ -213,7 +213,7 @@
         <select class="select"  id="input_p10">
             <option value="x"> » Selecione uma Opção « </option>
     <option value="A"> Luan </option>
-    <option value="B"> Alexandre Pato</option>
+    <option value="B"> Yuri Alberto </option>
     <option value="C"> Romarinho</option>
     </select><br>
     <div class="botoes">
@@ -581,7 +581,7 @@
 
         div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!<br>
             Isso corresponde à ${porcent}% do Quiz.<br>`
-
+        
         if (acertos <= 3) {
             div_lista3.innerHTML += `<b>Tente novamente</b><br>`
         }
@@ -631,7 +631,7 @@
     // }
 
     // Enviando o valor da nova input
-    fetch("/quiz/enviar", {
+    fetch("/usuarios/enviar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -639,7 +639,8 @@
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            acertosServer: acertosVar
+            acertosServer: acertosVar,
+            fkUsuarioServer: sessionStorage.getItem('ID_USUARIO')
         })
     }).then(function (resposta) {
 

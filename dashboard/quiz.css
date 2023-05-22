@@ -141,7 +141,7 @@ body {
 
 .banner1{
     width: 100%;
-    height: 934px;
+    height: 950px;
     background-image: url(../assets/imgs/fundo\(3\).jpeg);
     margin-top: 10px;
     background-repeat: no-repeat;
@@ -342,7 +342,7 @@ button:hover{
     background-color: #E3DCCD;
     color: #767066;
     width: 100px;
-    height: 50px;
+    height: 30px;
     border-style: none; /*tira a estilização automatica do botão do html*/
     border-radius: 250px;
     cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
