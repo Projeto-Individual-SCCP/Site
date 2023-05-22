@@ -31,12 +31,12 @@ function cadastrar(nome, email, estado, genero, idade, senha, confirmacaoSenha) 
     return database.executar(instrucao);
 }
 
-function enviar(acertos, porcentagem, fkUsuario) {
+function enviar(acertos, erros, fkUsuario) {
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO resultado (acertos, porcentagem, fkUsuario, fkQuiz) VALUES ('${acertos}', '${porcentagem}', ${fkUsuario}, ${1});
+        INSERT INTO resultado (acertos, erros, fkUsuario, fkQuiz) VALUES ('${acertos}', '${erros}', ${fkUsuario}, ${1});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

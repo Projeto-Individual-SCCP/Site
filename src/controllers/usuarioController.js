@@ -109,17 +109,20 @@ function cadastrar(req, res) {
 function enviar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var acertos = req.body.acertosServer;
+    var erros = req.body.errosServer;
     var fkUsuario= req.body.fkUsuarioServer;
    
 
     // Faça as validações dos valores
     if (acertos == undefined) {
-        res.status(400).send("Seus acertos está undefined!");
+        res.status(400).send("Seus acertos estão indefinidos!");
+    } else if (erros == undefined){
+        res.status(400).send("Seus erros estão indefinidos!");
     }
     else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.enviar(acertos, 100, fkUsuario)
+        usuarioModel.enviar(acertos, erros, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -128,7 +131,7 @@ function enviar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o envio dos acertos! Erro: ",
+                        "\nHouve um erro ao realizar o envio dos acertos e erros! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

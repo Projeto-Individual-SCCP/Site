@@ -73,13 +73,16 @@
         <div class="lista2 " id="div_lista2"></div>
         <div class="lista3 " id="div_lista3"></div>
         <div class="titulo">
-            Insira a quantidade de pontos:<br>
+            Insira a quantidade de acertos:<br>
         </div>
         <input class="input_number" id="input_acertos" type="number" min="0" max="10">
-       
+        <div class="titulo">
+            Insira a quantidade de erros:<br>
+        </div>
+        <input class="input_number" id="input_erros" type="number" min="0" max="10">
         <button class="botao-b" onclick="verificar()"> Validar </button>
         <div class= "fim" id="bot"></div>
-        <button class="botao-b" onclick="enviar()"> Enviar </button>
+        <!-- <button class="botao-b" onclick="enviar()"> Enviar </button> -->
 
     </div>
     <div id="acertos"></div>
@@ -597,12 +600,15 @@
     }
 
     function verificar() {
-        var input = input_acertos.value
+        var inputA = input_acertos.value;
+        var inputB = input_erros.value;
+        var erros= 10 - acertos
 
-        if (input == acertos) {
+        if (inputA == acertos && inputB == erros) {
             alert('PONTOS VALIDADOS')
 
-            bot.innerHTML= `<spam>Envie seus pontos clicando no botão abaixo!</spam>`
+            bot.innerHTML= `<spam>Envie seus pontos clicando no botão abaixo!</spam><br>
+            <button class="botao-b" onclick="enviar()"> Enviar </button>`
         }
 
         else {
@@ -616,10 +622,10 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var acertosVar = input_acertos.value;
-    
+    var errosVar = input_erros.value;
 
 
-    if (acertosVar == "") {
+    if (acertosVar == "" || errosVar == "") {
         // cardErro.style.display = "block"
         alert("ERRO");
 
@@ -640,6 +646,7 @@
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
             acertosServer: acertosVar,
+            errosServer: errosVar,
             fkUsuarioServer: sessionStorage.getItem('ID_USUARIO')
         })
     }).then(function (resposta) {
