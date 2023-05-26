@@ -8,7 +8,7 @@
     <title>FIEL ON | Lista de Jogadores</title>
 
     <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="lista.css">
 
 </head>
 
@@ -25,7 +25,8 @@
         </div>
     </div>
 
-    <div class="banner">
+    <!-- <div class="banner">
+        <div class="cardLista">
         Insira os nomes dos jogadores do Corinthians que você conhece: <input id="input_jog"><br>
         Insira de 0 a 10 o quanto você gosta deles: <input id="input_gostar" type="number" min="0" max="10"><br>
         <button onclick="registrar()">Registrar Jogadores</button>
@@ -34,6 +35,28 @@
         <div id="msg"></div>
         <div id="msg2"></div>
     </div>
+    </div> -->
+
+
+
+    <div id="projeto" class="container">
+        <div class="texto-banner">
+            <h1>LISTA DE JOGADORES</h1>
+            <div class="line"></div>
+            <div class="boxes">
+                <div class="box1">
+                    Insira os nomes dos jogadores do Corinthians que você conhece: <input id="input_jog"><br>
+                    Insira de 0 a 10 o quanto você gosta deles: <input id="input_gostar" type="number" min="0" max="10"><br>
+                    <button onclick="registrar()">Registrar Jogadores</button>
+                    <button onclick="ver()">Mostrar Jogadores</button>
+                    <button onclick="salvar()">Salvar lista</button>
+                    <div id="msg"></div>
+                    <div id="msg2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>
