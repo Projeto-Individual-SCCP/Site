@@ -281,6 +281,17 @@ body {
 
 canvas#lm35Temperatura2{
   width: 180px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+canvas#lm35Temperatura1{
+  width: 200px;
+  margin-top: 8%;
+  margin-left: 20%;
+  margin-right: 0%;
+  height: 500px;
+
 }
 
 .linha { /* estilização da linha dos gráficos */
@@ -292,21 +303,35 @@ canvas#lm35Temperatura2{
 .linhaMaior { /* estilização da linha dos gráficos */
   display: flex;
   flex-direction: row;
-  width: 680px;
+  width: 880px;
+  margin-left: 10%;
+  margin-top: -30%;
+  margin-bottom: 10%;
 }
 
 .linha1 { /* estilização da linha dos gráficos */
   display: flex;
   flex-direction: row;
-  width: 340px;
+  width: 240px;
+  margin-top: 20%;
+}
+
+.graph h1{
+  font-family: 'Poppins', sans-serif; 
+  letter-spacing: 2px;
+  color: #767066;
+  font-weight: bold;
+  margin-left: 10%;
 }
 
 .linha2 { /* estilização da linha dos gráficos */
   display: flex;
   flex-direction: row;
-  width: 580px;
-  margin-left: 10px;
+  width: 480px;
   padding: 20px;
+  margin-top: 20%;
+  height: 180px;
+  margin-right: 0%;
 }
 
 
@@ -314,7 +339,28 @@ canvas#lm35Temperatura2{
   color: rgb(216, 216, 216);
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
+
+.graficos .graph .line {
+  height: 10px;
+  width: 380px;
+  background-color: #767066;
+  margin-left: 265px;
+  color: #767066;
+}
+
+.texto-banner h1 {
+  font-size: 40px;
+ 
+  margin-bottom: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+
+}
+
 
 .btn-chart {
   font-family: "Exo 2", sans-serif;
