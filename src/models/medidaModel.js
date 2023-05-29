@@ -1,21 +1,19 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idResultado, limite_linhas) {
+function buscarUltimasMedidas(idResultado) {
 
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top ${limite_linhas}
-        Acertos, 
-        Erros
+        instrucaoSql = `select Acertos, 
+                    Erros
                     from Resultado
-                    where fkQuiz = ${1}`;
+                    where fkUsuario = ${idResultado}`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select top ${limite_linhas}
-        Acertos, 
-        Erros
+        instrucaoSql = `select Acertos, 
+                    Erros
                     from Resultado
-                    where fkQuiz = ${1}`;
+                    where fkUsuario = ${idResultado}`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

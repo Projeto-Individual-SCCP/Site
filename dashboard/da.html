@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
+    <link rel="stylesheet" href="quiz.html">
 
 </head>
 
@@ -76,16 +77,16 @@
             <div class="linhaMaior">
 
             <div class="linha1">
-                <canvas id="lm35Temperatura2"></canvas>
+                <canvas id="acertosEerros"></canvas>
             </div>
                
         
             <div class="linha2">
-            <canvas id="lm35Temperatura1"></canvas>
+            <canvas id="tentativas"></canvas>
         </div>
     </div> 
     <h1> SEUS RESULTADOS </h1>
-            <div class="linha">
+            <!-- <div class="linha">
                 <canvas id="lm35Temperatura3"></canvas>
                 <canvas id="lm35Temperatura4"></canvas>
             </div>
@@ -96,7 +97,7 @@
             <div class="linha">
                 <canvas id="lm35Temperatura7"></canvas>
                 <canvas id="lm35Temperatura8"></canvas>
-            </div>
+            </div> -->
         </section>
     </div> 
     <!-- 
@@ -129,11 +130,11 @@
 
 <script>
 
-    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     // let proximaAtualizacao;
 
-    // window.onload = obterDadosGraficos();
+    window.onload = obterDadosGrafico();
 
     // function obterDadosGraficos() {
     //     obterDadosGrafico(1)
@@ -190,30 +191,34 @@
 
     // //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     // //     Para ajustar o "select", ajuste o comando sql em src/models
-    // function obterDadosGrafico(idResultado) {
+    function obterDadosGrafico(idResultado) {
 
-    //     alterarTitulo(idResultado)
+        // alterarTitulo(idResultado)
 
-    //     if (proximaAtualizacao != undefined) {
-    //         clearTimeout(proximaAtualizacao);
-    //     }
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
 
-    //     fetch(`/medidas/ultimas/${idResultado}`, { cache: 'no-store' }).then(function (response) {
-    //         if (response.ok) {
-    //             response.json().then(function (resposta) {
-    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-    //                 resposta.reverse();
+        fetch(`/medidas/ultimas/${1}`, { cache: 'no-store' }).then(function (response) {
 
-    //                 plotarGrafico(resposta, idResultado);
-    //             });
-    //         } else {
-    //             console.error('Nenhum dado encontrado ou erro na API');
-    //         }
-    //     })
-    //         .catch(function (error) {
-    //             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    //         });
-    // }
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(JSON.stringify(resposta));
+                    console.log(JSON.stringify(resposta[0]));
+                    // var acertosA= JSON.stringify(resposta[0].Acertos);
+                    
+                    // resposta.reverse();
+
+                    // plotarGrafico(resposta, idResultado);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 
     // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
@@ -348,9 +353,9 @@
 
     // }
 
-    var contextoLm35Temperatura1 = document.getElementById('lm35Temperatura1').getContext('2d'); // Pega o id do canvas, e guarda na variável contextoLm35Temperatura1
-    var lm35Temperatura1 = new Chart( // New Chart, serve para criar um novo Chart, nesse caso está sendo guardado na variável "lm35Temperatura1"
-        contextoLm35Temperatura1,
+    var contextotentativas = document.getElementById('tentativas').getContext('2d'); // Pega o id do canvas, e guarda na variável contextoLm35Temperatura1
+    var tentativas = new Chart( // New Chart, serve para criar um novo Chart, nesse caso está sendo guardado na variável "lm35Temperatura1"
+        contextotentativas,
          {
             type: 'line',
       data: {
@@ -375,17 +380,17 @@
       }
     });
 
-    /* -- lm35Temperatura2 */
+   
 
-     var contextoLm35Temperatura2 = document.getElementById('lm35Temperatura2').getContext('2d');
-     var lm35Temperatura2 = new Chart(contextoLm35Temperatura2, {
+     var contextoAcertosEerros = document.getElementById('acertosEerros').getContext('2d');
+     var acertosEerros = new Chart(contextoAcertosEerros, {
          type: 'pie',
          data: {
          labels: ['Acertos', 'Erros'],
          datasets: [
              {
                  label: '',
-                 data: [9, 1],
+                 data: [],
                  backgroundColor: ['rgb(171, 114, 224)', 'rgb(234, 247, 57)'], 
                  borderColor: ['rgb(171, 114, 224)', 'rgb(234, 247, 57)'], 
                  borderWidth: 1

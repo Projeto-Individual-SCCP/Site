@@ -279,13 +279,13 @@ body {
   padding-right: 10px;
 }
 
-canvas#lm35Temperatura2{
+canvas#acertosEerros{
   width: 180px;
   margin-top: 10px;
   margin-left: 10px;
 }
 
-canvas#lm35Temperatura1{
+canvas#tentativas{
   width: 200px;
   margin-top: 8%;
   margin-left: 20%;
