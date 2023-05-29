@@ -327,10 +327,10 @@ canvas#tentativas{
 .linha2 { /* estilização da linha dos gráficos */
   display: flex;
   flex-direction: row;
-  width: 480px;
+  width: 580px;
   padding: 20px;
   margin-top: 20%;
-  height: 180px;
+  height: 280px;
   margin-right: 0%;
 }
 
