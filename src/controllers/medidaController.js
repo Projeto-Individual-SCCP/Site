@@ -2,7 +2,7 @@ var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
 
-    const limite_linhas = 1;
+    const limite_linhas = 7;
 
     // var idResultado = req.params.idResultado;
     var idUsuario= req.params.idUsuario;

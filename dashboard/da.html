@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementando o ChartJS</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>FIEL ON | Dashboards</title>
+
     <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
-    <link rel="stylesheet" href="quiz.html">
 
+    <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <body style="display: flex;" onload="obterDadosGrafico(sessionStorage.ID_USUARIO)">
@@ -62,11 +69,6 @@
             </div>
         </div> -->
 
-</body> 
-
-
-
-
 
      <div class="graficos">
         <section class="graph">
@@ -85,7 +87,7 @@
             <canvas id="tentativas"></canvas>
         </div> -->
         <div class="linha2">
-            <canvas id="myChart"></canvas>
+            <canvas id="myChartP"></canvas>
         </div>
     </div> 
     <!-- <h1> SEUS RESULTADOS </h1> --> 
@@ -140,11 +142,11 @@
 
 // window.onload = obterDadosGraficos();
 
-function obterDadosGraficos() {
+function obterDadosGraficos(idUsuario) {
     obterDadosGrafico(1)
     obterDadosGrafico(2)
-//     obterDadosGrafico(3)
-//     obterDadosGrafico(4)
+// //     obterDadosGrafico(3)
+// //     obterDadosGrafico(4)
 }
 
 // verificar_autenticacao();
@@ -224,18 +226,25 @@ function obterDadosGrafico(idUsuario) {
 // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
 // A função *plotarGrafico* também invoca a função *atualizarGrafico*
 function plotarGrafico(resposta, idUsuario) {
-
+    console.log(resposta)
     console.log('iniciando plotagem do gráfico...');
+    var acertos = []
+    var erros = []
+    let labels = [];
+    for(var contador = 0; contador < resposta.length; contador++) {
+        acertos.push(resposta[contador].Acertos)
+        erros.push(resposta[contador].Erros)
+        labels.push("Pontos")
+    }
 
     // Criando estrutura para plotar gráfico - labels
-    let labels = [];
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
         labels: labels,
         datasets: [{
             label: 'Acertos',
-            data: [],
+            data: acertos,
             fill: false,
             backgroundColor: [ 'rgb(234, 247, 57)'], 
             borderWidth: 3,
@@ -243,7 +252,7 @@ function plotarGrafico(resposta, idUsuario) {
         },
         {
             label: 'Erros',
-            data: [],
+            data: erros,
             fill: false,
             backgroundColor: ['rgb(171, 114, 224)'], 
             borderWidth: 3,
@@ -258,7 +267,7 @@ function plotarGrafico(resposta, idUsuario) {
     // Inserindo valores recebidos em estrutura para plotar o gráfico
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
-        labels.push(registro.idResultado);
+        labels.push(registro.idUsuario);
         dados.datasets[0].data.push(registro.Acertos);
         dados.datasets[1].data.push(registro.Erros);
     }
@@ -279,11 +288,11 @@ function plotarGrafico(resposta, idUsuario) {
 
     // Adicionando gráfico criado em div na tela
     let myChartP = new Chart(
-        document.getElementById(`myChart`),
+        document.getElementById(`myChartP`),
         config
     );
 
-    // setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
+    setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
 }
 
 
@@ -299,13 +308,13 @@ function atualizarGrafico(idUsuario, dados, myChartP) {
     fetch(`/medidas/tempo-real/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
         if (response.ok) {
             response.json().then(function (novoRegistro) {
+                console.log(novoRegistro);
+                // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                // console.log(`Dados atuais do gráfico:`);
+                // console.log(dados);
 
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                console.log(`Dados atuais do gráfico:`);
-                console.log(dados);
-
-                let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
-                avisoCaptura.innerHTML = ""
+                // let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
+                // avisoCaptura.innerHTML = ""
 
 
                 // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
@@ -319,6 +328,8 @@ function atualizarGrafico(idUsuario, dados, myChartP) {
                 //     console.log("---------------------------------------------------------------")
                 // } else {
                     // tirando e colocando valores no gráfico
+                    for (x = 0; x < response.length; x++) {
+                    var novoRegistro = response[x];
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].idResultado); // incluir um novo momento
 
@@ -327,17 +338,18 @@ function atualizarGrafico(idUsuario, dados, myChartP) {
 
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].Erros); // incluir uma nova medida de temperatura
+                    }
 
                     myChartP.update();
                 // }
 
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
+                // proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
             // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
+            // proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
         }
     })
         .catch(function (error) {
