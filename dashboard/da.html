@@ -234,7 +234,7 @@ function plotarGrafico(resposta, idUsuario) {
     for(var contador = 0; contador < resposta.length; contador++) {
         acertos.push(resposta[contador].Acertos)
         erros.push(resposta[contador].Erros)
-        labels.push("Pontos")
+        labels.push("Tentativa " + (contador+1))
     }
 
     // Criando estrutura para plotar gráfico - labels
