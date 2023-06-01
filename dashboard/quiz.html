@@ -73,13 +73,12 @@
         <div class="lista2 " id="div_lista2"></div>
         <div class="lista3 " id="div_lista3"></div>
         <div class="titulo">
-            Insira a quantidade de acertos:<br>
+            Insira a quantidade de:<br>
         </div>
-        <input class="input_number" id="input_acertos" type="number" min="0" max="10">
-        <div class="titulo">
-            Insira a quantidade de erros:<br>
+        <div class="botoes_ae">
+        <input class="input_number_ae" id="input_acertos" type="number" min="0" max="10" placeholder="  ACERTOS">
+        <input class="input_number_ae" id="input_erros" type="number" min="0" max="10" placeholder="ERROS">
         </div>
-        <input class="input_number" id="input_erros" type="number" min="0" max="10">
         <button class="botao-b" onclick="verificar()"> Validar </button>
         <div class= "fim" id="bot"></div>
         <!-- <button class="botao-b" onclick="enviar()"> Enviar </button> -->
@@ -582,19 +581,19 @@
         var porcent = acertos * 10;
 
 
-        div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!<br>
+        div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!
             Isso corresponde à ${porcent}% do Quiz.<br>`
         
         if (acertos <= 3) {
-            div_lista3.innerHTML += `<b>Tente novamente</b><br>`
+            div_lista3.innerHTML += `<b>Status: Sabe pouco sobre o timão, quem sabe numa próxima...</b><br>`
         }
 
         else if (acertos <= 7) {
-            div_lista3.innerHTML += `<b>Pode melhorar</b><br>`
+            div_lista3.innerHTML += `<b>Status: Tem um bom conhecimento sobre o timão, mas pode adquirir mais informações.</b><br>`
         }
 
         else {
-            div_lista3.innerHTML += `<b>Você sabe mesmo sobre o Corinthians!</b><br>`
+            div_lista3.innerHTML += `<b>Status: Você sabe mesmo sobre o Corinthians, FIEL ON!</b><br>`
         }
 
     }
@@ -605,14 +604,14 @@
         var erros= 10 - acertos
 
         if (inputA == acertos && inputB == erros) {
-            alert('PONTOS VALIDADOS')
+            alert('Os pontos foram validados, clique no botão de enviar que aparecerá abaixo e vá para a área dashboard para verificar sua evolução!')
 
-            bot.innerHTML= `<spam>Envie seus pontos clicando no botão abaixo!</spam><br>
-            <button class="botao-b" onclick="enviar()"> Enviar </button>`
+            bot.innerHTML= `
+            <button class="botao-b" onclick="enviar()"> Enviar Pontos </button>`
         }
 
         else {
-            alert('ERRO- INSIRA O NÚMERO CORRETO DE PONTOS ACUMULADOS')
+            alert('ERRO- Insira o número correto de pontos acumulados.')
         }
     }
 

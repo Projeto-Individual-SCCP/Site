@@ -141,7 +141,7 @@ body {
 
 .banner1{
     width: 100%;
-    height: 1150px;
+    height: 930px;
     background-color: #767066;
     /* background-image: url(../assets/imgs/fundo\(3\).jpeg); */
     margin-top: 10px;
@@ -321,30 +321,40 @@ button:hover{
     transition-duration: 0.3s; /*duração da transição da animação*/
 }
 
-.input_number{ 
+.input_number_ae{ 
     /*estilização de TODOS os inputs dos formularios do site*/
-    width: 30px;
+    width: 100px;
     font-family: 'Poppins', sans-serif;
     height: 30px;
     border-style: none;
     background-color: #E3DCCD;
     border-radius: 300px;
-    display: flex;
+    display: inline;
     align-items: center;
-    justify-content: center;
-    margin-left: 48%;
+    justify-content: space-around;
     color: #767066;
     margin-top: 1%;
     text-align: center;
+    margin-right: -42%;
+    margin-left: 42%;
+    padding: 0%;
 } 
+.botoes_ae{
+    display: inline;
+    align-items:center;
+    justify-content:space-around;
+    justify-items: center;
+    
+}
+
 
 .botao-b{
     background-color: #E3DCCD;
     color: #767066;
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     border-style: none; /*tira a estilização automatica do botão do html*/
-    border-radius: 250px;
+    border-radius: 16px;
     cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
@@ -353,7 +363,7 @@ button:hover{
     margin-top: 2%;
     align-items: center;
     justify-content: center;
-    margin-left: 45.7%;
+    margin-left: 42%;
     font-size: 15px;
     
 }
