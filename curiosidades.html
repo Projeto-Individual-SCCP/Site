@@ -72,7 +72,6 @@
         O nome não agradou a todos. Havia quem preferisse que o nome do clube homenageasse algum brasileiro de 
         renome como Santos Dumont ou Carlos Gomes.
         <div class="botoes">
-            <button class="botao" onclick="voltar()"> << Voltar</button>
             <button class="botao" onclick="ver()">Próximo >></button>
             </div>`
             ],
@@ -168,7 +167,6 @@
             Vasco no Maracanã nos pênaltis e levou o título.
             <div class="botoes">
             <button class="botao" onclick="voltar()"> << Voltar</button>
-            <button class="botao" onclick="ver()">Próximo >></button>
             </div>
     `
             ]
@@ -178,7 +176,6 @@
         var contador = 0;
         var listaCuriosidades = [];
         msg.innerHTML = curiosidades[contador];
-
 
 
         function ver() {
@@ -192,10 +189,11 @@
 
             else {
 
-                contador = 0
+                contador = 1
                 msg.innerHTML = curiosidades[contador];
             }
 
+    
         }
 
 
@@ -207,8 +205,13 @@
 
                 msg.innerHTML = curiosidades[contador - 1];
             }
+            else{
+                contador= 1
+                msg.innerHTML = curiosidades[curiosidades.length - 1];
 
+            }
             contador--
+          
 
         }
     </script>

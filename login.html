@@ -38,7 +38,7 @@
                 <p>E-mail:</p>
                 <input id="email_input" class="input_number" type="email" placeholder="ex: corinthians@outlook.com">
                 <p>Senha:</p>
-                <input id= "senha_input" class="input_number" placeholder="Insira sua senha...">
+                <input id= "senha_input" class="input_number" type="password" placeholder="Insira sua senha">
                 <div class="texto1">
                     <span>Não tem uma conta?  <a href="cadastro.html">Cadastre-se</a></span>
                 </div>
@@ -108,7 +108,7 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login, verifique os dados inseridos!");
 
                 resposta.text().then(texto => {
                     // console.error(texto);

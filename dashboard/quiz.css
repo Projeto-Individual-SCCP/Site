@@ -141,13 +141,13 @@ body {
 
 .banner1{
     width: 100%;
-    height: 950px;
-    background-image: url(../assets/imgs/fundo\(3\).jpeg);
+    height: 1150px;
+    background-color: #767066;
+    /* background-image: url(../assets/imgs/fundo\(3\).jpeg); */
     margin-top: 10px;
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #767066;
-    
     
 }
 

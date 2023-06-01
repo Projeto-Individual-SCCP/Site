@@ -558,7 +558,7 @@
             alert("Escolha uma opção válida!")
         }
 
-        else if (perguntas[9] && decima == 'B') {
+        if (perguntas[9] && decima == 'B') {
             acertos += 1
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
