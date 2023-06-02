@@ -325,13 +325,29 @@ canvas#tentativas{
 }
 
 .linha2 { /* estilização da linha dos gráficos */
-  display: flex;
+  display: block;
   flex-direction: row;
-  width: 580px;
+  width:fit-content;
   padding: 20px;
   margin-top: 20%;
-  height: 280px;
-  margin-right: 0%;
+  height:fit-content;
+  margin-right: -30%;
+  margin-left: 30%;
+  box-sizing: border-box;
+  
+}
+
+.linha2 { /* estilização da linha dos gráficos */
+  display: block;
+  flex-direction: row;
+  width:fit-content;
+  padding: 20px;
+  margin-top: 20%;
+  height:fit-content;
+  margin-right: -30%;
+  margin-left: 30%;
+  box-sizing: border-box;
+  
 }
 
 
@@ -626,13 +642,13 @@ input {
 
 
 
-.btn-logout:hover{
-  /*'animação' do botão quando o mouse passar*/
+/* .btn-logout:hover{
+  
   box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
   background-color: #bbb5aa;
   color: white;
-  transition-duration: 0.3s; /*duração da transição da animação*/
-}
+  transition-duration: 0.3s; 
+} */
 
 /* pagina extra - simulador */
 .simulador {

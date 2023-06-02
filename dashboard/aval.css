@@ -13,6 +13,7 @@ body {
     width: 80%;
     margin: 5%; 
     flex-direction: row;
+    height: 250px;
 }
 
 /* Header*/
@@ -83,9 +84,9 @@ body {
 }
 .line {
     height: 2px;
-    width: 880px;
+    width: 680px;
     background-color: #767066;
-    margin-left: 20px;
+    margin-left: 120px;
 }
 
 .banner .container {
@@ -155,9 +156,7 @@ body {
 
 .banner1{
     width: 100%;
-    height: 930px;
-    background-color: #767066;
-    background-image: url(../assets/imgs/fundo\(3\).jpeg);
+    height: 530px;
     margin-top: 10px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -675,3 +674,30 @@ button:hover{
     margin-top: 50px;
     margin-right: 60px;
 }
+
+.radioboxs{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    margin-left: 30%;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.radioboxs spam{
+    font-size: 20px;
+    color: #E3DCCD;
+   
+
+}
+
+input[type=radio]  {
+    border: 0px;
+    width: 25px;
+    height: 20px;
+    vertical-align: middle;
+    color: #767066;
+    
+}
+
