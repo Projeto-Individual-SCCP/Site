@@ -23,7 +23,7 @@ function buscarMedidasEmTempoReal(idUsuario) {
                 Erros
                 from Resultado
                 where fkUsuario = ${idUsuario}
-                order by idResultado desc limit 1
+                order by idResultado desc limit 7
                 `;
 
 console.log("Executando a instrução SQL: \n" + instrucaoSql);

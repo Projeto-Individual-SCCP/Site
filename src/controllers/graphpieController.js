@@ -4,7 +4,7 @@ function buscarUltimasMedidas1(req, res) {
 
 
     // var idResultado = req.params.idResultado;
-    var idUsuario= req.params.idUsuario;
+    var idUsuario = req.params.idUsuario;
 
     // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
@@ -24,7 +24,7 @@ function buscarUltimasMedidas1(req, res) {
 
 function buscarMedidasEmTempoReal1(req, res) {
 
-    var idUsuario= req.params.idUsuario;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando medidas em tempo real`);
 
