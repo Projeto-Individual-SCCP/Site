@@ -13,10 +13,9 @@ body {
     width: 80%;
     margin: 5%; 
     flex-direction: row;
-    height: 250px;
 }
 
-/* Header*/
+/* INICIO DO HEADER */
 .header {
     position: absolute; 
     top: 0; 
@@ -29,24 +28,25 @@ body {
     margin-left: 0%;
     margin-right: 0%;
     margin-top: 0px; 
-    /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
     padding: 0%;
 }
+
 .header .container {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     width: 200px;
-   
 }
+
 .navbar {
     width: 700px;
     display: flex;
     list-style: none; 
     justify-content: space-between;
-  
 }
+
 .navbar li a {
     color: #767066;
     text-decoration: none; 
@@ -55,38 +55,40 @@ body {
     display: flex;
     margin-left: 15px;
     letter-spacing: 1px;
-    
 }
+
 .navbar li a:hover {
     color: #b4a39b;
     transition: 0.5s;
-
 }
 
-.btn-logout {
-    /* width: 50%;
-    height: 25px; */
-    border-style: none; /*tira a estilização automatica do botão do html*/
+/* Imagem que representa o logout */
+.logout {
+    border-style: none; 
     border-radius: 10px;
-    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    cursor: pointer; 
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     display:flex;
     align-items: center;
     justify-content: center;
     padding: 2% 5%;
-  }
+}
+/* FIM DO HEADER */
 
-/* BANNER SOBRE O PROJETO*/
+
+
+/* BANNER REGRAS DO QUIZ */
 .banner {
     margin-top: 170px;
     margin-bottom: 0%;
 }
+
 .line {
     height: 2px;
-    width: 680px;
+    width: 880px;
     background-color: #767066;
-    margin-left: 120px;
+    margin-left: 20px;
 }
 
 .banner .container {
@@ -94,13 +96,21 @@ body {
     align-items: flex-start;
     justify-items: flex-start;
     justify-content:flex-start;
+    height: 480px;
 }
+
+.container1 h1:hover {
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .texto-banner {
     color:#767066;
     width: 100%; 
     margin-top: 20px;
     margin-left: 100px;
 }
+
 .texto-banner p {
     font-size: 20px;
     display: flex;
@@ -109,6 +119,7 @@ body {
     text-align: justify;
     margin-bottom: 0%;
 }
+
 .texto-banner h1 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
@@ -119,14 +130,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-
 
 .texto-banner h1:hover {
     color: #b4a39b;
     transition: 2.0s;
-  }
+}
 
 .line:hover {
     -ms-transform: scale(1.5);
@@ -146,36 +155,20 @@ body {
     text-align: start;
     margin-left: 0%;
 }
-
-.texto-banner p span {
-    font-weight: 700; 
-}
-
-/* BANNER SOBRE MIM*/
+/* FIM DO BANNER REGRAS DO QUIZ */
 
 
+
+/* BANNER PERGUNTAS E RESPOSTAS QUIZ */
 .banner1{
     width: 100%;
-    height: 530px;
+    height: 930px;
+    background-color: #767066;
+    background-image: url(../../assets/imgs/fundo\(3\).jpeg);
     margin-top: 10px;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-color: #767066;
-    
-}
-
-.fim spam{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1%;
-    color: #E3DCCD;
-    width: 90%;
-    margin-left: 5%;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 200;
-    margin-bottom: 0%;
+    background-color: #767066;   
 }
 
 .container1{
@@ -183,8 +176,19 @@ body {
     margin-bottom: 5%;
 }
 
+.container1 h2{
+    font-family: 'Poppins', sans-serif; 
+    color:#E3DCCD;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0%;
+    padding: 5%;
+    margin-left: -5%;
+}
 
-.perguntas{
+.perguntas{ /* Perguntas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,10 +197,9 @@ body {
     margin-left: 5%;
     text-align: center;
     margin-top: 2%;
-    
 }
 
-.mensagem{
+.mensagem{  /* Mensagem de Acertos Acumulados  */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,7 +213,7 @@ body {
     font-weight: 200;
 }
 
-.titulo{
+.titulo{ /* Suas respostas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +225,8 @@ body {
     font-size: 20px;
     font-weight: 400;
 }
-.lista{
+
+.lista1{ /* Gabarito de acertos e erros */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,7 +239,7 @@ body {
     font-weight: 200;
 }
 
-.lista2{
+.lista2{ /* Acertos e porcentagem */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,7 +252,7 @@ body {
     font-weight: 100;
 }
 
-.lista3{
+.lista3{ /* Status */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -260,12 +264,14 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
-.respotas{
+
+.respotas{ /* Espaço do select das respostas */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.select{
+
+.select{ /* Select das respostas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -282,15 +288,16 @@ body {
     color: #767066;
     font-weight: bold;
     font-size: 20px;
-    
 }
-.botoes{
+
+.botoes{ /* Classe dos botões de Verificar e Passar para o próximo (dentro dos vetores) */
     display: flex;
     align-items: center;
     justify-content:space-evenly;
     position: static;
 }
-.botao-a{
+
+.botaoProxima{
     background-color: #E3DCCD;
     color: #767066;
     width: 20%;
@@ -305,10 +312,9 @@ body {
     margin-top: 5%;
     align-items: center;
     justify-content: space-evenly;
-    
 }
 
-.botao-c{
+.botaoVerificar{
     background-color: #E3DCCD;
     color: #767066;
     width: 20%;
@@ -323,7 +329,6 @@ body {
     margin-top: 5%;
     align-items: center;
     justify-content: center;
-    
 }
 
 button:hover{
@@ -334,8 +339,7 @@ button:hover{
     transition-duration: 0.3s; /*duração da transição da animação*/
 }
 
-.input_number_ae{ 
-    /*estilização de TODOS os inputs dos formularios do site*/
+.input_numberAcertosErros{ /* Input de acertos e erros */
     width: 100px;
     font-family: 'Poppins', sans-serif;
     height: 30px;
@@ -352,23 +356,23 @@ button:hover{
     margin-left: 42%;
     padding: 0%;
 } 
-.botoes_ae{
+
+.inputsAcertosErros{ /* Classe/container que engloba as inputs de acertos e erros */
     display: inline;
     align-items:center;
     justify-content:space-around;
     justify-items: center;
-    
 }
 
 
-.botao-b{
+.botaoValidarEnviar{ /* Estilização do botão de validação dos acertos e erros E do botão de enviar o resultado para o banco */
     background-color: #E3DCCD;
     color: #767066;
-    width: 100px;
-    height: 30px;
-    border-style: none; /*tira a estilização automatica do botão do html*/
+    width: 200px;
+    height: 50px;
+    border-style: none; 
     border-radius: 16px;
-    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    cursor: pointer; 
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -376,234 +380,12 @@ button:hover{
     margin-top: 2%;
     align-items: center;
     justify-content: center;
-    margin-left: 47%;
-    font-size: 15px;
-    
-}
-
-.botao-d{
-    background-color: #E3DCCD;
-    color: #767066;
-    width: 100px;
-    height: 50px;
-    border-style: none; /*tira a estilização automatica do botão do html*/
-    border-radius: 250px;
-    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    display:flex;
-    margin-top: 0%;
-    align-items: center;
-    justify-content: center;
-    margin-left: 45.7%;
-    font-size: 15px;
-}
-
-
-.container1 h2{
-    font-family: 'Poppins', sans-serif; 
-    color:#E3DCCD;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0%;
-    padding: 5%;
-    margin-left: -3%;
-    font-size: 26px;
-}
-.container1 h1:hover {
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.container1 .line{
-    height: 2px;
-    width: 350px;
-    background-color:#E3DCCD;
-    margin-left: 455px;
-    margin-top: -150px;
-}
-
-.container1 .lineD{
-    height: 2px;
-    width: 750px;
-    background-color:#E3DCCD;
-    margin-left: 250px;
-    margin-top: -150px;
-
-}
-  
-.line:hover {
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
-}
-.lineD:hover {
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
-}
-
-
-
-.container1 .lineA{
-    height: 2px;
-    width: 400px;
-    background-color:#E3DCCD;
-    margin-left: 428px;
-    margin-top: -150px;
-
-}
-
-.container1 .lineF{
-    height: 2px;
-    width: 400px;
-    background-color:#E3DCCD;
-    margin-left: 428px;
-    margin-top: -150px;
-}
-
-.container1 .lineQ{
-    height: 2px;
-    width: 420px;
-    background-color:#E3DCCD;
-    margin-left: 428px;
-    margin-top: -150px;
-    margin-bottom: 2%;
-}
-  
-.lineA:hover {
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
-}
-
-.container1 p1 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: #E3DCCD;
-    margin-left: 5%;
-    margin-right: 7%;
-    margin-top: 4%;
-    width: 50%;
-    margin-bottom: 4%;
-}
-.container1 p2 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: #E3DCCD;
-    margin-left: 7%;
-    margin-right: 50%;
-    margin-top: 5%;
-}
-.imagem-banner1 img{
-    width: 450px;
-    margin-top: -37%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 5%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 60%;
-    opacity: 0.7;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner1 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-.imagem-banner2 img{
-    width: 300px;
-    margin-top: 5%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 60%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 5%;
-    opacity: 0.7;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner2 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.imagem-banner4 img{
-    width: 400px;
-    margin-top: 5%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 60%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 5%;
-    opacity: 0.7;
-    height: 300px;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner4 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-.card {
-    background-color: #E3DCCD;
-    width: 465px;
-    border-radius: 5px;
-    height: 40px;
-    margin-left: 60%;
-}
-.card h2{
-    color: #767066;
-    margin: 0%;
-    position: absolute;
-}
-
-.container1 p3 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: #E3DCCD;
-    margin-left: 35%;
-    margin-right: 7%;
-    margin-top: -48%;
-}
-.container1 p4 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: #E3DCCD;
-    margin-left: 5%;
-    margin-right: 50%;
-    margin-top: 4%;
-    width: 51%;
-}
-
-.container1 p5 {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-    color: #E3DCCD;
     margin-left: 42%;
-    margin-right: 7%;
-    margin-top: -59%;
+    font-size: 15px;  
 }
+/* FIM BANNER PERGUNTAS E RESPOSTAS QUIZ */
 
-/* BANNER 6-RODAPE */
+/* RODAPE */
 .banner6 {
     background-color: #E3DCCD;
     width: 100%;
@@ -668,6 +450,7 @@ button:hover{
     margin-top: 5px;
     margin-left: 380px;
 }
+
 .icons img {
     /*configuração das imagens de contato do Fale Conosco*/
     width: 50px;
@@ -675,58 +458,3 @@ button:hover{
     margin-top: 50px;
     margin-right: 60px;
 }
-
-/* .radioboxs{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    margin-left: 30%;
-    justify-content: space-between;
-    align-items: center;
-  */
-
-  .selects{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 34%;
-    background-color: #E3DCCD;
-    height: 50px;
-    width: 400px;
-    border-radius: 300px 100px 300px 100px;
-    text-align: center;
-    border-width: 2px;
-    cursor: pointer;
-    color: #767066;
-    font-weight: bold;
-    font-size: 20px;
-    
-}
- 
-.caixa h4{
-    color: #E3DCCD;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-
- 
-}
-
-.caixa_texto{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 31%; 
-    width: 500px;
-    height: 100px;
-    border-radius: 300px 100px 300px 100px;
-    color:#767066;
-    background-color: #E3DCCD;
-    
-}
-
-
-
-
-

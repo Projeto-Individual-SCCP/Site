@@ -9,12 +9,8 @@
     <title>FIEL ON | Quiz</title>
 
     <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
-    <link rel="stylesheet" href="quiz.css">
-    <link rel="stylesheet" href="quiz.js">
+    <link rel="stylesheet" href="../dashboard/cssDash/quiz.css">
     <script src="../js/funcoes.js"></script>
-  
-
-
 
 </head>
 
@@ -23,14 +19,14 @@
         <div class="container">
             <img class="logo" src="../assets/imgs/logo-dash.png">
             <ul class="navbar">
-                <li><a href="paginaInicial.html">Início</a></li>
-                <li><a href="da.html">Dashboards</a></li>
-                <li><a href="aval.html">Avaliação</a></li>
-                <li><div class="btn-logout" onclick="limparSessao()">
-                    <img class="sair" src="../assets/imgs/sair (1).png">
-                </div></li>
-                
-                <!-- <li><a href="mural.html">Interações</a></li> -->
+                <li><a href="../dashboard/paginaInicial.html">Início</a></li>
+                <li><a href="../dashboard/dashboard.html">Dashboards</a></li>
+                <li><a href="../dashboard/avaliacao.html">Avaliação</a></li>
+                <li>
+                    <div class="logout" onclick="limparSessao()">
+                        <img class="sair" src="../assets/imgs/sair (1).png">
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -62,57 +58,56 @@
         </div>
     </div>
 
-    <div class="test">
     <div class="banner1">
-       
+
         <div class="container1">
+            <h2><div class="perguntas" id="perguntasQuiz"></div><br></h2> <!--Perguntas -->
+ 
+        <div class="respostas" id="respostasQuiz"></div> <!--Alternativas/Select -->
 
-            <h2>
-                <div class="perguntas" id="perguntasQuiz"></div><br>
-            </h2>
-            <div class="respostas" id="respostasQuiz"></div>
         </div>
-        <div class="mensagem" id="msg"></div>
-        <div class="titulo">
-            Suas Respostas:<br>
+
+        <div class="mensagem" id="msg"></div> <!--Mensagem de Acertos Acumulados -->
+
+        <div class="titulo">Suas Respostas:<br></div>
+
+        <div class="lista1 " id="div_lista1"></div> <!-- Gabarito de acertos e erros -->
+        <div class="lista2 " id="div_lista2"></div> <!-- Acertos e porcentagem -->
+        <div class="lista3 " id="div_lista3"></div> <!-- Status -->
+
+        <div class="titulo"> Insira a quantidade de:<br></div>
+
+        <div class="inputsAcertosErros"> <!-- Inputs acertos e erros -->
+        <input class="input_numberAcertosErros" id="input_acertos" type="number" min="0" max="10" placeholder="  ACERTOS">
+        <input class="input_numberAcertosErros" id="input_erros" type="number" min="0" max="10" placeholder="ERROS">
         </div>
-        <div class="lista " id="div_lista"></div>
-        <div class="lista2 " id="div_lista2"></div>
-        <div class="lista3 " id="div_lista3"></div>
-        <div class="titulo">
-            Insira a quantidade de:<br>
-        </div>
-        <div class="botoes_ae">
-        <input class="input_number_ae" id="input_acertos" type="number" min="0" max="10" placeholder="  ACERTOS">
-        <input class="input_number_ae" id="input_erros" type="number" min="0" max="10" placeholder="ERROS">
-        </div>
-        <button class="botao-b" onclick="verificar()"> Validar </button>
-        <div class= "fim" id="bot"></div>
-        <!-- <button class="botao-b" onclick="enviar()"> Enviar </button> -->
+
+        <button class="botaoValidarEnviar" onclick="verificar()"> Validar </button> <!-- Botão Validar -->
+        <div id="botaoEnviar"></div> <!-- Onde aparece o botão de enviar -->
 
     </div>
-    <div id="acertos"></div>
 
 
-    </div>
-</div>
-    </div>
-
-    <div class="banner6"> 
-        <div class="container"> 
+    <div class="banner6">
+        <div class="container">
             <div class="texto-banner6">
                 <h1>ME DIGA O QUE ACHOU!</h1>
                 <p>Espero que tenha gostado da experiência.</p>
                 <h5>GYULIA.PIQUEIRA@SPTECH.SCHOOL </h5>
-                <div class="icons"> 
-                  <a href="https://www.linkedin.com/in/gyulia-piqueira-b5a23a25b/"><img src="../assets/imgs/linkedin.png" alt="Linkedin"></a>
-                  <a href="https://github.com/GyUliAmArTinsPiquEira"><img src="../assets/imgs/github.png" alt="GitHub"></a>
-                  <a href="https://www.instagram.com/gyuliapiqueira/"><img src="../assets/imgs/instagram.png" alt="Instagram"></a>
-                  <a href="https://www.whatsapp.com"><img src="../assets/imgs/whatsapp.png" alt="WhatsApp"></a>
-              </div>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/gyulia-piqueira-b5a23a25b/"><img
+                            src="../assets/imgs/linkedin.png" alt="Linkedin"></a>
+                    <a href="https://github.com/GyUliAmArTinsPiquEira"><img src="../assets/imgs/github.png"
+                            alt="GitHub"></a>
+                    <a href="https://www.instagram.com/gyuliapiqueira/"><img src="../assets/imgs/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.whatsapp.com"><img src="../assets/imgs/whatsapp.png" alt="WhatsApp"></a>
+                </div>
             </div>
         </div>
     </div>
+
+
 </body>
 <script>
     var perguntas = [["Em que ano o Corinthians foi fundado?"],
@@ -137,8 +132,8 @@
     <option value="C">1914</option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta1()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta1()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -149,8 +144,8 @@
     <option value="C">2, em 2002 e 2012</option>
     </select><br>
     <<div class="botoes">
-    <button class="botao-c" onclick="Resposta2()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta2()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -161,8 +156,8 @@
     <option value="C">Neto, Pelé, Edu Dracena</option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta3()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()">Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta3()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()">Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -173,8 +168,8 @@
     <option value="C">Jô</option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta4()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta4()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -185,8 +180,8 @@
     <option value="C">Real Madrid </option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta5()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta5()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -197,8 +192,8 @@
     <option value="C">Parque São Jorge </option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta6()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta6()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ], [`
         <select class="select" id="input_p7">
@@ -208,8 +203,8 @@
     <option value="C"> Corinthians x Palmeiras </option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta7()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta7()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ], [`
         <select class="select" id="input_p8">
@@ -219,8 +214,8 @@
     <option value="C">  Copa Sul-Americana </option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta8()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta8()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ], [`
         <select class="select" id="input_p9">
@@ -230,8 +225,8 @@
     <option value="C">  Reconhecimento de jornais internacionais </option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta9()">Verificar ✓</button>
-    <button class="botao-a" onclick="ver()"> Próxima Pergunta ⟫ </button>
+    <button class="botaoVerificar" onclick="Resposta9()">Verificar ✓</button>
+    <button class="botaoProxima" onclick="ver()"> Próxima Pergunta ⟫ </button>
     </div>`
         ],
         [`
@@ -242,7 +237,7 @@
     <option value="C"> Romarinho</option>
     </select><br>
     <div class="botoes">
-    <button class="botao-c" onclick="Resposta10()">Verificar ✓</button>
+    <button class="botaoVerificar" onclick="Resposta10()">Verificar ✓</button>
 </div>
     `
         ],
@@ -291,7 +286,7 @@
 
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(primeira);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✓.  `;
 
 
             if (acertos > 1) {
@@ -305,7 +300,7 @@
             acertos += 0
 
             listaResposta.push(primeira);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[0]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✕.  `;
         }
 
 
@@ -326,7 +321,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(segunda);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[1]}✓.  `;
 
             if (acertos > 2) {
                 acertos = 2
@@ -340,7 +335,7 @@
             acertos += 0
 
             listaResposta.push(segunda);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[1]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[1]}✕.  `;
         }
 
 
@@ -360,7 +355,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(terceira);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[2]}✓.  `;
 
             if (acertos > 3) {
                 acertos = 3
@@ -374,7 +369,7 @@
             acertos += 0
 
             listaResposta.push(terceira);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[2]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[2]}✕.  `;
         }
 
 
@@ -392,7 +387,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(quarta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[3]}✓.  `;
 
             if (acertos > 4) {
                 acertos = 4
@@ -406,7 +401,7 @@
             acertos += 0
 
             listaResposta.push(quarta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[3]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[3]}✕.  `;
         }
 
 
@@ -425,7 +420,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(quinta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[4]}✓.  `;
 
 
             if (acertos > 5) {
@@ -440,7 +435,7 @@
             acertos += 0
 
             listaResposta.push(quinta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[4]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[4]}✕.  `;
         }
 
 
@@ -459,7 +454,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(sexta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[5]}✓.  `;
 
             if (acertos > 6) {
                 acertos = 6
@@ -473,7 +468,7 @@
             acertos += 0
 
             listaResposta.push(sexta);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[5]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[5]}✕.  `;
         }
 
 
@@ -491,7 +486,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(setima);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[6]}✓.  `;
 
             if (acertos > 7) {
                 acertos = 7
@@ -504,7 +499,7 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(setima);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[6]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[6]}✕.  `;
         }
 
 
@@ -522,7 +517,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(oitava);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[7]}✓.  `;
 
             if (acertos > 8) {
                 acertos = 8
@@ -535,7 +530,7 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(oitava);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[7]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[7]}✕.  `;
         }
 
 
@@ -554,7 +549,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(nona);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✓.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[8]}✓.  `;
 
             if (acertos > 9) {
                 acertos = 9
@@ -567,7 +562,7 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(nona);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[8]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[8]}✕.  `;
         }
 
 
@@ -585,7 +580,7 @@
             listaAcertos.push(acertos)
             msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
             listaResposta.push(decima);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✓.<br>`;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[9]}✓.<br>`;
 
             if (acertos > 10) {
                 acertos = 10
@@ -598,7 +593,7 @@
             msg.innerHTML = `Não foi dessa vez. Acertos acumulados: ${acertos}.`
             acertos += 0
             listaResposta.push(decima);
-            div_lista.innerHTML += `${contador + 1}.${listaResposta[9]}✕.<br>`;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[9]}✕.<br>`;
         }
 
         var porcent = acertos * 10;
@@ -606,7 +601,7 @@
 
         div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!
             Isso corresponde à ${porcent}% do Quiz.<br>`
-        
+
         if (acertos <= 3) {
             div_lista3.innerHTML += `<b>Status: Sabe pouco sobre o timão, quem sabe numa próxima...</b><br>`
         }
@@ -624,13 +619,13 @@
     function verificar() {
         var inputA = input_acertos.value;
         var inputB = input_erros.value;
-        var erros= 10 - acertos
+        var erros = 10 - acertos
 
         if (inputA == acertos && inputB == erros) {
             alert('Os pontos foram validados, clique no botão de enviar que aparecerá abaixo e vá para a área dashboard para verificar sua evolução!')
 
-            bot.innerHTML= `
-            <button class="botao-b" onclick="enviar()"> Enviar Pontos </button>`
+            botaoEnviar.innerHTML = `
+            <button class="botaoValidarEnviar" onclick="enviar()"> Enviar Pontos </button>`
         }
 
         else {
@@ -639,71 +634,70 @@
     }
 
     function enviar() {
-    // aguardar();
+        // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var acertosVar = input_acertos.value;
-    var errosVar = input_erros.value;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var acertosVar = input_acertos.value;
+        var errosVar = input_erros.value;
 
 
-    if (acertosVar == "" || errosVar == "") {
-        // cardErro.style.display = "block"
-        alert("ERRO");
+        if (acertosVar == "" || errosVar == "") {
+            // cardErro.style.display = "block"
+            alert("ERRO");
 
-        // finalizarAguardar();
+            // finalizarAguardar();
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                acertosServer: acertosVar,
+                errosServer: errosVar,
+                fkUsuarioServer: sessionStorage.getItem('ID_USUARIO')
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert("Respostas enviadas com sucesso! Redirecionando para tela de Início...");
+
+                setTimeout(() => {
+                    window.location = "paginaInicial.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o envio das respostas...");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
         return false;
     }
-    // else {
-    //     setInterval(sumirMensagem, 5000)
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
     // }
+    function limparFormulario() {
+        acertosVar = "";
 
-    // Enviando o valor da nova input
-    fetch("/usuarios/enviar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            acertosServer: acertosVar,
-            errosServer: errosVar,
-            fkUsuarioServer: sessionStorage.getItem('ID_USUARIO')
-        })
-    }).then(function (resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            // cardErro.style.display = "block";
-
-  alert ("Respostas enviadas com sucesso! Redirecionando para tela de Início...");
-
-            setTimeout(() => {
-                window.location = "paginaInicial.html";
-            }, "2000")
-
-            limparFormulario();
-            // finalizarAguardar();
-        } else {
-            throw ("Houve um erro ao tentar realizar o envio das respostas...");
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-    });
-
-    return false;
-}
-
-// function sumirMensagem() {
-//     cardErro.style.display = "none"
-// }
-function limparFormulario(){
-    acertosVar = "";
-        
-}
+    }
 
 </script>
-
