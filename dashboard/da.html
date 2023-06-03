@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,11 +27,11 @@
             <img class="logo" src="../assets/imgs/logo-dash.png">
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Usuário: <span id="b_usuario">usuário</span>.</h3>
             </div>
 
             <div class="btn-nav">
-                <a href="../dashboard/dashboard.html">
+                <a href="../dashboard/paginaInicial.html">
                     <h3>Início</h3>
                 </a>
             </div>
@@ -44,7 +43,7 @@
             </div>
 
             <div class="btn-nav">
-                <a href="../dashboard/avaliação.html">
+                <a href="../dashboard/aval.html">
                     <h3>Avaliação</h3>
                 </a>
             </div>
@@ -63,7 +62,7 @@
         </div>
     </div>
 
-   
+
 
     <div class="graficos">
         <section class="graph">
@@ -71,14 +70,14 @@
             <h1> SEUS RESULTADOS </h1>
 
             <div class="titulos">
-            <div class="title_sub1">
-            <h3> ÚLTIMA TENTATIVA </h3> 
-            </div>
+                <div class="title_sub1">
+                    <h3> ÚLTIMA TENTATIVA </h3>
+                </div>
 
-            <div class="title_sub2">
-                <h3> TODAS AS TENTATIVAS</h3> 
+                <div class="title_sub2">
+                    <h3> TODAS AS TENTATIVAS</h3>
+                </div>
             </div>
-        </div>
 
             <div class="linhaMaior">
                 <div class="linha1">
@@ -89,10 +88,53 @@
                     <canvas id="myChartP"></canvas>
                 </div>
             </div>
-            
+
+            <h1> RECORDES DO CORINTHIANS </h1>
+
+            <div class="title_sub3">
+                <h3> TREINADORES COM MAIS JOGOS</h3>
+            </div>
+            <div class="linha3">
+                <canvas id="myChart3"></canvas>
+            </div>
+
+
+            <div class="title_sub3">
+                <h3> JOGADORES QUE MAIS ATUARAM COM A CAMISA</h3>
+            </div>
+            <div class="linha4">
+                <canvas id="myChart4"></canvas>
+            </div>
+
+            <div class="title_sub3">
+                <h3> JOGADORES COM MAIS GOLS</h3>
+            </div>
+            <div class="linha5">
+                <canvas id="myChart5"></canvas>
+                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
+            </div>
+
+          
+            <div class="title_sub4">
+                <h3> VITÓRIAS, EMPATES E DERROTAS DO CAMPEONATO BRASILEIRO</h3>
+            </div>
+            <div class="linha6">
+                <canvas id="myChart6"></canvas>
+                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
+            </div>
+
+            <div class="title_sub4">
+                <h3> GOLS MARCADOS E GOLS SOFRIDOS NO CAMPEONATO BRASILEIRO</h3>
+            </div>
+            <div class="linha7">
+                <canvas id="myChart7"></canvas>
+                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
+            </div>
+   
+
         </section>
     </div>
-  
+
 
 
 </body>
@@ -172,7 +214,7 @@
         fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    
+
                     resposta.reverse();
 
                     plotarGrafico(resposta, idUsuario);
@@ -196,7 +238,7 @@
         for (var contador = 0; contador < resposta.length; contador++) {
             acertos.push(resposta[contador].Acertos)
             erros.push(resposta[contador].Erros)
-            labels.push("Tentativa " + (contador + 1))
+            labels.push("T " + (contador + 1))
         }
 
         // Criando estrutura para plotar gráfico - labels
@@ -211,8 +253,9 @@
                 backgroundColor: ['rgb(169, 209, 214)'],
                 borderWidth: 0,
                 borderColor: ['rgb(169, 209, 214)'],
-                barThickness: 20, 
-                tension: 0.1
+                barThickness: 20,
+                tension: 0.1,
+                borderRadius: 10
                 // barPercentage: .9
 
             },
@@ -224,20 +267,22 @@
                 borderColor: ['rgb(222, 172, 161)'],
                 borderWidth: 0,
                 barThickness: 20,
-                tension: 0.1
+                tension: 0.1,
+                borderRadius: 10
+
                 // barPercentage: .9
             }]
-//             options: {
-//         scales: {
-//         myScale: {
-//         maintainAspectRatio: true, 
-//         responsive: true, 
-//         onResize: null, 
+            //             options: {
+            //         scales: {
+            //         myScale: {
+            //         maintainAspectRatio: true, 
+            //         responsive: true, 
+            //         onResize: null, 
 
-//       }
-//     }
-//   }
-};
+            //       }
+            //     }
+            //   }
+        };
 
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
@@ -255,7 +300,7 @@
         const config = {
             type: 'bar',
             data: dados,
-           
+
         };
 
         // Adicionando gráfico criado em div na tela
@@ -281,25 +326,25 @@
     //         if (response.ok) {
     //             response.json().then(function (novoRegistro) {
     //                 console.log(novoRegistro);
-                    // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    // console.log(`Dados atuais do gráfico:`);
-                    // console.log(dados);
+    // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+    // console.log(`Dados atuais do gráfico:`);
+    // console.log(dados);
 
-                    // let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
-                    // avisoCaptura.innerHTML = ""
+    // let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
+    // avisoCaptura.innerHTML = ""
 
 
-                    // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-                    //     console.log("---------------------------------------------------------------")
-                    //     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                    //     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
-                    //     console.log("Horário do novo dado capturado:")
-                    //     console.log(novoRegistro[0].momento_grafico)
-                    //     console.log("Horário do último dado capturado:")
-                    //     console.log(dados.labels[dados.labels.length - 1])
-                    //     console.log("---------------------------------------------------------------")
-                    // } else {
-                    // tirando e colocando valores no gráfico
+    // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+    //     console.log("---------------------------------------------------------------")
+    //     console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+    //     avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+    //     console.log("Horário do novo dado capturado:")
+    //     console.log(novoRegistro[0].momento_grafico)
+    //     console.log("Horário do último dado capturado:")
+    //     console.log(dados.labels[dados.labels.length - 1])
+    //     console.log("---------------------------------------------------------------")
+    // } else {
+    // tirando e colocando valores no gráfico
     //                 for (x = 0; x < response.length; x++) {
     //                     var novoRegistro = response[x];
     //                     dados.labels.shift(); // apagar o primeiro
@@ -383,6 +428,7 @@
                 borderWidth: 3,
                 borderColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
                 tension: 0.1
+
             }]
         };
 
@@ -396,7 +442,148 @@
             config
         );
 
+    };
+
+
+    const ctx2 = document.getElementById('myChart3');
+    const chartGrafico2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Oswaldo B.', 'Tite', 'Mano M.', 'Amilcar B.', 'Rato', 'Nelsinho B.', 'Fabio C.', 'Del D.', 'Jorge V.', 'Luxemburgo'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [435, 378, 248, 239, 227, 192, 183, 178, 146, 134],
+                    borderColor: 'rgb(255, 250, 129)',
+                    backgroundColor: 'rgb(255, 250, 129)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(255, 237, 81)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+    const ctx3 = document.getElementById('myChart4');
+    const chartGrafico3 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Wladimir', 'Cássio', 'Luizinho', 'Ronaldo', 'Zé Maria', 'Biro-Biro', 'Vaguinho', 'Cláudio', 'Olavo', 'Fagner'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [806, 645, 607, 602, 598, 590, 551, 550, 507, 495],
+                    borderColor: 'rgb(181, 225, 174)',
+                    backgroundColor: 'rgb(181, 225, 174)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(145, 210, 144)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+    const ctx4 = document.getElementById('myChart5');
+    const chartGrafico4 = new Chart(ctx4, {
+        type: 'bar',
+        data: {
+            labels: ['Cláudio', 'Baltazar', 'Teleco', 'Neco', 'Marcelinho', 'Servillio', 'Luizinho', 'Flavio', 'Sócrates', 'Paulo', 'Rivelino'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [305, 270, 257, 242, 206, 200, 175, 172, 172, 146, 144],
+                    borderColor: 'rgb(193, 179, 215)',
+                    backgroundColor: 'rgb(193, 179, 215)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(165, 137, 193)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
+
+
+    const ctx5 = document.getElementById('myChart6');
+
+    const chartGrafico5 = new Chart(ctx5, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Vitórias',
+                'Empates',
+                'Derrotas'
+            ],
+            datasets: [{
+                label: '',
+                data: [42, 30, 28],
+                backgroundColor: [
+                    'rgb(179, 226, 221)',
+                    'rgb(134, 207, 190)',
+                    'rgb(72, 181, 163)'
+                ],
+            borderColor:[
+                    'rgb(179, 226, 221)',
+                    'rgb(134, 207, 190)',
+                    'rgb(72, 181, 163)'
+                ],
+                hoverOffset: 4
+            }]
+        }
+  });
+
+
+  
+  const ctx6 = document.getElementById('myChart7');
+
+const chartGrafico6 = new Chart(ctx6, {
+    type: 'doughnut',
+    data: {
+        labels: [
+            'Gols Marcados', 
+            'Gols Sofridos'
+        ],
+        datasets: [{
+            label: '',
+            data: [1941, 1563],
+            backgroundColor: [
+                'rgb(252,202,162)',
+                'rgb(252,169,133)'
+            ],
+        borderColor:[
+                'rgb(252,202,162)',
+                'rgb(252,169,133)'
+            ],
+            hoverOffset: 4
+        }]
     }
+});
 
 
 </script>
