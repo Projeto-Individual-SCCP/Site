@@ -41,21 +41,23 @@ function enviar(acertos, erros, fkUsuario) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-// function salvar(pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, pergunta10) {
-//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
+
+function enviarAv(avaliacao, fkUsuarioA, comentario) {
     
-//     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-//     //  e na ordem de inserção dos dados.
-//     var instrucao = `
-//         INSERT INTO resposta (pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, pergunta10) VALUES ('${pergunta1}', '${pergunta2}', '${pergunta3}', '${pergunta4}', '${pergunta5}', '${pergunta6}', '${pergunta7}', '${pergunta8}', '${pergunta9}', '${pergunta10}');
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucao);
-//     return database.executar(instrucao);
-// }
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO resultado (avaliacao, fkUsuarioA, comentario) VALUES ('${avaliacao}', ${fkUsuarioA}', ${comentario}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 module.exports = {
     entrar,
     cadastrar,
     enviar,
+    enviarAv, 
     listar
 };

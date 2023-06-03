@@ -9,7 +9,7 @@
     <title>FIEL ON | Quiz</title>
 
     <link rel="shortcut icon" href="../assets/imgs/logo-cor-tela (2).png" type="image/x-icon">
-    <link rel="stylesheet" href="avaliação.css">
+    <link rel="stylesheet" href="aval.css">
     <script src="../js/funcoes.js"></script>
 
 
@@ -17,7 +17,8 @@
 
 </head>
 
-<body>
+<body style=" color:rgb(48, 108, 121);">
+    
     <div class="header">
         <div class="container">
             <img class="logo" src="../assets/imgs/logo-dash.png">
@@ -67,18 +68,29 @@
                     Classifique a qualidade do conteúdo, 
                     o visual e as funcionalidades fornecidas no site:
                 </h2>
-                <div id="radioboxs" class="radioboxs">
-                <input type="radio" class="radio" id="radio" name="resposta1" value="a"><spam>  Muito ruim</spam>
-                <input type="radio" class="radio" id="radio" name="resposta1" value="b"><spam>  Ruim</spam>
-                <input type="radio" class="radio" id="radio" name="resposta1" value="c"><spam>  Bom</spam>
-                <input type="radio" class="radio" id="radio" name="resposta1" value="d"><spam>  Muito bom </spam>
+                <!-- <div id="radioboxs" class="radioboxs">
+                <input type="radio" class="radio1" id="input_radio" name="atendimento" value="MuitoRuim"><spam>  Muito ruim</spam>
+                
+                <input type="radio" class="radio2" id="input_radio" name="atendimento" value="Ruim"><spam>  Ruim</spam>
+                
+                <input type="radio" class="radio3" id="input_radio" name="atendimento" value="Bom"><spam>  Bom</spam>
+                
+                <input type="radio" class="radio4" id="input_radio" name="atendimento" value="MuitoBom"><spam>  Muito bom </spam>
+                 -->
+                 <div id="selects">
+                 <select class="selects " name="selects" id="input_avaliacao">
+                    <option value="MuitoBom">Muito bom </option>
+                    <option value="Bom">Bom</option>
+                    <option value="Ruim">Ruim</option>
+                    <option value="MuitoRuim">MuitoRuim</option>
+                  </select>
                 </div>
             </div>
                 
             
             
             <div id="div_msg" class="caixa"><h4>Deixe um comentário:</h4></div>
-            <input id="msg" name="msg" style="background-color: #E3DCCD; color: black; width: 500px; height: 100px;">
+            <input id="input_msg" name="msg" class="caixa_texto"> <button class="botao-b" onclick="enviarAv()"> Enviar </button>
             <br>
             <!-- <button class="botao-b" onclick="enviar()"> Enviar </button> -->
 
@@ -104,3 +116,73 @@
         </div>
     </div>
 </body>
+<script>
+function enviarAv() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var avaliacaoVar = input_avaliacao.value;
+    var comentarioVar = input_msg.value;
+
+
+    if (avaliacaoVar == "" || comentarioVar == "") {
+        // cardErro.style.display = "block"
+        alert("ERRO- Por favor verifique se você preencheu os campos necessários");
+
+        // finalizarAguardar();
+        return false;
+    }
+    // else {
+    //     setInterval(sumirMensagem, 5000)
+    // }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/enviarAv", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            avaliacaoServer: avaliacaoVar,
+            comentarioServer: comentarioVar,
+            fkUsuarioAServer: sessionStorage.getItem('ID_USUARIO')
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            // cardErro.style.display = "block";
+
+  alert ("Respostas enviadas com sucesso! Redirecionando para tela de Início...");
+
+            setTimeout(() => {
+                window.location = "dashboard.html";
+            }, "2000")
+
+            limparFormulario();
+            // finalizarAguardar();
+        } else {
+            throw ("Houve um erro ao tentar realizar o envio das respostas...");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+    });
+
+    return false;
+}
+
+// function sumirMensagem() {
+//     cardErro.style.display = "none"
+// }
+function limparFormulario(){
+    comentarioVar = "";
+        
+}
+
+</script>
+

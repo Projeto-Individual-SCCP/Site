@@ -364,8 +364,8 @@ button:hover{
 .botao-b{
     background-color: #E3DCCD;
     color: #767066;
-    width: 200px;
-    height: 50px;
+    width: 100px;
+    height: 30px;
     border-style: none; /*tira a estilização automatica do botão do html*/
     border-radius: 16px;
     cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
@@ -376,7 +376,7 @@ button:hover{
     margin-top: 2%;
     align-items: center;
     justify-content: center;
-    margin-left: 42%;
+    margin-left: 47%;
     font-size: 15px;
     
 }
@@ -410,7 +410,8 @@ button:hover{
     justify-content: center;
     margin-top: 0%;
     padding: 5%;
-    margin-left: -5%;
+    margin-left: -3%;
+    font-size: 26px;
 }
 .container1 h1:hover {
     -ms-transform: scale(1.1);
@@ -675,29 +676,57 @@ button:hover{
     margin-right: 60px;
 }
 
-.radioboxs{
+/* .radioboxs{
     width: fit-content;
     height: fit-content;
     display: flex;
     margin-left: 30%;
     justify-content: space-between;
     align-items: center;
+  */
+
+  .selects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 34%;
+    background-color: #E3DCCD;
+    height: 50px;
+    width: 400px;
+    border-radius: 100px 300px 100px 300px;
+    text-align: center;
+    border-width: 2px;
+    cursor: pointer;
+    color: #767066;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+ 
+.caixa h4{
+    color: #E3DCCD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+
  
 }
 
-.radioboxs spam{
-    font-size: 20px;
-    color: #E3DCCD;
-   
-
-}
-
-input[type=radio]  {
-    border: 0px;
-    width: 25px;
-    height: 20px;
-    vertical-align: middle;
-    color: #767066;
+.caixa_texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   margin-left: 31%; 
+    width: 500px;
+    height: 100px;
+    border-radius: 100px 300px 100px 300px;
+    color:#767066;
+    background-color: #E3DCCD;
     
 }
+
+
+
+
 

@@ -141,10 +141,46 @@ function enviar(req, res) {
 }
 
 
+function enviarAv(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var avaliacao = req.body.avaliacaoServer;
+    var comentario = req.body.comentarioServer;
+    var fkUsuarioA= req.body.fkUsuarioServer;
+   
+
+    // Faça as validações dos valores
+    if (avaliacao == undefined) {
+        res.status(400).send("Seu avaliacao não está preenchido");
+    } else if (comentario == undefined){
+        res.status(400).send("Sua mensagem não está definida!");
+    }
+    else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.enviarAv(avaliacao, comentario, fkUsuarioA)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o envio dos acertos e erros! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     enviar,
+    enviarAv,
     listar,
     testar
 }

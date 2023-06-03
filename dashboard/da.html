@@ -63,81 +63,37 @@
         </div>
     </div>
 
-    <!-- <p style="color: rgb(171, 114, 224); color: rgb(234, 247, 57);"
-    <div id="graficos">
-        <div id="grafico1" class="display-block">
-            <h3 class="tituloGraficos">
-                <span id="tituloAquario1">SEUS RESULTADOS</span>
-            </h3>
-            <div class="graph">
-                <canvas id="myChartCanvas1"></canvas>
-            </div>
-            <div class="label-captura">
-                <p id="avisoCaptura1" style="color: white"></p>
-            </div>
-        </div> -->
-
+   
 
     <div class="graficos">
         <section class="graph">
 
             <h1> SEUS RESULTADOS </h1>
 
+            <div class="titulos">
+            <div class="title_sub1">
+            <h3> ÚLTIMA TENTATIVA </h3> 
+            </div>
+
+            <div class="title_sub2">
+                <h3> TODAS AS TENTATIVAS</h3> 
+            </div>
+        </div>
 
             <div class="linhaMaior">
-
                 <div class="linha1">
                     <canvas id="myChart1"></canvas>
                 </div>
 
-                <!--         
-            <div class="linha2">
-            <canvas id="tentativas"></canvas>
-        </div> -->
                 <div class="linha2">
                     <canvas id="myChartP"></canvas>
                 </div>
             </div>
-            <!-- <h1> SEUS RESULTADOS </h1> -->
-            <!-- <div class="linha">
-                <canvas id="lm35Temperatura3"></canvas>
-                <canvas id="lm35Temperatura4"></canvas>
-            </div>
-            <div class="linha">
-                <canvas id="lm35Temperatura5"></canvas>
-                <canvas id="lm35Temperatura6"></canvas>
-            </div>
-            <div class="linha">
-                <canvas id="lm35Temperatura7"></canvas>
-                <canvas id="lm35Temperatura8"></canvas>
-            </div> -->
-            <!-- </section>
-    </div> 
-
-    <div id="graficos">
-        <div id="grafico1" class="display-block">
-            <h3 class="tituloGraficos">
-                <span id="tituloAquario1">Acertos</span>
-            </h3>
-            <div class="graph">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="label-captura">
-                <p id="avisoCaptura1" style="color: white"></p>
-            </div>
-        </div>
-    </div> 
-    <div class="chart-container">
-    <div>
-        <canvas class="graph" id="myChart"></canvas> 
-        
+            
+        </section>
     </div>
+  
 
-    <div>
-        <canvas class="graph" id="myChart2"></canvas> 
-      
-    </div>
-</div>  -->
 
 </body>
 
@@ -252,9 +208,9 @@
                 label: 'Acertos',
                 data: acertos,
                 fill: false,
-                backgroundColor: ['rgb(234, 247, 57)'],
+                backgroundColor: ['rgb(169, 209, 214)'],
                 borderWidth: 0,
-                borderColor: ['rgb(234, 247, 57)'],
+                borderColor: ['rgb(169, 209, 214)'],
                 barThickness: 20, 
                 tension: 0.1
                 // barPercentage: .9
@@ -264,17 +220,24 @@
                 label: 'Erros',
                 data: erros,
                 fill: false,
-                backgroundColor: ['rgb(171, 114, 224)'],
-                borderColor: ['rgb(171, 114, 224)'],
+                backgroundColor: ['rgb(222, 172, 161)'],
+                borderColor: ['rgb(222, 172, 161)'],
                 borderWidth: 0,
                 barThickness: 20,
                 tension: 0.1
                 // barPercentage: .9
             }]
+//             options: {
+//         scales: {
+//         myScale: {
+//         maintainAspectRatio: true, 
+//         responsive: true, 
+//         onResize: null, 
 
-        
-        }
-            ;
+//       }
+//     }
+//   }
+};
 
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
@@ -284,10 +247,15 @@
             dados.datasets[1].data.push(registro.Erros);
         }
 
+        // var options= {
+        //     responsive: true, 
+        //     m
+        // }
         // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'bar',
             data: dados,
+           
         };
 
         // Adicionando gráfico criado em div na tela
@@ -411,9 +379,9 @@
             datasets: [{
                 data: [ultimaMedida.Acertos, ultimaMedida.Erros],
                 fill: false,
-                backgroundColor: ['rgb(234, 247, 57)', 'rgb(171, 114, 224)'],
+                backgroundColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
                 borderWidth: 3,
-                borderColor: ['rgb(234, 247, 57)', 'rgb(171, 114, 224)'],
+                borderColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
                 tension: 0.1
             }]
         };
