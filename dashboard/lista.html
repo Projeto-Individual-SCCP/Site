@@ -25,94 +25,99 @@
         </div>
     </div>
 
-    <!-- <div class="banner">
-        <div class="cardLista">
-        Insira os nomes dos jogadores do Corinthians que você conhece: <input id="input_jog"><br>
-        Insira de 0 a 10 o quanto você gosta deles: <input id="input_gostar" type="number" min="0" max="10"><br>
-        <button onclick="registrar()">Registrar Jogadores</button>
-        <button onclick="ver()">Mostrar Jogadores</button>
-        <button onclick="salvar()">Salvar lista</button>
-        <div id="msg"></div>
-        <div id="msg2"></div>
-    </div>
-    </div> -->
-
-
-
     <div id="projeto" class="container">
         <div class="texto-banner">
-            <h1>LISTA DE JOGADORES</h1>
+            <h1>LINEUP GAME</h1>
             <div class="line"></div>
             <div class="boxes">
                 <div class="box1">
-                    Insira os nomes dos jogadores do Corinthians que você conhece: <input id="input_jog"><br>
-                    Insira de 0 a 10 o quanto você gosta deles: <input id="input_gostar" type="number" min="0" max="10"><br>
+                    Insira os nome dos jogadores atuais do Corinthians: <input id="input_jog"><br>
+                    <p style="color: azure;"> Lembre-se de escrever os nomes com letras maiúsculas, e, quando o jogador
+                        for conhecido pelo sobrenome o escreva também!
+                    </p>
                     <button onclick="registrar()">Registrar Jogadores</button>
-                    <button onclick="ver()">Mostrar Jogadores</button>
-                    <button onclick="salvar()">Salvar lista</button>
+
                     <div id="msg"></div>
                     <div id="msg2"></div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
 <script>
-    var listaJogadores = [];
+    
     var listaGostar = [];
+    var listaJogadores=[];
 
     function registrar() {
-        var contador = 0;
+    
 
+        var listaEscalados = ["Carlos Miguel", "Cassio", "Matheus Donelli", "Fabio Santos", "Matheus Bidu", "Rafael Ramos", "Fagner", "Balbuena", 
+    "Bruno Mendez", "Caetano", "Gil", "Murillo", "Cantillo", "Du Queiroz", "Fausto Vera", "Maycon", "Paulinho", "Roni", 
+    "Adson", "Giuliano", "Matheus Araújo", "Renato Augusto", "Chrystian", "Gustavo Mosquito", "Junior Moraes", "Pedro", 
+    "Romero", "Roger Guedes", "Yuri Alberto", "Ruan Oliveira"];
 
-        if (listaJogadores.indexOf(input_jog.value) < 0) {
-            listaJogadores.push(input_jog.value);
-        } else {
-            alert("Não pode mais de 1 jogador com o mesmo nome!");
+        var listaImagem= ['<img style="height: 100px;" src="../assets/imgs/carlos-miguel.jpg">', 
+        '<img style="height: 100px;" src="../assets/imgs/cassio-ramos.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/matheus-donelli.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/fabio-santos.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/matheus-bidu.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/rafael-ramos.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/fagner-lemos.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/balbuena.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/bruno-mendez.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/caetano.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/gil.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/murillo.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/cantillo.jpg"> ',
+        '<img style="height: 100px;" src="../assets/imgs/du-queiroz.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/fausto-vera.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/maycon.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/paulinho.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/roni.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/adson.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/giuliano.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/matheus-de-araujo.jpg"> ',
+        '<img style="height: 100px;" src="../assets/imgs/renato-augusto.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/chrystian-amaral-barletta.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/gustavo-henric-da-silva.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/moraes-junior.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/pedro.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/angel-rodrigo-romero.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/roger-krug-guedes.jpg">',
+        '<img style="height: 100px;" src="../assets/imgs/yuri.jpg"> ',
+        '<img style="height: 100px;" src="../assets/imgs/ruan-de-oliveira-.jpg">'
+    ]
+
+        var jogadorRegistrado = input_jog.value;
+        var jogadorIndex = listaEscalados.indexOf(jogadorRegistrado);
+        var imagemJogador = listaImagem[jogadorIndex];
+
+        if (listaEscalados.indexOf(jogadorRegistrado) > -1 ) {
+            msg.innerHTML = `O jogador ${jogadorRegistrado} está entre os escalados!<br>`;
+            listaJogadores.push(jogadorRegistrado);
+            msg.innerHTML += `${imagemJogador}<br>`;
+        }
+        else {
+            msg.innerHTML = `O jogador ${jogadorRegistrado} não faz parte do elenco, tente novamente<br>`;
         }
 
-
-        while (contador <= listaJogadores.length) {
-            if (contador >= 0 && contador <= 4) {
-                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um torcedor iniciante e conhece bem pouco do elenco.<br>`
-            }
-            else if (contador >= 5 && contador <= 8) {
-                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um bom torcedor e mas poderia conhecer mais o elenco.<br>`
-            }
-            else {
-                msg.innerHTML = `Você sabe o nome de ${contador} jogadores. Você é um torcedor FIEL e sabe tudo sobre o TIMÃO! VAI CORINTHIANS!!<br>`
-            }
-            contador += 1
+        for(var contador= 0 ;contador< listaJogadores.length; contador++){
+            msg.innerHTML+= `${listaJogadores[contador]}, `
         }
+        if (listaJogadores.length >= 7){
+                alert("Uau, você tem uma boa memória")
+        }
+        if (listaJogadores.length >= 12){
+                alert("EXCEPCIONAL!")
+        }
+
     }
 
-    function ver() {
-        var contador = 0;
-        var amor = Number(input_gostar.value);
-        listaGostar.push(input_gostar.value);
 
-        if (amor < 5) {
-            alert(" Nível de Paixão muito baixo... 😢")
-        } else {
-            alert(" Nível de Paixão alto, ele deve ser muito querido por toda Fiel! 😁")
-        }
+  
 
-        while (contador < listaJogadores.length) {
-            msg.innerHTML += `
-    ${contador + 1}. Nome: ${listaJogadores[contador]} ⋙ Nível de Paixão: ${listaGostar[contador]}<br>`
-            contador += 1
-        }
-    }
-
-    function salvar() {
-        // salvando no local storage
-        const arr= listaJogadores
-        localStorage.setItem('itens', JSON.stringify(arr));
-        const itens = JSON.parse(localStorage.getItem('itens'))
-
-        msg2.innerHTML = `${itens}<br>`
-    }
 </script>
