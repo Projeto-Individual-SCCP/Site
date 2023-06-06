@@ -145,7 +145,7 @@ function enviarAv(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var avaliacao = req.body.avaliacaoServer;
     var comentario = req.body.comentarioServer;
-    var fkUsuarioA= req.body.fkUsuarioServer;
+    var fkUsuarioA= req.body.fkUsuarioAServer;
    
 
     // Faça as validações dos valores

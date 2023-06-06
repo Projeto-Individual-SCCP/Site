@@ -20,7 +20,7 @@ router.post("/enviar", function (req, res) {
     usuarioController.enviar(req, res);
 })
 
-router.post("enviarAv", function (req, res) {
+router.post("/enviarAv", function (req, res) {
     usuarioController.enviarAv(req, res);
 })
 

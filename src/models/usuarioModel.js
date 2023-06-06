@@ -42,12 +42,12 @@ function enviar(acertos, erros, fkUsuario) {
     return database.executar(instrucao);
 }
 
-function enviarAv(avaliacao, fkUsuarioA, comentario) {
+function enviarAv(avaliacao, comentario, fkUsuarioA) {
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO resultado (avaliacao, fkUsuarioA, comentario) VALUES ('${avaliacao}', ${fkUsuarioA}', ${comentario}');
+        INSERT INTO PesquisaSastifacao (avaliacao, comentario, fkUsuarioA) VALUES ('${avaliacao}', '${comentario}', '${fkUsuarioA}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

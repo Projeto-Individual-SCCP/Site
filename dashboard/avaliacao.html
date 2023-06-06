@@ -23,6 +23,7 @@
                 <li><a href="../dashboard/paginaInicial.html">Início</a></li>
                 <li><a href="../dashboard/dashboard.html">Dashboards</a></li>
                 <li><a href="../dashboard/quiz.html">Quiz</a></li>
+                <li><a href="../dashboard/lista.html">Lineup Game</a></li>
                 <li>
                     <div class="logout" onclick="limparSessao()">
                         <img class="sair" src="../assets/imgs/sair (1).png">
@@ -144,10 +145,10 @@
             if (resposta.ok) {
                 // cardErro.style.display = "block";
 
-                alert("Respostas enviadas com sucesso! Redirecionando para tela de Início...");
+                alert("Respostas enviadas com sucesso, obrigada pela avaliação! Redirecionando para tela de Início...");
 
                 setTimeout(() => {
-                    window.location = "dashboard.html";
+                    window.location = "paginaInicial.html";
                 }, "2000")
 
                 limparFormulario();
