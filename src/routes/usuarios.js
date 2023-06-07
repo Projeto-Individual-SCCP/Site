@@ -22,12 +22,7 @@ router.post("/enviar", function (req, res) {
 
 router.post("/enviarAv", function (req, res) {
     usuarioController.enviarAv(req, res);
-})
-
-
-// router.post("/salvar", function (req, res) {
-//     usuarioController.salvar(req, res);
-// })
+});
 
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);

@@ -91,29 +91,28 @@
                 </div>
 
                 <div class="linha2">
-                    <canvas id="myChartP"></canvas>
+                    <canvas id="myChart2"></canvas>
                 </div>
             </div>
 
-            <h1> A MAIORIA  </h1>
+            <!-- <h1> A MAIORIA  </h1>
             <div class="title_subG">
                 <h3> MÉDIA DE ACERTOS POR GÊNERO</h3>
             </div>
             <div class="linhaG">
                 <canvas id="myChartG"></canvas>
-            </div>
+            </div> -->
 
 
-            <h1> RECORDES DO CORINTHIANS </h1>
+            <h1> RECORDES HISTÓRICOS DO CORINTHIANS </h1>
 
             <div class="title_sub3">
                 <h3> TREINADORES COM MAIS JOGOS</h3>
             </div>
+
             <div class="linha3">
                 <canvas id="myChart3"></canvas>
             </div>
-
-
             <div class="title_sub3">
                 <h3> JOGADORES QUE MAIS ATUARAM COM A CAMISA</h3>
             </div>
@@ -131,7 +130,7 @@
 
           
             <div class="title_sub4">
-                <h3> VITÓRIAS, EMPATES E DERROTAS DO CAMPEONATO BRASILEIRO</h3>
+                <h3> OS MAIORES GARÇONS DO CORINTHIANS</h3>
             </div>
             <div class="linha6">
                 <canvas id="myChart6"></canvas>
@@ -139,7 +138,7 @@
             </div>
 
             <div class="title_sub4">
-                <h3> GOLS MARCADOS E GOLS SOFRIDOS NO CAMPEONATO BRASILEIRO</h3>
+                <h3> OS MAIORES CAMPEÕES PELO CORINTHIANS</h3>
             </div>
             <div class="linha7">
                 <canvas id="myChart7"></canvas>
@@ -210,7 +209,7 @@
                 data: acertos,
                 fill: false,
                 backgroundColor: ['rgb(169, 209, 214)'],
-                borderWidth: 0,
+                borderWidth: 3,
                 borderColor: ['rgb(169, 209, 214)'],
                 barThickness: 20,
                 tension: 0.1,
@@ -224,7 +223,7 @@
                 fill: false,
                 backgroundColor: ['rgb(222, 172, 161)'],
                 borderColor: ['rgb(222, 172, 161)'],
-                borderWidth: 0,
+                borderWidth: 3,
                 barThickness: 20,
                 tension: 0.1,
                 borderRadius: 10
@@ -248,12 +247,11 @@
         };
 
         // Adicionando gráfico criado em div na tela
-        let myChartP = new Chart(
-            document.getElementById(`myChartP`),
+        let myChart2 = new Chart(
+            document.getElementById(`myChart2`),
             config
         );
 
-        // setTimeout(() => atualizarGrafico(idUsuario, dados, myChartP), 2000);
     }
 
 
@@ -326,76 +324,6 @@
         );
 
     };
-
-//----------------------------------------------------------------------------------------------------------------
-// GRÁFICO DE LINHA - MÉDIA DE ACERTOS POR GÊNERO
-
-function obterDadosGraficos2(idUsuario) {
-        obterDadosGrafico1(1)
-        obterDadosGrafico1(2)
-        // //     obterDadosGrafico(3)
-        // //     obterDadosGrafico(4)
-    }
-
-    function obterDadosGrafico2(idUsuario) {
-
-        // alterarTitulo(idAquario)
-
-        // if (proximaAtualizacao != undefined) {
-        //     clearTimeout(proximaAtualizacao);
-        // }
-
-        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    resposta.reverse();
-
-                    plotarGrafico2(resposta, idUsuario);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico2(resposta, idUsuario) {
-
-        console.log("RESPOSTA", resposta)
-
-        var ultimaMedida = resposta.pop();
-
-        let dados1 = {
-            labels: ["Acertos", "Erros"],
-            datasets: [{
-                data: [ultimaMedida.Acertos, ultimaMedida.Erros],
-                fill: false,
-                backgroundColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
-                borderWidth: 3,
-                borderColor: ['rgb(169, 209, 214)', 'rgb(222, 172, 161)'],
-                tension: 0.1
-
-            }]
-        };
-
-        const config = {
-            type: 'pie',
-            data: dados1,
-        };
-
-        let myChartG = new Chart(
-            document.getElementById(`myChartG`),
-            config
-        );
-
-    };
-
-
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -487,57 +415,60 @@ function obterDadosGraficos2(idUsuario) {
     const ctx5 = document.getElementById('myChart6');
 
     const chartGrafico5 = new Chart(ctx5, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
-            labels: [
-                'Vitórias',
-                'Empates',
-                'Derrotas'
+            labels: ['Cláudio', 'Marcelinho C.', 'Luizinho', 'Rivellino', 'Vaguinho', 'Baltazar', 'Fagner', 'Jadson', 'Sócrates', 'Ricardinho'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [191, 187, 166, 120, 104, 88, 65, 64, 59, 57],
+                    borderColor: 'rgb(252, 202, 162)',
+                    backgroundColor: 'rgb(252, 202, 162)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(252, 169, 133)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+
+                },
+
+
             ],
-            datasets: [{
-                label: '',
-                data: [42, 30, 28],
-                backgroundColor: [
-                    'rgb(179, 226, 221)',
-                    'rgb(134, 207, 190)',
-                    'rgb(72, 181, 163)'
-                ],
-            borderColor:[
-                    'rgb(179, 226, 221)',
-                    'rgb(134, 207, 190)',
-                    'rgb(72, 181, 163)'
-                ],
-                hoverOffset: 4
-            }]
+        },
+
+        options: {
+            indexAxis: 'y',
         }
-  });
+    });
 
 
   
   const ctx6 = document.getElementById('myChart7');
 
 const chartGrafico6 = new Chart(ctx6, {
-    type: 'doughnut',
-    data: {
-        labels: [
-            'Gols Marcados', 
-            'Gols Sofridos'
-        ],
-        datasets: [{
-            label: '',
-            data: [1941, 1563],
-            backgroundColor: [
-                'rgb(252,202,162)',
-                'rgb(252,169,133)'
-            ],
-        borderColor:[
-                'rgb(252,202,162)',
-                'rgb(252,169,133)'
-            ],
-            hoverOffset: 4
-        }]
-    }
-});
+    type: 'bar',
+        data: {
+            labels: ['Del Debbio', 'Cassio', 'Rato', 'Ralf', 'Danilo', 'Alessandro', 'Chicão', 'Marcelinho'],
+            datasets: [
+                {
+                    label: 'Jogos',
+                    data: [11, 9, 9, 8, 8, 8, 8, 8],
+                    borderColor: 'rgb(134, 207, 190)',
+                    backgroundColor: 'rgb(134, 207, 190)',
+                    borderWidth: 0,
+                    borderRadius: 10,
+                    hoverBackgroundColor: 'rgb(72, 181, 163)',
+                    barPercentage: .9,
+                    categoryPercentage: .9
+                },
 
+
+            ],
+        },
+
+        options: {
+            indexAxis: 'y',
+        }
+    });
 
 </script>

@@ -175,7 +175,6 @@ function enviarAv(req, res) {
     }
 }
 
-
 module.exports = {
     entrar,
     cadastrar,

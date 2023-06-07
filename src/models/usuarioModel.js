@@ -54,6 +54,7 @@ function enviarAv(avaliacao, comentario, fkUsuarioA) {
 }
 
 
+
 module.exports = {
     entrar,
     cadastrar,
