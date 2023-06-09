@@ -35,14 +35,11 @@
             <div class="line"></div>
             <div class="boxes">
                 <div class="box1">
-                    <div class="msg" id="msg"><br>
-                    </div>
+                    <div class="msg" id="msg"><br></div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
 
     <div class="banner6">
         <div class="container">
@@ -175,43 +172,21 @@
 
         var contador = 0;
         var listaCuriosidades = [];
-        msg.innerHTML = curiosidades[contador];
+        msg.innerHTML = curiosidades[contador]; // Atualiza a div com as curiosidades do vetor e exibe a curiosidade correspondente à posição atual indicada pelo valor do contador.
 
 
         function ver() {
-
-            contador++
+            contador++ // Avança para a próxima curiosidade quando a função é chamada novamente (de um em um).
             if (contador < curiosidades.length) {
-
-
                 msg.innerHTML = curiosidades[contador];
             }
-
-            else {
-
-                contador = 1
-                msg.innerHTML = curiosidades[contador];
-            }
-
-    
         }
 
-
         function voltar() {
-
-
             if (contador < curiosidades.length) {
-
-
                 msg.innerHTML = curiosidades[contador - 1];
-            }
-            else{
-                contador= 1
-                msg.innerHTML = curiosidades[curiosidades.length - 1];
-
-            }
-            contador--
-          
-
+            } // Atualiza a div com as curiosidades do vetor e exibe a curiosidade correspondente à posição atual - 1 para que ela seja indicada de acordo com o valor do contador anterior.
+            contador-- // Volta para a curiosidade anterior quando a função é chamada novamente (de um em um).
+    
         }
     </script>

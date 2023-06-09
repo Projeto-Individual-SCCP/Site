@@ -15,7 +15,7 @@ body {
     flex-direction: row;
 }
 
-/* Header*/
+/* INICIO DO HEADER*/
 .header {
     position: absolute; 
     top: 0; 
@@ -31,21 +31,23 @@ body {
     /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
     padding: 0%;
 }
+
 .header .container {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     width: 200px;
-   
 }
+
 .navbar {
     width: 700px;
     display: flex;
     list-style: none; 
     justify-content: space-between;
-  
 }
+
 .navbar li a {
     color: #767066;
     text-decoration: none; 
@@ -54,21 +56,22 @@ body {
     display: flex;
     margin-left: 15px;
     letter-spacing: 1px;
-    
 }
+
 .navbar li a:hover {
     color: #b4a39b;
     transition: 0.5s;
     -ms-transform: scale(1.2);
     transform: scale(1.2);
-
 }
+/* FIM DO HEADER */
 
-/* BANNER SOBRE O PROJETO*/
+
+/* BANNER APRESENTAÇÃO*/
 .banner {
     margin-top: 170px;
-
 }
+
 .line {
     height: 2px;
     width: 478px;
@@ -79,19 +82,22 @@ body {
 .line:hover {
     -ms-transform: scale(1.5);
     transform: scale(1.5);
-  }
+}
+
 .banner .container {
     display: flex;
     align-items: flex-start;
     justify-items: flex-start;
     justify-content:flex-start;
 }
+
 .texto-banner {
     color:#767066;
     width: 100%; 
     margin-top: 20px;
     margin-left: 100px;
 }
+
 .texto-banner p {
     font-size: 20px;
     display: flex;
@@ -99,6 +105,7 @@ body {
     justify-content: center;
     text-align: justify;
 }
+
 .texto-banner h1 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
@@ -114,7 +121,7 @@ body {
 .texto-banner h1:hover {
     color: #b4a39b;
     transition: 2.0s;
-  }
+}
 
 .texto-banner h2 {
     font-size: 25px;
@@ -132,17 +139,21 @@ body {
 .texto-banner p span {
     font-weight: 700; 
 }
+/* FIM DO BANNER DE APRESENTAÇÃO */
 
-/* BANNER SOBRE MIM*/
+
+/* COMEÇO DO BANNER SOBRE MIM / MINHA HISTÓRIA*/
 .banner1{
     width: 100%;
     height: 1800px;
     background-color: #767066;
     margin-top: 170px;
 }
+
 .container1{
     margin-top: 100px;
 }
+
 .container1 h1{
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
@@ -178,6 +189,7 @@ body {
     margin-top: 5%;
     margin-left: 7%;
 }
+
 .container1 p1 {
     font-size: 20px;
     display: flex;
@@ -189,6 +201,7 @@ body {
     margin-right: 7%;
     margin-top: 1%;
 }
+
 .container1 p2 {
     font-size: 20px;
     display: flex;
@@ -200,6 +213,7 @@ body {
     margin-right: 50%;
     margin-top: 1%;
 }
+
 .imagem-banner1 img{
     width: 450px;
     margin-top: -470px;
@@ -214,12 +228,39 @@ body {
 
 .imagem-banner1 img:hover {
     opacity:0.5;
-  }
+}
+
+/* FIM DO BANNER SOBRE MIM / MINHA HISTÓRIA*/
+
+
+/* COMEÇO DA DIV DE VALORES EM COMUM */
 .banner1 .container1 .boxes {
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
+}
+
+.title h1{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+}
+
+.boxes{
+    margin-bottom: 50px;
+}
+
+.container1 .title .line{
+    height: 2px;
+    width: 490px;
+    background-color:#E3DCCD;
+    margin-left: 388px;
+    margin-top: -150px;
+    margin-bottom: 2%;
+}
+
+    /* BOX VALORES- FORÇA */
 .boxes .box1 {
     width: 100%;
     height: 220px;
@@ -233,15 +274,15 @@ body {
     margin: 20px 10px 20px 10px; 
     margin-bottom: 0%;
     text-align: center; 
-  }
+}
 
-  .box1:hover {
+.box1:hover {
     color: #b4a39b;
     transition: 0.5s;
     box-shadow: 0 16px 40px 0 rgba(0,0,0,0.2);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-  }
+}
 
 .boxes .box1 h1{
     color: #767066;
@@ -249,6 +290,7 @@ body {
     margin-top: 6%;
     margin-bottom: 0%;
 }
+
 .boxes .box1 p {
     color: #767066;
     font-size: 18px;
@@ -258,6 +300,7 @@ body {
     text-align: center; 
 }
 
+    /* BOX VALORES- PERSEVERANÇA */
 .boxes .box2 {
     width: 100%;
     height: 220px;
@@ -272,7 +315,7 @@ body {
     margin: 20px 10px 20px 10px; 
     text-align: center; 
     margin-bottom: 0%;
-  }
+}
 
 .boxes .box2 h1{
     color: #767066;
@@ -280,6 +323,7 @@ body {
     margin-top: 0%;
     margin-bottom: 0%;
 }
+
 .boxes .box2 p {
     color: #767066;
     font-size: 18px;
@@ -287,6 +331,7 @@ body {
     padding: 2%;
     width: 100%;
 }
+
 .box2:hover {
     color: #b4a39b;
     transition: 0.5s;
@@ -294,16 +339,16 @@ body {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     
-  }
+}
 
+    /* BOX VALORES- VONTADE */
 .box3:hover {
     color: #b4a39b;
     transition: 0.5s;
     box-shadow: 0 16px 40px 0 rgba(0,0,0,0.2);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-  }
-
+}
 
 .boxes .box3 {
     width: 100%;
@@ -317,7 +362,7 @@ body {
     margin: 5px;
     border-radius: 20px;
     margin: 20px 10px 20px 10px; 
-  }
+}
 
 .boxes .box3 h1{
     color: #767066;
@@ -325,6 +370,7 @@ body {
     margin-top: 0%;
     margin-bottom: 0%;
 }
+
 .boxes .box3 p {
     color: #767066;
     font-size: 18px;
@@ -332,26 +378,10 @@ body {
     padding: 2%;
     text-align: center; 
 }
-.title h1{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0%;
-}
-.boxes{
-    margin-bottom: 50px;
-    
-}
-.container1 .title .line{
-    height: 2px;
-    width: 490px;
-    background-color:#E3DCCD;
-    margin-left: 388px;
-    margin-top: -150px;
-    margin-bottom: 2%;
-}
+/* FIM DA DIV DE VALORES EM COMUM */
 
-/* BANNER 6-RODAPE */
+
+/* RODAPE */
 .banner6 {
     background-color: #E3DCCD;
     width: 100%;
@@ -416,6 +446,7 @@ body {
     margin-top: 5px;
     margin-left: 380px;
 }
+
 .icons img {
     /*configuração das imagens de contato do Fale Conosco*/
     width: 50px;

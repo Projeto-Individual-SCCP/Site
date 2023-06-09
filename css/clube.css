@@ -15,7 +15,7 @@ body {
     flex-direction: row;
 }
 
-/* Header*/
+/* INICIO DO HEADER */
 .header {
     position: absolute; 
     top: 0; 
@@ -31,21 +31,23 @@ body {
     /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
     padding: 0%;
 }
+
 .header .container {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     width: 200px;
-   
 }
+
 .navbar {
     width: 700px;
     display: flex;
     list-style: none; 
     justify-content: space-between;
-  
 }
+
 .navbar li a {
     color: #767066;
     text-decoration: none; 
@@ -54,19 +56,20 @@ body {
     display: flex;
     margin-left: 15px;
     letter-spacing: 1px;
-    
 }
+
 .navbar li a:hover {
     color: #b4a39b;
     transition: 0.5s;
-
 }
+/* FIM DO HEADER */
 
-/* BANNER SOBRE O PROJETO*/
+
+/* COMEÇO DO BANNER SOBRE O TIME*/
 .banner {
     margin-top: 170px;
-
 }
+
 .line {
     height: 2px;
     width: 380px;
@@ -80,12 +83,14 @@ body {
     justify-items: flex-start;
     justify-content:flex-start;
 }
+
 .texto-banner {
     color:#767066;
     width: 100%; 
     margin-top: 20px;
     margin-left: 100px;
 }
+
 .texto-banner p {
     font-size: 20px;
     display: flex;
@@ -93,6 +98,7 @@ body {
     justify-content: center;
     text-align: justify;
 }
+
 .texto-banner h1 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
@@ -108,7 +114,7 @@ body {
 .texto-banner h1:hover {
     color: #b4a39b;
     transition: 2.0s;
-  }
+}
 
 .line:hover {
     -ms-transform: scale(1.5);
@@ -128,20 +134,33 @@ body {
     text-align: center;
 }
 
-.texto-banner p span {
-    font-weight: 700; 
+.texto-banner .audio audio{
+    color: #767066;
+    margin-left: 38%;
+    width: 230px;
+    border-radius: 300px;
 }
 
-/* BANNER SOBRE MIM*/
+audio:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 16px 32px 0 rgb(91, 84, 76);
+}
+/* FIM DO BANNER SOBRE O TIME*/
+
+
+/* INICIO DO BANNER DE INFORMAÇÕES SOBRE O TIME */
 .banner1{
     width: 100%;
     height: 3700px;
     background-color: #767066;
     margin-top: 150px;
 }
+
 .container1{
     margin-top: 80px;
 }
+
 .container1 h1{
     font-size: 40px;
     font-family: 'Poppins', sans-serif; 
@@ -154,7 +173,8 @@ body {
     margin-top: 2%;
     padding: 10%;
 }
-.container1 .line{
+
+.container1 .line{ /*CONQUISTAS*/
     height: 2px;
     width: 350px;
     background-color:#E3DCCD;
@@ -162,36 +182,25 @@ body {
     margin-top: -150px;
 }
 
-.container1 .lineD{
+.line:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineD{ /*DERMOCRACIA CORINTHIANA*/
     height: 2px;
     width: 750px;
     background-color:#E3DCCD;
     margin-left: 250px;
     margin-top: -150px;
+}
 
-}
-  
-.line:hover {
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
-}
 .lineD:hover {
     -ms-transform: scale(1.5);
     transform: scale(1.5);
 }
 
-
-
-.container1 .lineA{
-    height: 2px;
-    width: 400px;
-    background-color:#E3DCCD;
-    margin-left: 428px;
-    margin-top: -150px;
-
-}
-
-.container1 .lineF{
+.container1 .lineA{ /*AÇÕES SOCIAIS*/
     height: 2px;
     width: 400px;
     background-color:#E3DCCD;
@@ -199,7 +208,25 @@ body {
     margin-top: -150px;
 }
 
-.container1 .lineQ{
+.lineA:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineF{ /*FIEL TORCIDA*/
+    height: 2px;
+    width: 400px;
+    background-color:#E3DCCD;
+    margin-left: 428px;
+    margin-top: -150px;
+}
+
+.lineF:hover {
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.container1 .lineQ{ /*QUER SABER MAIS?*/
     height: 2px;
     width: 420px;
     background-color:#E3DCCD;
@@ -207,8 +234,8 @@ body {
     margin-top: -150px;
     margin-bottom: 2%;
 }
-  
-.lineA:hover {
+
+.lineQ:hover {
     -ms-transform: scale(1.5);
     transform: scale(1.5);
 }
@@ -226,6 +253,7 @@ body {
     width: 50%;
     margin-bottom: 4%;
 }
+
 .container1 p2 {
     font-size: 20px;
     display: flex;
@@ -236,71 +264,6 @@ body {
     margin-left: 7%;
     margin-right: 50%;
     margin-top: 5%;
-}
-.imagem-banner1 img{
-    width: 450px;
-    margin-top: -37%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 5%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 60%;
-    opacity: 0.7;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner1 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-.imagem-banner2 img{
-    width: 300px;
-    margin-top: 5%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 60%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 5%;
-    opacity: 0.7;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner2 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.imagem-banner4 img{
-    width: 400px;
-    margin-top: 5%;
-    margin-bottom: 50px;
-    align-items: center;
-    margin-right: 60%;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    margin-left: 5%;
-    opacity: 0.7;
-    height: 300px;
-    border: 8px solid #E3DCCD;
-}
-.imagem-banner4 img:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-.card {
-    background-color: #E3DCCD;
-    width: 465px;
-    border-radius: 5px;
-    height: 40px;
-    margin-left: 60%;
-}
-.card h2{
-    color: #767066;
-    margin: 0%;
-    position: absolute;
 }
 
 .container1 p3 {
@@ -339,6 +302,42 @@ body {
     margin-top: -59%;
 }
 
+.imagem-banner1 img{
+    width: 450px;
+    margin-top: -37%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 5%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 60%;
+    opacity: 0.7;
+    border: 8px solid #E3DCCD;
+}
+
+.imagem-banner1 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.imagem-banner2 img{
+    width: 300px;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-right: 60%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 5%;
+    opacity: 0.7;
+    border: 8px solid #E3DCCD;
+}
+.imagem-banner2 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
 
 .imagem-banner3 img{
     width: 390px;
@@ -354,122 +353,81 @@ body {
     opacity: 0.7;
     border: 8px solid #E3DCCD;
 }
+
 .imagem-banner3 img:hover{
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.banner1 .container1 .boxes {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-.boxes .box1 {
-    width: 100%;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E3DCCD;
-    padding: 40px;
-    border-radius: 20px;
-    margin: 20px 10px 20px 10px; 
-    margin-bottom: 0%;
-    text-align: center; 
-  }
-
-.boxes .box1 h1{
-    color: #767066;
-    font-size: 30px;
-    margin-top: 6%;
-    margin-bottom: 0%;
-}
-.boxes .box1 p {
-    color: #767066;
-    font-size: 18px;
-    margin-top: 0%;
-    padding: 2%;
-    width: 100%;
-    text-align: center; 
-}
-
-.boxes .box2 {
-    width: 100%;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E3DCCD;
-    padding: 40px;
-    margin: 5px;
-    border-radius: 20px;
-    margin: 20px 10px 20px 10px; 
-    text-align: center; 
-    margin-bottom: 0%;
-  }
-
-.boxes .box2 h1{
-    color: #767066;
-    font-size: 30px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-}
-.boxes .box2 p {
-    color: #767066;
-    font-size: 18px;
-    margin-top: 0%;
-    padding: 2%;
-    width: 100%;
-}
-.boxes .box3 {
-    width: 100%;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #E3DCCD;
-    padding: 40px;
-    margin: 5px;
-    border-radius: 20px;
-    margin: 20px 10px 20px 10px; 
-  }
-
-.boxes .box3 h1{
-    color: #767066;
-    font-size: 30px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-}
-.boxes .box3 p {
-    color: #767066;
-    font-size: 18px;
-    margin-top: 0%;
-    padding: 2%;
-    text-align: center; 
-}
-.title h1{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0%;
-}
-.boxes{
+.imagem-banner4 img{
+    width: 400px;
+    margin-top: 5%;
     margin-bottom: 50px;
-    
-}
-.container1 .title .line{
-    height: 2px;
-    width: 490px;
-    background-color:#E3DCCD;
-    margin-left: 388px;
-    margin-top: -150px;
-    margin-bottom: 2%;
+    align-items: center;
+    margin-right: 60%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: row;
+    margin-left: 5%;
+    opacity: 0.7;
+    height: 300px;
+    border: 8px solid #E3DCCD;
 }
 
-/* BANNER 6-RODAPE */
+.imagem-banner4 img:hover{
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.card { /*MARQUEE*/
+    background-color: #E3DCCD;
+    width: 465px;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 60%;
+}
+
+.card h2{
+    color: #767066;
+    margin: 0%;
+    position: absolute;
+}
+
+.botao{
+    background-color: #E3DCCD;
+    color: #767066;
+    width: 20%;
+    height: 50px;
+    border-style: none; /*tira a estilização automatica do botão do html*/
+    border-radius: 10px;
+    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display:flex;
+    margin: 5px 10% 0px 40%; /*borda da imagem (top right bottom left)*/
+    align-items: center;
+    justify-content: center;
+}
+
+.botao a{ 
+    color: #767066;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+button:hover{
+    /*'animação' do botão quando o mouse passar*/
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    background-color: #bbb5aa;
+    color: white;
+    transition-duration: 0.3s; /*duração da transição da animação*/
+}
+
+/* FIM DO BANNER DE INFORMAÇÕES SOBRE O TIME */
+
+
+/* RODAPE */
 .banner6 {
     background-color: #E3DCCD;
     width: 100%;
@@ -543,46 +501,4 @@ body {
 }
 
 
-.botao{
-    background-color: #E3DCCD;
-    color: #767066;
-    width: 20%;
-    height: 50px;
-    border-style: none; /*tira a estilização automatica do botão do html*/
-    border-radius: 10px;
-    cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    display:flex;
-    margin: 5px 10% 0px 40%; /*borda da imagem (top right bottom left)*/
-    align-items: center;
-    justify-content: center;
-}
 
-.botao a{ 
-    color: #767066;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-button:hover{
-    /*'animação' do botão quando o mouse passar*/
-    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
-    background-color: #bbb5aa;
-    color: white;
-    transition-duration: 0.3s; /*duração da transição da animação*/
-}
-
-.texto-banner .audio audio{
-    color: #767066;
-    margin-left: 38%;
-    width: 230px;
-    border-radius: 300px;
-}
-
-audio:hover{
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    box-shadow: 0 16px 32px 0 rgb(91, 84, 76);
-}
