@@ -7,8 +7,7 @@ body {
   background-repeat: no-repeat;
 }
 
-
-
+/* INICIO DO HEADER */
 .header {
   position: absolute; 
   top: 0; 
@@ -21,25 +20,26 @@ body {
   margin-left: 0%;
   margin-right: 0%;
   margin-top: 0px; 
-  /* box-shadow: 0 16px 32px 0 rgba(255, 255, 255, 0.489); */
   padding: 0%;
   position:absolute;
 }
+
 .header .container {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .logo {
   width: 200px;
- 
 }
+
 .navbar {
   width: 700px;
   display: flex;
   list-style: none; 
   justify-content:space-around;
-
 }
+
 .navbar li a {
   color: #767066;
   text-decoration: none; 
@@ -50,16 +50,17 @@ body {
   letter-spacing: 1px;
   
 }
+
 .navbar li a:hover {
   color: #b4a39b;
   transition: 0.5s;
   -ms-transform: scale(1.2);
   transform: scale(1.2);
-
 }
+/* FIM DO HEADER */
 
 
-
+/* INICIO DA PÁGINA DE PLOTAGEM DE GRÁFICOS */
 .graph {
   width: 70%;
   margin: auto;
@@ -70,15 +71,7 @@ body {
 }
 
 
-
-.linha { /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  width: 200px;
-
-}
-
-.linhaMaior { /* estilização da linha dos gráficos */
+.linhaMaior { /* LINHA NA QUAL EXISTE A PLOTAGEM DE DOIS GRÁFICOS DINÂMICOS */
   display: flex;
   flex-direction: row;
   width: 880px;
@@ -88,44 +81,32 @@ body {
 }
 
 
-
-.titulos{
+.titulos{/* LINHA NA QUAL EXISTEM DOIS TÍTULOS */
   display: flex;
   flex-direction: row;
   margin-left: 10%;
   width: 100%;
 }
 
-.title_sub2 h3{
-  margin-left: 114%;
-  width: 100%;
-  color: #767066;
-}
-.title_sub1 h3{
+.title_sub1 h3{/* ÚLTIMA TENTATIVA */
   margin-left: 3%;
   width: 100%;
   color: #767066;
 }
+
+.title_sub2 h3{/* TODAS AS TENTATIVAS */
+  margin-left: 114%;
+  width: 100%;
+  color: #767066;
+}
+
 .title_sub3 h3{
   margin-left: 10%;
   width: 100%;
   color: #767066;
 }
-.title_subG h3{
-  margin-left: 10%;
-  width: 100%;
-  color: #767066;
-}
-.title_sub4 h3{
-  margin-left: 10%;
-  width: 100%;
-  color: #767066;
-}
 
-
-
-
-.graph h1{
+.graph h1{/* SEUS RESULTADOS E RECORDES DO CORINTHIANS (TÍTULOS) */
   font-family: 'Poppins', sans-serif; 
   letter-spacing: 2px;
   color: #767066;
@@ -133,20 +114,7 @@ body {
   margin-left: 10%;
 }
 
-.linha2 { /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  width:700px;
-  padding: 20px;
-  margin-top: 21%;
-  height:fit-content;
-  margin-right: -40%;
-  margin-left: 30%;
-  box-sizing: border-box;
-}
-
-
-.linha1 { /* estilização da linha dos gráficos */
+.linha1 { /* GRÁFICO DA ÚLTIMA TENTATIVA */
   display: flex;
   flex-direction: row;
   width:380px;
@@ -159,207 +127,75 @@ body {
   position: relative;
 }
 
-.linha3 { /* estilização da linha dos gráficos */
+.linha2 { /* GRÁFICO DE TODAS AS TENTATIVAS */ 
   display: flex;
   flex-direction: row;
+  width:700px;
   padding: 20px;
-  width:740px;
-  margin-left: 7%;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.linha4 { /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  width:740px;
-  margin-left: 7%;
-  box-sizing: border-box;
-  position: relative;
-}
-.linha5 { /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  width:740px;
-  margin-left: 7%;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.linha6 { /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  margin-left: 5%;
-  width: 740px;
-  box-sizing: border-box;
-  position: relative;
-}
-.linha7{ /* estilização da linha dos gráficos */
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-  margin-left: 5%;
-  width: 740px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-
-
-
-
-/* 
-.linha2 { 
-  display: block;
-  flex-direction: row;
-  width:fit-content;
-  padding: 20px;
-  margin-top: 20%;
+  margin-top: 21%;
   height:fit-content;
-  margin-right: -30%;
+  margin-right: -40%;
   margin-left: 30%;
   box-sizing: border-box;
-   */
+}
 
-
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
+.linha3 { /* TREINADORES COM MAIS JOGOS */
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
 }
 
-
-.texto-banner h1 {
-  font-size: 40px;
- 
-  margin-bottom: 10px;
+.linha4 { /* JOGADORES QUE MAIS ATUARAM COM A CAMISA */
   display: flex;
-  align-items: start;
-  justify-content: start;
-  width: 100%;
-
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
 }
-
-
-.btn-chart {
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-}
-
-.btn-pink {
-  color: white;
-  background-color: #e6005a;
-}
-
-.btn-white {
-  color: #e6005a;
-  background-color: white;
-
-}
-
-.label-captura {
-  height: 80px;
-}
-
-.display-none {
-  display: none;
-}
-
-.display-flex {
+.linha5 { /* JOGADORES COM MAIS GOLS */
   display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width:740px;
+  margin-left: 7%;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.display-block {
+.linha6 { /* OS MAIORES GARÇONS DO CORINTHIANS */
   display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 5%;
+  width: 740px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.linha7{ /* OS MAIORES CAMPEÕES PELO CORINTHIANS*/
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-left: 5%;
+  width: 740px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 canvas {
   width: 100% !important;
   height: 100% !important;
 }
+/* FIM DA PÁGINA DE PLOTAGEM DE GRÁFICOS */
 
 
-/* FORMULARIO */
-
-.alerta_erro{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card_erro {
-  display: none;
-  background-color: #fff;
-  color: black;
-  width: 230px;
-  position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
-  margin-right: 10%;
-}
-
-.card_erro #mensagem_erro{
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.formulario .tipo_campo {
-  font-size: 20px;
-  font-weight: 600 !important;
-}
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  margin-bottom: 10px;
-  border: 2px solid #32b9cd;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.btn {
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-  align-self: center;
-  margin-top: 5px;
-}
-
-.loading-div {
-  width: 50px;
-  margin: auto;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-/* PAGINA DOS GRÁFICOS */
-
+/* COMEÇO DA NAV BAR LATERAL */
 .janela {
   display: flex;
   width: 35vw;
@@ -383,25 +219,10 @@ input {
   align-items: center;
   border-right: 4px dotted #767066;
   background-color: #E3DCCD;
-  /* border: 3px solid pink; */
 }
+
 .logo {
   width: 200px;
- 
-}
-
-.dash-right {
-  display: flex;
-  width: 80%;
-  height: fit-content;
-  background-color: #8b8b9c;
-  position: relative;
-  top: 0;
-  left: 25%;
-}
-
-.header-left h1 {
-  color: #32b9cd;
 }
 
 .hello {
@@ -414,9 +235,7 @@ input {
   color: #767066;
   font-weight: 300;
   font-size: 20px;
-
 }
-
 
 .hello h3 span {
   font-weight: 800;
@@ -427,12 +246,15 @@ input {
   font-weight: 300;
   font-size: 16px;
 }
+/* FIM DA NAV BAR LATERAL */
 
-.btn-nav {
+
+/* COMEÇO DA ESTILIZAÇÃO DOS BOTÕES LATERAIS (Inicio, Quiz, LineUp, Avaliação e Dashboards) */
+.botoesLaterais { 
   background-color: #767066 ;
   width: 50%;
   height: 25px;
-  border-style: none; /*tira a estilização automatica do botão do html*/
+  border-style: none; 
   border-radius: 100px 300px 100px 300px;
   cursor:pointer; /*muda a imagem do cursor quando passar pelo botão*/
   font-size: 17px;
@@ -444,13 +266,8 @@ input {
   padding: 2% 5%;
 
 }
-.btn-nav h3{ 
-  color: #f0efee;
-  text-decoration: none;
-  font-weight: normal;
-}
 
-.btn-nav:hover{
+.botoesLaterais:hover{
   /*'animação' do botão quando o mouse passar*/
   box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
   background-color: #bbb5aa;
@@ -458,137 +275,27 @@ input {
   transition-duration: 0.3s; /*duração da transição da animação*/
 }
 
-
-.btn-nav-white{
-  background-color: #767066 ;
-  color: #E3DCCD;
-  width: 50%;
-  height: 25px;
-  border-style: none; /*tira a estilização automatica do botão do html*/
-  border-radius: 100px 300px 100px 300px;
-  cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
-  font-size: 17px;
-  font-family: 'Poppins', sans-serif;
-  text-decoration: none;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2% 5%;
-
-}
-
-.btn-nav-white h3{ 
+.botoesLaterais h3{ 
   color: #f0efee;
   text-decoration: none;
   font-weight: normal;
 }
 
-.btn-nav-white:hover{
-  /*'animação' do botão quando o mouse passar*/
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
-  background-color: #bbb5aa;
-  color: white;
-  transition-duration: 0.3s; /*duração da transição da animação*/
-}
-
-
-
-
-
-.btn-nav h3,
-.btn-logout h3 {
+.botoesLaterais h3,
+.botoesLaterais h3 {
   margin: 0;
   padding: 0;
 }
 
-.btn-logout {
-  /* width: 50%;
-  height: 25px; */
-  border-style: none; /*tira a estilização automatica do botão do html*/
-  border-radius: 10px;
+.btn-logout { /* Botão/ Imagem de saída do usuário*/
   cursor: pointer; /*muda a imagem do cursor quando passar pelo botão*/
-  font-family: 'Poppins', sans-serif;
-  text-decoration: none;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2% 5%;
 }
 
+/* FIM DA ESTILIZAÇÃO DOS BOTÕES LATERAIS */
 
 
 
-/* .btn-logout:hover{
-  
-  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
-  background-color: #bbb5aa;
-  color: white;
-  transition-duration: 0.3s; 
-} */
-
-/* pagina extra - simulador */
-.simulador {
-  color: white;
-
-}
-
-.simulador .container {
-  flex-direction: column
-}
-
-
-
-.container1 h1{
-  font-size: 40px;
-  font-family: 'Poppins', sans-serif; 
-  letter-spacing: 2px;
-  color:#E3DCCD;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2%;
-  padding: 10%;
-}
-
-.container1 h2{
-  font-size: 25px;
-  font-family: 'Poppins', sans-serif; 
-  letter-spacing: 2px;
-  color:#E3DCCD;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2%;
-  padding: 10%;
-
-}
-.line{
-  height: 2px;
-  width: 350px;
-  background-color:#E3DCCD;
-  margin-left: 455px;
-  margin-top: -150px;
-}
-
-
-
-.line:hover {
-  -ms-transform: scale(1.5);
-  transform: scale(1.5);
-}
-
-.form{
-  width: 100%;
-  margin:0%;
-  margin-top: 0%;
-  margin-left: 0%;
-  margin-right: 0%;
-  position: fixed;
-  
-}
-
+/* COMEÇO DO TEXTO DE BEM-VINDO À ÁREA DO USUÁRIO */
 .texto-banner {
   color:#767066;
   width: 60%; 
@@ -603,69 +310,14 @@ input {
   text-align: justify;
   margin-top: 5%;
 }
-
-.container2{
-  margin-top: 20%;
-  width: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  margin-left: 7%;
-}
-
-.container3{
-  margin-top: 20%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  background-color: #767066;
-  margin-right: 0%;
-  margin-left: 0%;
-  padding: 0%;
-}
-
-.texto-banner2 h1{
+.texto-banner h1 {
   font-size: 40px;
-  font-family: 'Poppins', sans-serif; 
-  letter-spacing: 2px;
-  color:#767066;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -2%;
-}
-
-.texto-banner2 h1:hover {
-  color: #b4a39b;
-  transition: 0.5s;
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.texto-banner2 h2{
-  font-size: 25px;
-  font-family: 'Poppins', sans-serif; 
-  letter-spacing: 2px;
-  color:#767066;
-  font-weight: bold;
+  margin-bottom: 10px;
   display: flex;
   align-items: start;
   justify-content: start;
-  margin-top: 15%;
+  width: 100%;
 }
+/* FIM DO TEXTO DE BEM-VINDO À ÁREA DO USUÁRIO */
 
-
-.texto-banner2 p {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  margin-top: 2%;
-  color: #767066;
-}
 

@@ -32,8 +32,8 @@
         </div>
     </div>
 
+    <!-- BANNER REGRAS DO QUIZ  -->
     <div id="projeto" class="banner">
-
         <div class="container">
             <div class="texto-banner">
                 <h1>Quanto você conhece o Corinthians?</h1>
@@ -59,12 +59,12 @@
         </div>
     </div>
 
+    <!-- BANNER QUIZ -->
     <div class="banner1">
-
         <div class="container1">
+
             <h2><div class="perguntas" id="perguntasQuiz"></div><br></h2> <!--Perguntas -->
- 
-        <div class="respostas" id="respostasQuiz"></div> <!--Alternativas/Select -->
+            <div class="respostas" id="respostasQuiz"></div> <!--Alternativas/Select -->
 
         </div>
 
@@ -74,7 +74,7 @@
 
         <div class="lista1 " id="div_lista1"></div> <!-- Gabarito de acertos e erros -->
         <div class="lista2 " id="div_lista2"></div> <!-- Acertos e porcentagem -->
-        <div class="lista3 " id="div_lista3"></div> <!-- Status -->
+        <div class="lista3 " id="div_lista3"></div> <!-- Status do quão corintiano o usuário é-->
 
         <div class="titulo"> Insira a quantidade de:<br></div>
 
@@ -250,15 +250,18 @@
     var contador = 0;
     var listaResposta = [];
     var listaAcertos = [];
-    perguntasQuiz.innerHTML = perguntas[contador];
-    respostasQuiz.innerHTML = alternativas[contador];
+
+    // Precisam ser criadas fora da função pois não dependem dela para aparecer, precisam aparecer assim que o usuário entra na página e não quando ele clica em algum botão.
+    perguntasQuiz.innerHTML = perguntas[contador]; // Atualiza a div com as perguntas do vetor (perguntas) e exibe a pergunta correspondente à posição atual indicada pelo valor do contador.
+    respostasQuiz.innerHTML = alternativas[contador]; // Atualiza a div e exibe o select junto aos botões de verificar e próxima correspondente à posição atual indicada pelo valor do contador.
 
 
     function ver() {
-        contador++
+        contador++ // Avança para a próxima pergunta e resposta quando a função é chamada novamente (de um em um).
 
-        if (contador < perguntas.length) {
-
+        if (contador < perguntas.length) { // Se for verdadeiro, significa que ainda há perguntas a serem exibidas. 
+           
+            // Atualiza o conteúdo HTML dos elementos perguntasQuiz e respostasQuiz com a próxima pergunta e resposta do array perguntas e alternativas.
             perguntasQuiz.innerHTML = perguntas[contador];
             respostasQuiz.innerHTML = alternativas[contador];
 
@@ -268,7 +271,7 @@
             alert("Quiz finalizado");
         }
 
-        msg.innerHTML = "";
+        msg.innerHTML = ""; // Limpa a div.
 
     }
 
@@ -277,20 +280,20 @@
     function Resposta1() {
         var primeira = input_p1.value;
 
-        if (perguntas[0] && primeira == 'x') {
+        if (perguntas[0] && primeira == 'x') { // Se o usuário manter sua resposta no select 'Selecione uma Opção' peço para que ele escolha uma opção válida.
             alert("Escolha uma opção válida!")
         }
 
-        else if (perguntas[0] && primeira == 'A') {
-            acertos += 1
+        else if (perguntas[0] && primeira == 'A') { // Se a lista de perguntas estiver na posição 0 e o select escolhido for o de valor A
+            acertos += 1 // Adiciona um ponto na variável acertos.
 
 
-            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
-            listaResposta.push(primeira);
-            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✓.  `;
+            msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.` // Exibe o valor atual da variável acertos.
+            listaResposta.push(primeira); // Pega o valor do select escolhido pelo usuário e adiciona numa lista de vetores.
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✓.  `; // Exibe o número da pergunta e o valor de resposta que o usuário inseriu.
 
 
-            if (acertos > 1) {
+            if (acertos > 1) { // Validação para que ele clique apenas uma vez no botão, para que o botão não adicione mais um ponto reestabeleço o valor de acertos de acordo com o número da pergunta.
                 acertos = 1
                 alert("Não vale clicar mais de uma vez, passe para a próxima pergunta!")
                 msg.innerHTML = `Parabéns! Acertos acumulados: ${acertos}.`
@@ -301,7 +304,7 @@
             acertos += 0
 
             listaResposta.push(primeira);
-            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✕.  `;
+            div_lista1.innerHTML += `${contador + 1}.${listaResposta[0]}✕.  `; 
         }
 
 
@@ -597,10 +600,10 @@
             div_lista1.innerHTML += `${contador + 1}.${listaResposta[9]}✕.<br>`;
         }
 
-        var porcent = acertos * 10;
+        var porcent = acertos * 10; // Pega a quantidade de acertos e faz vezes 10 para verficar a porcentagem.
 
 
-        div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)!
+        div_lista2.innerHTML += `Você acertou ${acertos} pergunta(as)! 
             Isso corresponde à ${porcent}% do Quiz.<br>`
 
         if (acertos <= 3) {
@@ -620,9 +623,9 @@
     function verificar() {
         var inputA = input_acertos.value;
         var inputB = input_erros.value;
-        var erros = 10 - acertos
+        var erros = 10 - acertos // SEMPRE OS ERROS VÃO SER ESSA CONTA
 
-        if (inputA == acertos && inputB == erros) {
+        if (inputA == acertos && inputB == erros) { // Se a input de acertos for igual a quantidade de acertos da variável global (acertos) e a input de erros for igual a 10 - a quantidade de acertos da variável global (acertos). 
             alert('Os pontos foram validados, clique no botão de enviar que aparecerá abaixo e vá para a área dashboard para verificar sua evolução!')
 
             botaoEnviar.innerHTML = `

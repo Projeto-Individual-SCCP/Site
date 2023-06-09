@@ -31,6 +31,7 @@
         </div>
     </div>
 
+    <!-- CARD DE INSTRUÇÕES DO JOGO -->
     <div id="projeto" class="banner">
         <div class="container">
             <div class="texto-banner">
@@ -58,27 +59,30 @@
             </div>
         </div>
     </div>
+
+    <!-- CARD DO BOTÃO INICIAR GAME -->
     <div class="botao-div" id="botaoDiv" style="display: block;">
         <button class="botao" onclick="iniciar()">Iniciar GAME!</button>
     </div>
-            <div class="boxes">
-                <div class="box1" id="box1Div" style="display: none;">       
-                    <span class="timer" id="span_tempo"></span><br>
-                    Jogadores: <input class="inputJog" id="input_jog"><br>
-              
-                    <button class="botaoRegistrar" onclick="registrar()">Registrar Jogadores</button>
 
-                    <div id="msg"></div>
-            </div>
+    <!-- CARD GERAL -->
+    <div class="boxes">
 
-            <div class="box2" id="box2Div" style="display: none;">
-                    <p> GALERIA DOS ESCALADOS:</p>
-                    <div id="imagensJogadores"></div>
-            </div>
-            </div>
+        <!-- CARD ONDE O USUÁRIO INSERE OS JOGADORES -->
+        <div class="box1" id="box1Div" style="display: none;">
+            <span class="timer" id="span_tempo"></span><br>
+            Jogadores: <input class="inputJog" id="input_jog"><br>
+            <button class="botaoRegistrar" onclick="registrar()">Registrar Jogadores</button>
+            <div id="msg"></div><!-- ONDE APARECEM AS IMAGENS INDIVIDUAIS DOS JOGADORES E OS NOMES -->
         </div>
-    </div>
 
+        <!-- CARD DA GALERIA DOS ESCALADOS-->
+        <div class="box2" id="box2Div" style="display: none;">
+            <p> GALERIA DOS ESCALADOS:</p>
+            <div id="imagensJogadores"></div>
+        </div>
+
+    </div>
 </body>
 
 </html>
@@ -86,14 +90,14 @@
 
     var listaGostar = [];
     var listaJogadores = [];
-    var segundo = 50;
-    span_tempo.innerHTML = segundo;
-    var interval = null;
+    var segundo = 50;   // Define a contagem iniciando de 50.
+    var interval = null;  // Variável usada para armazenar a referência ao intervalo do temporizador.
+    span_tempo.innerHTML = segundo; // Atualiza o conteúdo do elemento para exibir o valor atual da variável "segundo".
 
     function iniciar() {
-        interval = setInterval(() => {
-            segundo -= 1;
-            span_tempo.innerHTML = segundo;
+        interval = setInterval(() => {// Inicia um intervalo de tempo que será executado a cada 1 segundo.
+            segundo -= 1; // Diminui o valor da variável "segundo" em 1.
+            span_tempo.innerHTML = segundo;// Atualiza a div.
 
             if (segundo <= 0) {
                 clearInterval(interval);
@@ -146,34 +150,37 @@
             '<img style="height: 100px;" src="../assets/imgs/ruan-de-oliveira-.jpg">'
         ];
 
-        var jogadorRegistrado = input_jog.value;
-        var jogadorIndex = listaEscalados.indexOf(jogadorRegistrado);
-        var imagemJogador = listaImagem[jogadorIndex];
 
-        if (listaJogadores.indexOf(jogadorRegistrado) > -1) {
+        var jogadorRegistrado = input_jog.value; //Pega a informação inserida pelo usuário e guarda na variável.
+        var jogadorIndex = listaEscalados.indexOf(jogadorRegistrado); // Encontra o índice do jogador registrado (da input) na listaEscalados.
+        var imagemJogador = listaImagem[jogadorIndex]; // Atribui a imagem correspondente ao jogador registrado (da input) usando o jogadorIndex para acessar a listaImagem na posição correspondente.
+
+        if (listaJogadores.indexOf(jogadorRegistrado) > -1) { // Verifica se o jogador já foi inserido na lista de jogadores registrados 
             alert("O jogador já foi inserido!");
         }
 
-        else if (listaEscalados.includes(jogadorRegistrado)) {
-            msg.innerHTML = `<br> O jogador ${jogadorRegistrado} está entre os escalados!<br>`;
-            listaJogadores.push(jogadorRegistrado);
+        else if (listaEscalados.includes(jogadorRegistrado)) { // Verifica se o jogador registrado está na lista de jogadores escalados. 
+            msg.innerHTML = `<br> O jogador ${jogadorRegistrado} está entre os escalados!<br>`; //true
+            listaJogadores.push(jogadorRegistrado); // Adiciona o nome registrado na lista vazia criada fora da função.
             msg.innerHTML += `<br>${imagemJogador}<br>
-            <br>`;
-        } else {
+            <br>`; // Exibe a imagem correspondente ao jogador inserido na input.
+        }
+
+        else { //false
             msg.innerHTML = `<br> O jogador ${jogadorRegistrado} não faz parte do elenco, tente novamente...<br>`;
         }
 
         for (var contador = 0; contador < listaJogadores.length; contador++) {
             msg.innerHTML += `${listaJogadores[contador]}, `;
-        }
+        } // Percorre a lista de jogadores registrados (listaJogadores) e adiciona os nomes deles à variável msg para exibição.
 
-        var imagensJogadoresDiv = document.getElementById('imagensJogadores');
+        var imagensJogadoresDiv = document.getElementById('imagensJogadores'); // A variável é criada para exibir a galeria de escalados e pega as informações com base no id da div.
         imagensJogadoresDiv.innerHTML = '';
 
         for (var i = 0; i < listaJogadores.length; i++) {
-            var jogador = listaJogadores[i];
-            var jogadorIndex = listaEscalados.indexOf(jogador);
-            var imagemJogador = listaImagem[jogadorIndex];
+            var jogador = listaJogadores[i]; //Pega o elemento da lista na posição do contador.
+            var jogadorIndex = listaEscalados.indexOf(jogador); //Encontra o índice do jogador atual na lista de jogadores escalados (lista já existente).
+            var imagemJogador = listaImagem[jogadorIndex]; // Acessa lista de imagens na posição do jogador.
             imagensJogadoresDiv.innerHTML += `${imagemJogador} `;
         }
     }

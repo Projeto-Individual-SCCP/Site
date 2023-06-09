@@ -30,37 +30,30 @@
                 <h3>Usuário: <span id="b_usuario">usuário</span>.</h3>
             </div>
 
-            <div class="btn-nav">
+            <div class="botoesLaterais">
                 <a href="../dashboard/paginaInicial.html">
                     <h3>Início</h3>
                 </a>
             </div>
 
-            <div class="btn-nav-white">
+            <div class="botoesLaterais">
                 <a href="../dashboard/quiz.html">
                     <h3>Quiz</h3>
                 </a>
             </div>
 
-            <div class="btn-nav-white">
+            <div class="botoesLaterais">
                 <a href="../dashboard/lista.html">
                     <h3>Lineup Game</h3>
                 </a>
             </div>
 
-            <div class="btn-nav">
+            <div class="botoesLaterais">
                 <a href="../dashboard/avaliacao.html">
                     <h3>Avaliação</h3>
                 </a>
             </div>
           
-            <!-- 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Interações</h3>
-                </a>
-            </div> -->
-
             <div class="btn-logout" onclick="limparSessao()">
                 <img class="sair" src="../assets/imgs/sair (1).png">
             </div>
@@ -72,79 +65,75 @@
 
     <div class="graficos">
         <section class="graph">
-
+            <!-- COMEÇO DA PRIMEIRA LINHA DO DASH -->
             <h1> SEUS RESULTADOS </h1>
 
             <div class="titulos">
-                <div class="title_sub1">
-                    <h3> ÚLTIMA TENTATIVA </h3>
-                </div>
-
-                <div class="title_sub2">
-                    <h3> TODAS AS TENTATIVAS</h3>
-                </div>
+            <div class="title_sub1">
+                <h3> ÚLTIMA TENTATIVA </h3>
+            </div>
+            <div class="title_sub2">
+                <h3> TODAS AS TENTATIVAS</h3>
+            </div>
             </div>
 
             <div class="linhaMaior">
-                <div class="linha1">
-                    <canvas id="myChart1"></canvas>
-                </div>
-
-                <div class="linha2">
-                    <canvas id="myChart2"></canvas>
-                </div>
+            <div class="linha1">
+                <canvas id="myChart1"></canvas>
             </div>
 
-            <!-- <h1> A MAIORIA  </h1>
-            <div class="title_subG">
-                <h3> MÉDIA DE ACERTOS POR GÊNERO</h3>
+            <div class="linha2">
+                <canvas id="myChart2"></canvas>
             </div>
-            <div class="linhaG">
-                <canvas id="myChartG"></canvas>
-            </div> -->
-
+            </div>
+            <!-- FIM DA PRIMEIRA LINHA DO DASH -->
 
             <h1> RECORDES HISTÓRICOS DO CORINTHIANS </h1>
 
+            <!-- COMEÇO DA SEGUNDA LINHA DO DASH -->
             <div class="title_sub3">
                 <h3> TREINADORES COM MAIS JOGOS</h3>
             </div>
-
             <div class="linha3">
                 <canvas id="myChart3"></canvas>
             </div>
+            <!-- FIM DA SEGUNDA LINHA DO DASH -->
+
+            <!-- COMEÇO DA TERCEIRA LINHA DO DASH -->
             <div class="title_sub3">
                 <h3> JOGADORES QUE MAIS ATUARAM COM A CAMISA</h3>
             </div>
             <div class="linha4">
                 <canvas id="myChart4"></canvas>
             </div>
+            <!-- FIM DA TERCEIRA LINHA DO DASH -->
 
+            <!-- COMEÇO DA QUARTA LINHA DO DASH -->
             <div class="title_sub3">
                 <h3> JOGADORES COM MAIS GOLS</h3>
             </div>
             <div class="linha5">
                 <canvas id="myChart5"></canvas>
-                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
             </div>
+            <!-- FIM DA QUARTA LINHA DO DASH -->
 
-          
-            <div class="title_sub4">
+            <!-- COMEÇO DA QUINTA LINHA DO DASH -->
+            <div class="title_sub3">
                 <h3> OS MAIORES GARÇONS DO CORINTHIANS</h3>
             </div>
             <div class="linha6">
                 <canvas id="myChart6"></canvas>
-                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
             </div>
+            <!-- FIM DA QUINTA LINHA DO DASH -->
 
-            <div class="title_sub4">
+            <!-- COMEÇO DA SEXTA LINHA DO DASH -->
+            <div class="title_sub3">
                 <h3> OS MAIORES CAMPEÕES PELO CORINTHIANS</h3>
             </div>
             <div class="linha7">
                 <canvas id="myChart7"></canvas>
-                <!-- -tag canvas: tela em branco para colocarmos os gráficos -->
             </div>
-   
+            <!-- FIM DA SEXTA LINHA DO DASH -->
 
         </section>
     </div>
@@ -158,6 +147,7 @@
 
     var idUsuario = sessionStorage.ID_USUARIO;
 
+//------------------------------------------------------------------------------------------------------------------
 // GRÁFICO DE LINHA - TODAS AS TENTATIVAS DO USUÁRIO
 
     function obterDadosGraficos(idUsuario) {
@@ -254,10 +244,7 @@
 
     }
 
-
-
-
-    // --------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------
 // GRÁFICO DE PIZZA - ÚLTIMA TENTATIVA DO USUÁRIO
 
     function obterDadosGraficos1(idUsuario) {
@@ -326,9 +313,9 @@
     };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
-
-    const ctx2 = document.getElementById('myChart3');
-    const chartGrafico2 = new Chart(ctx2, {
+// TREINADORES COM MAIS JOGOS
+const ctx2 = document.getElementById('myChart3');
+const chartGrafico2 = new Chart(ctx2, {
         type: 'bar',
         data: {
             labels: ['Oswaldo B.', 'Tite', 'Mano M.', 'Amilcar B.', 'Rato', 'Nelsinho B.', 'Fabio C.', 'Del D.', 'Jorge V.', 'Luxemburgo'],
@@ -355,8 +342,9 @@
         }
     });
 
-    const ctx3 = document.getElementById('myChart4');
-    const chartGrafico3 = new Chart(ctx3, {
+// JOGADORES QUE MAIS ATUARAM COM A CAMISA 
+const ctx3 = document.getElementById('myChart4');
+const chartGrafico3 = new Chart(ctx3, {
         type: 'bar',
         data: {
             labels: ['Wladimir', 'Cássio', 'Luizinho', 'Ronaldo', 'Zé Maria', 'Biro-Biro', 'Vaguinho', 'Cláudio', 'Olavo', 'Fagner'],
@@ -383,8 +371,9 @@
         }
     });
 
-    const ctx4 = document.getElementById('myChart5');
-    const chartGrafico4 = new Chart(ctx4, {
+// JOGADORES COM MAIS GOLS
+const ctx4 = document.getElementById('myChart5');
+const chartGrafico4 = new Chart(ctx4, {
         type: 'bar',
         data: {
             labels: ['Cláudio', 'Baltazar', 'Teleco', 'Neco', 'Marcelinho', 'Servillio', 'Luizinho', 'Flavio', 'Sócrates', 'Paulo', 'Rivelino'],
@@ -411,10 +400,9 @@
         }
     });
 
-
-    const ctx5 = document.getElementById('myChart6');
-
-    const chartGrafico5 = new Chart(ctx5, {
+// OS MAIORES GARÇONS DO CORINTHIANS 
+const ctx5 = document.getElementById('myChart6');
+const chartGrafico5 = new Chart(ctx5, {
         type: 'bar',
         data: {
             labels: ['Cláudio', 'Marcelinho C.', 'Luizinho', 'Rivellino', 'Vaguinho', 'Baltazar', 'Fagner', 'Jadson', 'Sócrates', 'Ricardinho'],
@@ -441,10 +429,8 @@
         }
     });
 
-
-  
-  const ctx6 = document.getElementById('myChart7');
-
+// OS MAIORES CAMPEÕES PELO CORINTHIANS
+const ctx6 = document.getElementById('myChart7');
 const chartGrafico6 = new Chart(ctx6, {
     type: 'bar',
         data: {
